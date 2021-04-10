@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{550410FE-5420-44A6-A33C-A6A9D8EAC5A1}</ProjectGuid>
+    <ProjectGuid>{C6F22E04-89D6-407F-85D7-A67EE4342BF9}</ProjectGuid>
     <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <TemplateGuid>{c9e5eea5-ca05-42a1-839b-61506e0a37df}</TemplateGuid>
     <OutputType>Library</OutputType>
@@ -66,7 +66,7 @@
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
     <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
     <PackageReference Include="Xamarin.Forms.PancakeView">
-      <Version>2.1.0.714</Version>
+      <Version>2.3.0.763-beta</Version>
     </PackageReference>
     <PackageReference Include="XF.Material">
       <Version>1.7.8</Version>
@@ -107,15 +107,15 @@
   <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\DuraDriveRider\DuraDriveRider.csproj">
-      <Project>{EF4FEC10-4C2D-43E3-9788-8B2365FF0F6C}</Project>
+      <Project>{B039E6C3-D3D1-43CE-B522-B43AB3800CFE}</Project>
       <Name>DuraDriveRider</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\home_selected.png" />
+    <AndroidResource Include="Resources\drawable\home.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\home.png" />
+    <AndroidResource Include="Resources\drawable\home_selected.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

@@ -1,5 +1,5 @@
-﻿using AdventureClub.Controls;
-using AdventureClub.iOS.Renderers;
+﻿using DuraDriveRider.Controls;
+using DuraDriveRider.iOS.Renderers;
 using CoreAnimation;
 using CoreGraphics;
 using Foundation;
@@ -13,7 +13,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
 
 [assembly: ExportRenderer(typeof(CustomEntry), typeof(CustomEntryRenderer))]
-namespace AdventureClub.iOS.Renderers
+namespace DuraDriveRider.iOS.Renderers
 {
 	public class CustomEntryRenderer : EntryRenderer
 	{

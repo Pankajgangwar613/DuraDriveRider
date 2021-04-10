@@ -12,13 +12,14 @@ namespace DuraDriveRider
         public App()
         {
             InitializeComponent();
-            MainPage = new MaterialNavigationPage(new MainPage()); 
+            MainPage = new MainPage();
+            //MainPage = new MaterialNavigationPage(new MainPage());
             XF.Material.Forms.Material.Init(this);
             LocalizationResourceManager.Current.Init(AppResources.ResourceManager);
             //AppResources.Culture = CrossMultilingual.Current.DeviceCultureInfo; 
             // MainPage = new MaterialNavigationPage(new AdentureBannerPage()); 
             //SetFlags(new string[] { "Shell_UWP_Experimental", "AnotherFeature_Experimental" });
-            }
+        } 
 
         protected override void OnStart()
         {

@@ -1,10 +1,11 @@
-﻿using System;
+﻿using DuraDriveRider.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace DuraDriveRider.Pages.XctTabView.ViewModels
 {
-   public class HomeXctTabViewModel
+   public class HomeXctTabViewModel : BaseViewModel
     {
     }
 }

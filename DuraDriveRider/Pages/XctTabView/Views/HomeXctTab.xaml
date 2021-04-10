@@ -1,11 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="DuraDriveRider.Pages.XctTabView.Views.HomeXctTab"
-      xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+<Pages:BaseContentPage
+    x:Class="DuraDriveRider.Pages.XctTabView.Views.HomeXctTab"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:Pages="clr-namespace:DuraDriveRider.Infrastructure"
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
     xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
     x:Name="thispage">
-    <ContentPage.Resources>
+    <Pages:BaseContentPage.Resources>
         <ResourceDictionary>
             <Style x:Key="ActiveIndicator" TargetType="Frame">
                 <Setter Property="BackgroundColor" Value="#978348" />
@@ -15,22 +17,27 @@
                 <Setter Property="BorderColor" Value="#777B7C" />
             </Style>
         </ResourceDictionary>
-    </ContentPage.Resources>
+    </Pages:BaseContentPage.Resources>
     <xct:TabView
-        IsSwipeEnabled="False" x:Name="MyTabView"
+        x:Name="MyTabView"
+        IsSwipeEnabled="False"
         TabStripBackgroundColor="WhiteSmoke"
         TabStripPlacement="Bottom">
         <xct:TabViewItem
             x:Name="Home"
             Icon="home"
             IconSelected="home_selected"
-            Style="{StaticResource XctTabViewStyle}" 
-            Text="home" 
+            Style="{StaticResource XctTabViewStyle}"
+            Text="home"
             VerticalOptions="EndAndExpand">
             <xct:TabViewItem.Content>
                 <ScrollView VerticalScrollBarVisibility="Never">
                     <StackLayout>
-                        <Label Text="Welcome to XCT tab" FontSize="44" VerticalOptions="CenterAndExpand" TextColor="Red"/>
+                        <Label
+                            FontSize="44"
+                            Text="Welcome to XCT tab"
+                            TextColor="Red"
+                            VerticalOptions="CenterAndExpand" />
 
                     </StackLayout>
                 </ScrollView>
@@ -41,14 +48,18 @@
             x:Name="Secondtab"
             Icon="home"
             IconSelected="home_selected"
-            Style="{StaticResource XctTabViewStyle}" 
-            Text="Second tab" 
+            Style="{StaticResource XctTabViewStyle}"
+            Text="Second tab"
             VerticalOptions="EndAndExpand">
             <xct:TabViewItem.Content>
                 <ScrollView VerticalScrollBarVisibility="Never">
                     <StackLayout>
 
-                        <Label Text="Welcome to Second XCT tab" FontSize="44" VerticalOptions="CenterAndExpand" TextColor="Green"/>
+                        <Label
+                            FontSize="44"
+                            Text="Welcome to Second XCT tab"
+                            TextColor="Green"
+                            VerticalOptions="CenterAndExpand" />
 
                     </StackLayout>
                 </ScrollView>
@@ -57,4 +68,4 @@
         </xct:TabViewItem>
     </xct:TabView>
 
-</ContentPage>
+</Pages:BaseContentPage>

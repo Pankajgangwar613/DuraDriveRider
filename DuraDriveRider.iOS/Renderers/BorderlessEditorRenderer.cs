@@ -1,5 +1,5 @@
-﻿using AdventureClub.Controls;
-using AdventureClub.iOS.Renderers;
+﻿using DuraDriveRider.Controls;
+using DuraDriveRider.iOS.Renderers;
 using Foundation;
 using System;
 using System.Collections.Generic;
@@ -11,7 +11,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
 
 [assembly: ExportRenderer(typeof(BorderlessEditor), typeof(BorderlessEditorRenderer))]
-namespace AdventureClub.iOS.Renderers
+namespace DuraDriveRider.iOS.Renderers
 {
     public class BorderlessEditorRenderer : EditorRenderer
     {

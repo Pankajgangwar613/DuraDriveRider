@@ -1,5 +1,5 @@
-﻿using AdventureClub.Controls;
-using AdventureClub.iOS.Renderers;
+﻿using DuraDriveRider.Controls;
+using DuraDriveRider.iOS.Renderers;
 using Foundation;
 using System;
 using System.Collections.Generic;
@@ -9,7 +9,7 @@ using UIKit;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
 [assembly: ExportRenderer(typeof(BorderlessPicker), typeof(BorderlessPickerRender))]
-namespace AdventureClub.iOS.Renderers
+namespace DuraDriveRider.iOS.Renderers
 {
    public class BorderlessPickerRender : PickerRenderer
     {

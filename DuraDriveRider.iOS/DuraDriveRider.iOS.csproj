@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{34D92CC4-CADE-429E-9348-9F4856F5DD30}</ProjectGuid>
+    <ProjectGuid>{2B2CC886-CBAB-4841-A5F4-0B2167131B4F}</ProjectGuid>
     <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <TemplateGuid>{6143fdea-f3c2-4a09-aafa-6e230626515e}</TemplateGuid>
     <OutputType>Exe</OutputType>
@@ -141,7 +141,7 @@
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
     <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
     <PackageReference Include="Xamarin.Forms.PancakeView">
-      <Version>2.1.0.714</Version>
+      <Version>2.3.0.763-beta</Version>
     </PackageReference>
     <PackageReference Include="XF.Material">
       <Version>1.7.8</Version>
@@ -150,7 +150,7 @@
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
     <ProjectReference Include="..\DuraDriveRider\DuraDriveRider.csproj">
-      <Project>{EF4FEC10-4C2D-43E3-9788-8B2365FF0F6C}</Project>
+      <Project>{B039E6C3-D3D1-43CE-B522-B43AB3800CFE}</Project>
       <Name>DuraDriveRider</Name>
     </ProjectReference>
   </ItemGroup>

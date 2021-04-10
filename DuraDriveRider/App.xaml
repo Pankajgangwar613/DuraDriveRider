@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<Application xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+<Application xmlns="http://xamarin.com/schemas/2014/forms" xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:custom="clr-namespace:DuraDriveRider.Controls"
              x:Class="DuraDriveRider.App">
     <Application.Resources>
 
         <Color x:Key="StatusBarColor">#131313</Color>
 
         <Style x:Key="DefaultButtonStyle" TargetType="Button">
-            <!--<Setter Property="FontFamily" Value="RalewayBold" />-->
+            <Setter Property="FontFamily" Value="RobotoBold" />
             <Setter Property="Padding" Value="0" />
             <Setter Property="TextTransform" Value="None" />
             <Setter Property="CornerRadius" Value="25" />
@@ -23,7 +23,7 @@
 
         <Style x:Key="RalewayBoldFontLabelStyle" TargetType="Label">
             <!--<Setter Property="FontAttributes" Value="Bold" />-->
-            <!--<Setter Property="FontFamily" Value="RalewayBold" />-->
+            <Setter Property="FontFamily" Value="RalewayBold" />
             <Setter Property="TextColor" Value="White" />
             <Setter Property="FontSize" Value="18" />
         </Style>
@@ -37,20 +37,20 @@
         </Style>
 
         <Style x:Key="RalewayMediumFontLabelStyle" TargetType="Label">
-            <!--<Setter Property="FontFamily" Value="RalewayMedium" />-->
+            <Setter Property="FontFamily" Value="RalewayMedium" />
             <Setter Property="TextColor" Value="#193340" />
             <Setter Property="FontSize" Value="14" />
         </Style>
 
         <Style x:Key="CustomEntryStyle" TargetType="custom:CustomEntry">
-            <!--<Setter Property="FontFamily" Value="RalewayMedium" />-->
+            <Setter Property="FontFamily" Value="RalewayMedium" />
             <Setter Property="TextColor" Value="#131313" />
             <Setter Property="PlaceholderColor" Value="#131313" />
             <Setter Property="FontSize" Value="15" />
         </Style>
 
         <Style x:Key="BorderLessPickerStyle" TargetType="custom:BorderlessPicker">
-            <!--<Setter Property="FontFamily" Value="RalewayMedium" />-->
+            <Setter Property="FontFamily" Value="RalewayMedium" />
             <Setter Property="TextColor" Value="#131313" />
             <Setter Property="TitleColor" Value="#131313" />
             <Setter Property="FontSize" Value="16" />
@@ -81,5 +81,6 @@
             <Setter Property="FontFamily" Value="RobotoRegular" />
             <Setter Property="HeightRequest" Value="60" />
         </Style>
+
     </Application.Resources>
 </Application>

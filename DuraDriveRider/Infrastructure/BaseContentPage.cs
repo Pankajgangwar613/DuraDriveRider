@@ -4,6 +4,7 @@ using System.Text;
 using Xamarin.Forms;
 using Xamarin.Forms.PlatformConfiguration;
 using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
+using XF.Material.Forms.UI;
 
 namespace DuraDriveRider.Infrastructure
 {

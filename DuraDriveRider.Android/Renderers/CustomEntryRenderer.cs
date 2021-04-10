@@ -1,5 +1,5 @@
-﻿using AdventureClub.Controls;
-using AdventureClub.Droid.Renderers;
+﻿using DuraDriveRider.Controls;
+using DuraDriveRider.Droid.Renderers;
 using Android.App;
 using Android.Content;
 using Android.Graphics.Drawables;
@@ -15,7 +15,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 
 [assembly: ExportRenderer(typeof(CustomEntry), typeof(CustomEntryRenderer))]
-namespace AdventureClub.Droid.Renderers
+namespace DuraDriveRider.Droid.Renderers
 {
     public class CustomEntryRenderer : EntryRenderer
     {

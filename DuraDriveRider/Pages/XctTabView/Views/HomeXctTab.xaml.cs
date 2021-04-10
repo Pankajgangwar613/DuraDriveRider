@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DuraDriveRider.Infrastructure;
+using DuraDriveRider.Pages.XctTabView.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,11 +12,12 @@ using Xamarin.Forms.Xaml;
 namespace DuraDriveRider.Pages.XctTabView.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class HomeXctTab : ContentPage
+    public partial class HomeXctTab : BaseContentPage
     {
         public HomeXctTab()
         {
             InitializeComponent();
+            BindingContext = new HomeXctTabViewModel();
         }
     }
 }

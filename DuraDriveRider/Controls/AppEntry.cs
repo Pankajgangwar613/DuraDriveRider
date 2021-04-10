@@ -1,4 +1,4 @@
-﻿namespace AdventureClub.Controls
+﻿namespace DuraDriveRider.Controls
 {
     internal class AppEntry
     {

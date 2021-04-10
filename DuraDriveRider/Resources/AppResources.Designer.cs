@@ -63,9 +63,9 @@ namespace DuraDriveRider.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Tested App Resources.
         /// </summary>
-        internal static string Test {
+        internal static string Test_App_Resources {
             get {
-                return ResourceManager.GetString("Test", resourceCulture);
+                return ResourceManager.GetString("Test App Resources", resourceCulture);
             }
         }
     }
