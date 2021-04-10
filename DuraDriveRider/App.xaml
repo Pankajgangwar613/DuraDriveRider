@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DuraDriveRider.App">
+    <Application.Resources>
+
+        <Color x:Key="StatusBarColor">#131313</Color>
+
+        <Style x:Key="DefaultButtonStyle" TargetType="Button">
+            <!--<Setter Property="FontFamily" Value="RalewayBold" />-->
+            <Setter Property="Padding" Value="0" />
+            <Setter Property="TextTransform" Value="None" />
+            <Setter Property="CornerRadius" Value="25" />
+            <Setter Property="BackgroundColor" Value="#0B3A47" />
+            <Setter Property="TextColor" Value="#FFF" />
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="HeightRequest" Value="46" />
+            <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+            <Setter Property="VerticalOptions" Value="Center" />
+            <Setter Property="BorderColor" Value="#0B3A47" />
+            <Setter Property="BorderWidth" Value="1" />
+        </Style>
+
+        <Style x:Key="RalewayBoldFontLabelStyle" TargetType="Label">
+            <!--<Setter Property="FontAttributes" Value="Bold" />-->
+            <!--<Setter Property="FontFamily" Value="RalewayBold" />-->
+            <Setter Property="TextColor" Value="White" />
+            <Setter Property="FontSize" Value="18" />
+        </Style>
+
+        <Style x:Key="BoxViewStyle" TargetType="BoxView">
+            <Setter Property="BackgroundColor" Value="Gray" />
+            <Setter Property="VerticalOptions" Value="Center" />
+            <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+            <Setter Property="HeightRequest" Value="1" />
+            <Setter Property="Margin" Value="2" />
+        </Style>
+
+        <Style x:Key="RalewayMediumFontLabelStyle" TargetType="Label">
+            <!--<Setter Property="FontFamily" Value="RalewayMedium" />-->
+            <Setter Property="TextColor" Value="#193340" />
+            <Setter Property="FontSize" Value="14" />
+        </Style>
+
+        <Style x:Key="CustomEntryStyle" TargetType="custom:CustomEntry">
+            <!--<Setter Property="FontFamily" Value="RalewayMedium" />-->
+            <Setter Property="TextColor" Value="#131313" />
+            <Setter Property="PlaceholderColor" Value="#131313" />
+            <Setter Property="FontSize" Value="15" />
+        </Style>
+
+        <Style x:Key="BorderLessPickerStyle" TargetType="custom:BorderlessPicker">
+            <!--<Setter Property="FontFamily" Value="RalewayMedium" />-->
+            <Setter Property="TextColor" Value="#131313" />
+            <Setter Property="TitleColor" Value="#131313" />
+            <Setter Property="FontSize" Value="16" />
+        </Style>
+
+        <Style x:Key="XctTabViewStyle" TargetType="xct:TabViewItem">
+            <Setter Property="FontSize" Value="12" />
+            <Setter Property="FontSizeSelected" Value="12" />
+            <Setter Property="TextColor" Value="#7A7A7A" />
+            <Setter Property="TextColorSelected" Value="#1C3947" />
+            <Setter Property="BackgroundColor" Value="WhiteSmoke" />
+            <Setter Property="FontFamily" Value="RobotoRegular" />
+            <Setter Property="HeightRequest" Value="60" />
+        </Style>
+
+
+        <Style x:Key="XctTabViewBadgeStyle" TargetType="xct:TabViewItem">
+            <Setter Property="FontSize" Value="12" />
+            <Setter Property="FontSizeSelected" Value="12" />
+            <Setter Property="TextColor" Value="#7A7A7A" />
+            <Setter Property="TextColorSelected" Value="#1C3947" />
+            <Setter Property="BackgroundColor" Value="WhiteSmoke" />
+            <Setter Property="BadgeTextColor" Value="White" />
+            <Setter Property="BadgeBorderColor" Value="Gray" />
+            <!--<Setter Property="BadgeBorderColorSelected" Value="Green" />-->
+            <Setter Property="BadgeBackgroundColor" Value="Red" />
+            <!--<Setter Property="BadgeBackgroundColorSelected" Value="Green" />-->
+            <Setter Property="FontFamily" Value="RobotoRegular" />
+            <Setter Property="HeightRequest" Value="60" />
+        </Style>
+    </Application.Resources>
+</Application>
