@@ -1,10 +1,12 @@
-﻿using DuraDriveRider.Pages.XctTabView.Views;
+﻿using DuraDriveRider.Pages.Auth.PopUp;
+using DuraDriveRider.Pages.XctTabView.Views;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Xamarin.CommunityToolkit.Extensions;
 using Xamarin.Forms;
 
 namespace DuraDriveRider
@@ -16,9 +18,11 @@ namespace DuraDriveRider
             InitializeComponent();
         }
 
-        private void Button_Clicked(object sender, EventArgs e)
+        private async void Button_Clicked(object sender, EventArgs e)
         {
-            App.Current.MainPage = new HomeXctTab();
+            await Navigation.ShowPopupAsync(new ChooseAccountPopUp());
+            //Dismiss(null);
+            //App.Current.MainPage = new HomeXctTab();
         }
     }
 }

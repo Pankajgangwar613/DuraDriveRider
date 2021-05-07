@@ -9,6 +9,15 @@
     x:Name="thispage">
     <Pages:BaseContentPage.Resources>
         <ResourceDictionary>
+            <xct:StateToBooleanConverter x:Key="StateToBooleanConverter" />
+
+            <DataTemplate x:Key="error_template">
+                <Label Text="Something went horribly wrong!"
+                   VerticalOptions="Center"
+                   VerticalTextAlignment="Center"
+                   HorizontalOptions="Center"
+                   HorizontalTextAlignment="Center"  />
+            </DataTemplate>
             <Style x:Key="ActiveIndicator" TargetType="Frame">
                 <Setter Property="BackgroundColor" Value="#978348" />
             </Style>
@@ -20,52 +29,269 @@
     </Pages:BaseContentPage.Resources>
     <xct:TabView
         x:Name="MyTabView"
+        xct:SafeAreaEffect.SafeArea="true"
         IsSwipeEnabled="False"
         TabStripBackgroundColor="WhiteSmoke"
         TabStripPlacement="Bottom">
         <xct:TabViewItem
             x:Name="Home"
             Icon="home"
-            IconSelected="home_selected"
+            IconSelected="home_active"
             Style="{StaticResource XctTabViewStyle}"
-            Text="home"
+            Text="Home"
             VerticalOptions="EndAndExpand">
             <xct:TabViewItem.Content>
                 <ScrollView VerticalScrollBarVisibility="Never">
-                    <StackLayout>
+                    <StackLayout Padding="20">
                         <Label
                             FontSize="44"
-                            Text="Welcome to XCT tab"
+                            Text="Home"
                             TextColor="Red"
+                            TextTransform="None"
                             VerticalOptions="CenterAndExpand" />
-
+                        <Button Style="{StaticResource DefaultButtonStyle}" Text="button" />
                     </StackLayout>
                 </ScrollView>
 
             </xct:TabViewItem.Content>
         </xct:TabViewItem>
+
+        <!--  Order  -->
         <xct:TabViewItem
-            x:Name="Secondtab"
-            Icon="home"
-            IconSelected="home_selected"
+            x:Name="Order"
+            Icon="order"
+            IconSelected="order_active"
             Style="{StaticResource XctTabViewStyle}"
-            Text="Second tab"
+            Text="Order"
             VerticalOptions="EndAndExpand">
             <xct:TabViewItem.Content>
                 <ScrollView VerticalScrollBarVisibility="Never">
-                    <StackLayout>
+                    <Grid RowDefinitions="120,*">
+                        <yummy:PancakeView
+                            BackgroundColor="#211E66"
+                            CornerRadius="0,0,10,10"
+                            HeightRequest="95"
+                            VerticalOptions="StartAndExpand">
+                            <Grid  Margin="15,10">
+                                <Grid InputTransparent="False">
+                                    <Picker
+                                        Title="Hi, John"
+                                        ItemDisplayBinding="{Binding .}"
+                                        ItemsSource="{Binding ProfileNameList}"
+                                        SelectedItem="{Binding ProfileSelected}"
+                                        TextColor="White"
+                                        TitleColor="White"
+                                        VerticalOptions="CenterAndExpand">
+                                        <Picker.Effects>
+                                            <xct:RemoveBorderEffect />
+                                        </Picker.Effects>
+                                    </Picker>
+                                    <Image InputTransparent="True" Margin="10,0,0,0"
+                                        HeightRequest="15" Rotation="90"
+                                        HorizontalOptions="CenterAndExpand"
+                                        Source="backarrowwhite"
+                                        VerticalOptions="Center"
+                                        WidthRequest="15" />
+                                </Grid>
+                                <StackLayout Grid.Column="1" HorizontalOptions="EndAndExpand" Orientation="Horizontal">
+                                    <Image InputTransparent="True" Margin="10,0"
+                                        HeightRequest="22"  
+                                        HorizontalOptions="Center"
+                                        Source="help"
+                                        VerticalOptions="Center"
+                                        WidthRequest="22" />
+                                    <Image InputTransparent="True" 
+                                        HeightRequest="22"  
+                                        HorizontalOptions="Center"
+                                        Source="notification"
+                                        VerticalOptions="Center"
+                                        WidthRequest="22" />
+                                </StackLayout>
+                            </Grid>
+                        </yummy:PancakeView>
 
-                        <Label
-                            FontSize="44"
-                            Text="Welcome to Second XCT tab"
-                            TextColor="Green"
-                            VerticalOptions="CenterAndExpand" />
-
-                    </StackLayout>
+                        <ScrollView Grid.Row="1" VerticalScrollBarVisibility="Never">
+                            <StackLayout />
+                        </ScrollView>
+                    </Grid>
                 </ScrollView>
 
             </xct:TabViewItem.Content>
         </xct:TabViewItem>
+
+        <!--  Wallet  -->
+        <xct:TabViewItem
+            x:Name="Wallet"
+            Icon="wallet"
+            IconSelected="wallet_active"
+            Style="{StaticResource XctTabViewStyle}"
+            Text="Wallet"
+            VerticalOptions="EndAndExpand">
+            <xct:TabViewItem.Content>
+                <ScrollView VerticalScrollBarVisibility="Never">
+                    
+                </ScrollView>
+
+            </xct:TabViewItem.Content>
+        </xct:TabViewItem>
+
+        <!--  Profile  -->
+        <xct:TabViewItem
+            x:Name="Profile"
+            Icon="profile"
+            IconSelected="profile_active"
+            Style="{StaticResource XctTabViewStyle}"
+            Text="Profile"
+            VerticalOptions="EndAndExpand">
+            <xct:TabViewItem.Content>
+                <Grid RowDefinitions="120,*">
+                    <Grid>
+                        <Grid>
+                            <yummy:PancakeView
+                                BackgroundColor="#211E66"
+                                CornerRadius="0,0,10,10"
+                                HeightRequest="95"
+                                VerticalOptions="StartAndExpand" />
+                            <StackLayout
+                                Margin="12,2"
+                                HorizontalOptions="StartAndExpand"
+                                Orientation="Horizontal"
+                                VerticalOptions="EndAndExpand">
+                                <xct:AvatarView
+                                    FontSize="14"
+                                    Size="90"
+                                    Source="profile_active"
+                                    Text="Profile Name"
+                                    TextColor="White"
+                                    Color="Gray" />
+                                <StackLayout Spacing="2">
+                                    <Label
+                                        FontSize="18"
+                                        HorizontalOptions="Start"
+                                        Style="{StaticResource DefaultLabelStyle}"
+                                        Text="John Doe"
+                                        TextColor="White"
+                                        VerticalOptions="EndAndExpand" />
+                                    <Label
+                                        FontSize="16"
+                                        HorizontalOptions="Start"
+                                        Style="{StaticResource DefaultLabelStyle}"
+                                        Text="DD94874"
+                                        TextColor="White"
+                                        VerticalOptions="StartAndExpand" />
+                                    <StackLayout Orientation="Horizontal" Spacing="2">
+                                        <Image
+                                            HeightRequest="14"
+                                            HorizontalOptions="Start"
+                                            Source="verified"
+                                            VerticalOptions="Center"
+                                            WidthRequest="14" />
+                                        <Label
+                                            HorizontalOptions="Start"
+                                            Style="{StaticResource DefaultLabelStyle}"
+                                            Text="Verified"
+                                            TextColor="#0BAC00"
+                                            VerticalOptions="Center" />
+
+                                    </StackLayout>
+                                </StackLayout>
+
+
+                                <StackLayout
+                                    Margin="50,0,0,0"
+                                    HorizontalOptions="EndAndExpand"
+                                    Orientation="Horizontal"
+                                    VerticalOptions="CenterAndExpand">
+                                    <Label
+                                        HorizontalOptions="Start"
+                                        Style="{StaticResource DefaultLabelStyle}"
+                                        Text="View Profile"
+                                        TextColor="White"
+                                        VerticalOptions="Center" />
+                                    <Image
+                                        HeightRequest="15"
+                                        HorizontalOptions="Start"
+                                        Source="backarrowwhite"
+                                        VerticalOptions="Center"
+                                        WidthRequest="15" />
+                                    <StackLayout.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding ViewProfileCommand}" />
+                                    </StackLayout.GestureRecognizers>
+                                </StackLayout>
+                            </StackLayout>
+                        </Grid>
+                    </Grid>
+                    <ScrollView Grid.Row="1" VerticalScrollBarVisibility="Never">
+                        <StackLayout Padding="20">
+                            <CollectionView
+                                HeightRequest="150"
+                                ItemsSource="{Binding ProfileItems}"
+                                VerticalOptions="FillAndExpand">
+                                <CollectionView.ItemsLayout>
+                                    <GridItemsLayout Orientation="Vertical" VerticalItemSpacing="20" />
+                                </CollectionView.ItemsLayout>
+                                <CollectionView.ItemTemplate>
+                                    <DataTemplate>
+                                        <Frame
+                                            BackgroundColor="#EBE9FF"
+                                            BorderColor="#EBE9FF"
+                                            CornerRadius="5"
+                                            Style="{StaticResource FrameStyle}">
+                                            <StackLayout Orientation="Horizontal">
+                                                <StackLayout.GestureRecognizers>
+                                                    <TapGestureRecognizer Command="{Binding Path=BindingContext.ProfileTabCommand, Source={x:Reference thispage}}" CommandParameter="{Binding .}" />
+                                                </StackLayout.GestureRecognizers>
+                                                <Image
+                                                    HeightRequest="20"
+                                                    Source="{Binding Images}"
+                                                    VerticalOptions="CenterAndExpand"
+                                                    WidthRequest="20" />
+
+                                                <Label
+                                                    Margin="8,0,0,0"
+                                                    FontSize="14"
+                                                    Text="{Binding TitleName}"
+                                                    TextColor="#3B3B3B"
+                                                    VerticalOptions="CenterAndExpand" />
+                                                <Image
+                                                    HeightRequest="15"
+                                                    HorizontalOptions="EndAndExpand"
+                                                    Source="backarrowBlue"
+                                                    VerticalOptions="CenterAndExpand"
+                                                    WidthRequest="15" />
+
+                                            </StackLayout>
+                                        </Frame>
+                                    </DataTemplate>
+                                </CollectionView.ItemTemplate>
+                            </CollectionView>
+
+                            <StackLayout
+                                Padding="0,0,0,30"
+                                HorizontalOptions="CenterAndExpand"
+                                Orientation="Horizontal">
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding LogOutCommand}" />
+                                </StackLayout.GestureRecognizers>
+                                <Image
+                                    HeightRequest="20"
+                                    Source="logout"
+                                    VerticalOptions="CenterAndExpand"
+                                    WidthRequest="20" />
+
+                                <Label
+                                    FontSize="15"
+                                    Text="Sign Out"
+                                    TextColor="#3B3B3B"
+                                    VerticalOptions="CenterAndExpand" />
+
+                            </StackLayout>
+                        </StackLayout>
+                    </ScrollView>
+                </Grid>
+            </xct:TabViewItem.Content>
+        </xct:TabViewItem>
+
     </xct:TabView>
 
 </Pages:BaseContentPage>

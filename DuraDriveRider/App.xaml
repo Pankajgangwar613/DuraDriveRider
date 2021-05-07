@@ -1,55 +1,65 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<Application xmlns="http://xamarin.com/schemas/2014/forms" xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:custom="clr-namespace:DuraDriveRider.Controls"
-             x:Class="DuraDriveRider.App">
+<Application
+    x:Class="DuraDriveRider.App"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:custom="clr-namespace:DuraDriveRider.Controls"
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit">
     <Application.Resources>
 
-        <Color x:Key="StatusBarColor">#131313</Color>
-
+        <Color x:Key="StatusBarColor">#131313</Color> 
+        
         <Style x:Key="DefaultButtonStyle" TargetType="Button">
             <Setter Property="FontFamily" Value="RobotoBold" />
             <Setter Property="Padding" Value="0" />
             <Setter Property="TextTransform" Value="None" />
-            <Setter Property="CornerRadius" Value="25" />
-            <Setter Property="BackgroundColor" Value="#0B3A47" />
+            <Setter Property="CornerRadius" Value="8" />
+            <Setter Property="BackgroundColor" Value="#211E66" />
             <Setter Property="TextColor" Value="#FFF" />
             <Setter Property="FontSize" Value="18" />
             <Setter Property="HeightRequest" Value="46" />
             <Setter Property="HorizontalOptions" Value="FillAndExpand" />
             <Setter Property="VerticalOptions" Value="Center" />
-            <Setter Property="BorderColor" Value="#0B3A47" />
+            <Setter Property="BorderColor" Value="#211E66" />
             <Setter Property="BorderWidth" Value="1" />
+            <!--<Setter Property="xct:VisualFeedbackEffect.FeedbackColor" Value="Red" />--> 
         </Style>
 
-        <Style x:Key="RalewayBoldFontLabelStyle" TargetType="Label">
+        <Style x:Key="DefaultLabelStyle" TargetType="Label">
             <!--<Setter Property="FontAttributes" Value="Bold" />-->
-            <Setter Property="FontFamily" Value="RalewayBold" />
+            <Setter Property="FontFamily" Value="ProximaNovaSemiboldItalic" />
+            <Setter Property="VerticalOptions"  Value="CenterAndExpand" />
+            <Setter Property="HorizontalOptions"  Value="StartAndExpand" />
             <Setter Property="TextColor" Value="White" />
-            <Setter Property="FontSize" Value="18" />
+            <Setter Property="FontSize" Value="14" />
         </Style>
 
         <Style x:Key="BoxViewStyle" TargetType="BoxView">
+            <Setter Property="Opacity" Value="0.5" />
             <Setter Property="BackgroundColor" Value="Gray" />
             <Setter Property="VerticalOptions" Value="Center" />
             <Setter Property="HorizontalOptions" Value="FillAndExpand" />
             <Setter Property="HeightRequest" Value="1" />
-            <Setter Property="Margin" Value="2" />
+            <Setter Property="Margin" Value="5" />
         </Style>
+        <Style x:Key="FrameStyle" TargetType="Frame">
+            <Setter Property="BackgroundColor" Value="White" />
+            <Setter Property="BorderColor" Value="WhiteSmoke" />
+            <Setter Property="CornerRadius" Value="12" />
+            <Setter Property="Padding" Value="12" />
+            <Setter Property="VerticalOptions" Value="FillAndExpand" />
+            <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+            <Setter Property="HasShadow" Value="False" />
+        </Style> 
 
-        <Style x:Key="RalewayMediumFontLabelStyle" TargetType="Label">
-            <Setter Property="FontFamily" Value="RalewayMedium" />
-            <Setter Property="TextColor" Value="#193340" />
-            <Setter Property="FontSize" Value="14" />
-        </Style>
-
-        <Style x:Key="CustomEntryStyle" TargetType="custom:CustomEntry">
+        <Style x:Key="EntryStyle" TargetType="Entry">
             <Setter Property="FontFamily" Value="RalewayMedium" />
             <Setter Property="TextColor" Value="#131313" />
             <Setter Property="PlaceholderColor" Value="#131313" />
             <Setter Property="FontSize" Value="15" />
         </Style>
 
-        <Style x:Key="BorderLessPickerStyle" TargetType="custom:BorderlessPicker">
+        <Style x:Key="PickerStyle" TargetType="Picker">
             <Setter Property="FontFamily" Value="RalewayMedium" />
             <Setter Property="TextColor" Value="#131313" />
             <Setter Property="TitleColor" Value="#131313" />
@@ -59,8 +69,8 @@
         <Style x:Key="XctTabViewStyle" TargetType="xct:TabViewItem">
             <Setter Property="FontSize" Value="12" />
             <Setter Property="FontSizeSelected" Value="12" />
-            <Setter Property="TextColor" Value="#7A7A7A" />
-            <Setter Property="TextColorSelected" Value="#1C3947" />
+            <Setter Property="TextColor" Value="#b4b4cb" />
+            <Setter Property="TextColorSelected" Value="#1F1E65" />
             <Setter Property="BackgroundColor" Value="WhiteSmoke" />
             <Setter Property="FontFamily" Value="RobotoRegular" />
             <Setter Property="HeightRequest" Value="60" />

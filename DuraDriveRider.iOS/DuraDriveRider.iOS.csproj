@@ -65,12 +65,6 @@
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
-    <Compile Include="Renderers\BorderlessDatePickerRenderer.cs" />
-    <Compile Include="Renderers\BorderlessEditorRenderer.cs" />
-    <Compile Include="Renderers\BorderlessPickerRender.cs" />
-    <Compile Include="Renderers\BorderlessTimePickerRenderer.cs" />
-    <Compile Include="Renderers\CoustomSearchBarRenderer.cs" />
-    <Compile Include="Renderers\CustomEntryRenderer.cs" />
     <None Include="Entitlements.plist" />
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -131,9 +125,6 @@
   <ItemGroup>
     <PackageReference Include="Acr.UserDialogs">
       <Version>7.1.0.483</Version>
-    </PackageReference>
-    <PackageReference Include="Rg.Plugins.Popup">
-      <Version>2.0.0.11</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.CommunityToolkit">
       <Version>1.1.0</Version>

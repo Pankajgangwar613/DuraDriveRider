@@ -11,16 +11,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Resources\Fonts\RobotoBold.ttf" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Include="Resources\Fonts\RobotoBold.ttf" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Acr.UserDialogs" Version="7.1.0.483" />
-    <PackageReference Include="Rg.Plugins.Popup" Version="2.0.0.11" />
     <PackageReference Include="Xamarin.CommunityToolkit" Version="1.1.0" />
     <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.4.11.982" />
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
@@ -38,6 +29,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="Pages\Auth\PopUp\ChooseAccountPopUp.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Pages\XctTabView\Views\HomeXctTab.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -48,8 +42,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Pages\Auth\" />
     <Folder Include="Pages\Auth\ViewsModel\" />
     <Folder Include="Pages\Auth\Views\" />
+    <Folder Include="Resources\Fonts\" />
   </ItemGroup>
 </Project>
