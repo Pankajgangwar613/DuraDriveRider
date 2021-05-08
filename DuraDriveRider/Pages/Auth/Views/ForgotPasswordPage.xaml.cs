@@ -1,4 +1,5 @@
-﻿using DuraDriveRider.Pages.Auth.ViewsModel;
+﻿using DuraDriveRider.Infrastructure;
+using DuraDriveRider.Pages.Auth.ViewsModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,7 @@ using Xamarin.Forms.Xaml;
 namespace DuraDriveRider.Pages.Auth.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class ForgotPasswordPage : ContentPage
+    public partial class ForgotPasswordPage : BaseContentPage
     {
         public ForgotPasswordPage()
         {

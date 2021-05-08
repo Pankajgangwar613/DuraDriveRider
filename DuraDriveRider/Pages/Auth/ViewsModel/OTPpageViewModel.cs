@@ -8,7 +8,7 @@ using Xamarin.Forms;
 
 namespace DuraDriveRider.Pages.Auth.ViewsModel
 {
-    class ForgotPasswordPageViewModel
+   public class OTPpageViewModel
     {
         public ICommand GetOtpCommand => new Command(async (obj) =>
         {

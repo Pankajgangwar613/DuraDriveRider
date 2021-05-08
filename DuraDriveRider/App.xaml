@@ -3,7 +3,7 @@
     x:Class="DuraDriveRider.App"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:custom="clr-namespace:DuraDriveRider.Controls"
+   xmlns:Yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
     xmlns:xct="http://xamarin.com/schemas/2020/toolkit">
     <Application.Resources>
 
@@ -21,10 +21,11 @@
             <Setter Property="FontSize" Value="18" />
             <Setter Property="HeightRequest" Value="46" />
             <Setter Property="HorizontalOptions" Value="FillAndExpand" />
-            <Setter Property="VerticalOptions" Value="Center" />
+            <Setter Property="VerticalOptions" Value="CenterAndExpand" />
             <Setter Property="BorderColor" Value="#211E66" />
             <Setter Property="BorderWidth" Value="1" />
-            <!--<Setter Property="xct:VisualFeedbackEffect.FeedbackColor" Value="Red" />-->
+            <Setter Property="Margin"  Value="1,0" />
+            <Setter Property="xct:VisualFeedbackEffect.FeedbackColor" Value="DarkBlue" />
         </Style>
 
         <Style ApplyToDerivedTypes="True" TargetType="Label">
@@ -38,10 +39,10 @@
         <Style ApplyToDerivedTypes="True" TargetType="BoxView">
             <Setter Property="Opacity" Value="0.5" />
             <Setter Property="BackgroundColor" Value="Gray" />
-            <Setter Property="VerticalOptions" Value="Center" />
+            <Setter Property="VerticalOptions" Value="CenterAndExpand" />
             <Setter Property="HorizontalOptions" Value="FillAndExpand" />
             <Setter Property="HeightRequest" Value="1" />
-            <Setter Property="Margin" Value="5" />
+            <Setter Property="Margin" Value="1,6" />
         </Style>
         <Style ApplyToDerivedTypes="True" TargetType="Frame">
             <Setter Property="BackgroundColor" Value="White" />
@@ -52,12 +53,24 @@
             <Setter Property="HorizontalOptions" Value="FillAndExpand" />
             <Setter Property="HasShadow" Value="False" />
         </Style>
+        <Style ApplyToDerivedTypes="True" TargetType="Yummy:PancakeView">
+            <Setter Property="BackgroundColor" Value="White" />
+            <!--<Setter Property="BorderColor" Value="WhiteSmoke" />-->
+            <Setter Property="Padding" Value="20" />
+            <Setter Property="VerticalOptions" Value="StartAndExpand" />
+            <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+        </Style>
 
         <Style ApplyToDerivedTypes="True" TargetType="Entry">
             <Setter Property="FontFamily" Value="ProximaNovaRegular" />
             <Setter Property="TextColor" Value="#131313" />
             <Setter Property="PlaceholderColor" Value="#131313" />
             <Setter Property="FontSize" Value="15" />
+        </Style>
+
+        <Style ApplyToDerivedTypes="True" TargetType="Image">
+            <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+            <Setter Property="VerticalOptions" Value="CenterAndExpand" />
         </Style>
 
         <!--<Style ApplyToDerivedTypes="True" TargetType="Picker">

@@ -1,5 +1,4 @@
-﻿using DuraDriveRider.Infrastructure;
-using DuraDriveRider.Pages.Auth.ViewsModel;
+﻿using DuraDriveRider.Pages.Auth.ViewsModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,12 +11,12 @@ using Xamarin.Forms.Xaml;
 namespace DuraDriveRider.Pages.Auth.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class LoginPage : BaseContentPage
+    public partial class OTPpage : ContentPage
     {
-        public LoginPage()
+        public OTPpage()
         {
             InitializeComponent();
-            BindingContext = new LoginPageViewModel();
+            BindingContext = new OTPpageViewModel();
         }
     }
 }
