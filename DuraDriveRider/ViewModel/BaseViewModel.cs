@@ -47,7 +47,7 @@ namespace DuraDriveRider.ViewModel
         });
 
         protected NavigationPage _navigation => (Application.Current.MainPage as NavigationPage) ?? Application.Current.MainPage as NavigationPage;
-        protected IUserDialogs _userDialogs => UserDialogs.Instance;
+       
         private object _parameter;
 
         public bool IsInitializedBase { get; protected set; }
@@ -70,9 +70,9 @@ namespace DuraDriveRider.ViewModel
         public virtual async Task OnPageAppearing() { }
 
         public virtual async Task OnPageDisappearing() { }
-
-        protected void ShowLoading() { _userDialogs.ShowLoading(); }
-        protected void HideLoading() { _userDialogs.HideLoading(); }
+        protected IUserDialogs _userDialogs => UserDialogs.Instance;
+        protected void ShowLoading() => _userDialogs.ShowLoading();  
+        protected void HideLoading()=> _userDialogs.HideLoading(); 
         protected void ShowAlert(string message, string title = "", string acknowledgeText = "OK")
         {
             _userDialogs.Alert(message, title, acknowledgeText);

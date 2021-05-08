@@ -1,4 +1,5 @@
-﻿using DuraDriveRider.NavigationService;
+﻿using Acr.UserDialogs;
+using DuraDriveRider.NavigationService;
 using DuraDriveRider.Pages.XctTabView.Model;
 using DuraDriveRider.ViewModel;
 using System;
@@ -10,54 +11,14 @@ using System.Windows.Input;
 using Xamarin.CommunityToolkit.ObjectModel;
 using Xamarin.CommunityToolkit.UI.Views;
 using Xamarin.Forms;
+using XF.Material.Forms.Models;
 using XF.Material.Forms.UI;
+using XF.Material.Forms.UI.Dialogs;
 
 namespace DuraDriveRider.Pages.XctTabView.ViewModels
 {
    public class HomeXctTabViewModel : BaseViewModel
     {
-
-        bool enableCache;
-        string email = "dsiegel@avantipoint.com";
-        int size = 50;
-        DefaultGravatar defaultGravatar = DefaultGravatar.MysteryPerson;
-
-        public DefaultGravatar[] Defaults { get; } = new[]
-        {
-            DefaultGravatar.Blank,
-            DefaultGravatar.FileNotFound,
-            DefaultGravatar.Identicon,
-            DefaultGravatar.MonsterId,
-            DefaultGravatar.MysteryPerson,
-            DefaultGravatar.Retro,
-            DefaultGravatar.Robohash,
-            DefaultGravatar.Wavatar
-        };
-
-        public bool EnableCache
-        {
-            get => enableCache;
-            set => SetProperty(ref enableCache, value);
-        }
-
-        public string Email
-        {
-            get => email;
-            set => SetProperty(ref email, value);
-        }
-
-        public int Size
-        {
-            get => size;
-            set => SetProperty(ref size, value);
-        }
-
-        public DefaultGravatar DefaultGravatar
-        {
-            get => defaultGravatar;
-            set => SetProperty(ref defaultGravatar, value);
-        }
-    
 
     public ICommand FullscreenLoadingCommand { get; }
 
@@ -100,8 +61,49 @@ namespace DuraDriveRider.Pages.XctTabView.ViewModels
         {
             "hi, John"
         };
+        public ObservableCollection<string> PaymentList { get; set; } = new ObservableCollection<string>
+        {
+            "All","E-Wallet txn","Cash Wallet"
+        };
+        private void MaterialMenuButton_MenuSelected(object sender, MenuSelectedEventArgs e)
+        {
+            MaterialDialog.Instance.AlertAsync("MenuSelected");
+        }
+        public MaterialMenuItem[] Actions => new MaterialMenuItem[]
+       {
+            new MaterialMenuItem
+            {
+                Text = "Edit"
+            },
+            new MaterialMenuItem
+            {
+                Text = "Delete"
+            }
+       };
 
+        public ICommand MenuCommand = new Command(
+            execute: (arg) =>
+            {
+                MaterialDialog.Instance.AlertAsync("MenuCommand");
+            },
+            canExecute: (x) =>
+            {
+                bool? retval = MaterialDialog.Instance.ConfirmAsync(message: "Allow Menu?", confirmingText: "Yes", dismissiveText: "No").Result;
+                return (retval.HasValue && retval.Value == true);
+            });
 
+        public ObservableCollection<ProfileModel> EWalletOfList { get; set; } = new ObservableCollection<ProfileModel>()
+        {
+            new ProfileModel{ TitleName = "#14565636664" }, 
+            new ProfileModel{ TitleName = "#14565636664" }, 
+            new ProfileModel{ TitleName = "#14565636664" }, 
+            new ProfileModel{ TitleName = "#14565636664" }, 
+            new ProfileModel{ TitleName = "#14565636664" }, 
+            new ProfileModel{ TitleName = "#14565636664" }, 
+            new ProfileModel{ TitleName = "#14565636664" }, 
+            new ProfileModel{ TitleName = "#14565636664" }, 
+            new ProfileModel{ TitleName = "#14565636664" }, 
+        };
         //Profile
         public ObservableCollection<ProfileModel> ProfileItems { get; set; } = new ObservableCollection<ProfileModel>()
         {
@@ -115,7 +117,7 @@ namespace DuraDriveRider.Pages.XctTabView.ViewModels
         };
 
         public ICommand ViewProfileCommand => new Command(async (obj) =>
-        {
+        { 
             //await RichNavigation.PushAsync(new MyPointsPage(), typeof(MyPointsPage));
         });
         

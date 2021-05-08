@@ -7,34 +7,35 @@
     xmlns:xct="http://xamarin.com/schemas/2020/toolkit">
     <Application.Resources>
 
-        <Color x:Key="StatusBarColor">#131313</Color> 
-        
-        <Style x:Key="DefaultButtonStyle" TargetType="Button">
-            <Setter Property="FontFamily" Value="RobotoBold" />
+        <Color x:Key="StatusBarColor">#131313</Color>
+        <Color x:Key="PrimaryColor">White</Color>
+        <Color x:Key="SecondaryColor">Black</Color>
+
+        <Style ApplyToDerivedTypes="True" TargetType="Button">
+            <Setter Property="FontFamily" Value="ProximaNovaRegular" />
             <Setter Property="Padding" Value="0" />
             <Setter Property="TextTransform" Value="None" />
             <Setter Property="CornerRadius" Value="8" />
             <Setter Property="BackgroundColor" Value="#211E66" />
-            <Setter Property="TextColor" Value="#FFF" />
+            <Setter Property="TextColor" Value="{StaticResource PrimaryColor}" />
             <Setter Property="FontSize" Value="18" />
             <Setter Property="HeightRequest" Value="46" />
             <Setter Property="HorizontalOptions" Value="FillAndExpand" />
             <Setter Property="VerticalOptions" Value="Center" />
             <Setter Property="BorderColor" Value="#211E66" />
             <Setter Property="BorderWidth" Value="1" />
-            <!--<Setter Property="xct:VisualFeedbackEffect.FeedbackColor" Value="Red" />--> 
+            <!--<Setter Property="xct:VisualFeedbackEffect.FeedbackColor" Value="Red" />-->
         </Style>
 
-        <Style x:Key="DefaultLabelStyle" TargetType="Label">
-            <!--<Setter Property="FontAttributes" Value="Bold" />-->
-            <Setter Property="FontFamily" Value="ProximaNovaSemiboldItalic" />
-            <Setter Property="VerticalOptions"  Value="CenterAndExpand" />
-            <Setter Property="HorizontalOptions"  Value="StartAndExpand" />
-            <Setter Property="TextColor" Value="White" />
+        <Style ApplyToDerivedTypes="True" TargetType="Label">
+            <Setter Property="FontFamily" Value="ProximaNovaRegular" />
+            <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+            <Setter Property="HorizontalOptions" Value="StartAndExpand" />
+            <Setter Property="TextColor" Value="{StaticResource PrimaryColor}" />
             <Setter Property="FontSize" Value="14" />
         </Style>
 
-        <Style x:Key="BoxViewStyle" TargetType="BoxView">
+        <Style ApplyToDerivedTypes="True" TargetType="BoxView">
             <Setter Property="Opacity" Value="0.5" />
             <Setter Property="BackgroundColor" Value="Gray" />
             <Setter Property="VerticalOptions" Value="Center" />
@@ -42,7 +43,7 @@
             <Setter Property="HeightRequest" Value="1" />
             <Setter Property="Margin" Value="5" />
         </Style>
-        <Style x:Key="FrameStyle" TargetType="Frame">
+        <Style ApplyToDerivedTypes="True" TargetType="Frame">
             <Setter Property="BackgroundColor" Value="White" />
             <Setter Property="BorderColor" Value="WhiteSmoke" />
             <Setter Property="CornerRadius" Value="12" />
@@ -50,20 +51,43 @@
             <Setter Property="VerticalOptions" Value="FillAndExpand" />
             <Setter Property="HorizontalOptions" Value="FillAndExpand" />
             <Setter Property="HasShadow" Value="False" />
-        </Style> 
+        </Style>
 
-        <Style x:Key="EntryStyle" TargetType="Entry">
-            <Setter Property="FontFamily" Value="RalewayMedium" />
+        <Style ApplyToDerivedTypes="True" TargetType="Entry">
+            <Setter Property="FontFamily" Value="ProximaNovaRegular" />
             <Setter Property="TextColor" Value="#131313" />
             <Setter Property="PlaceholderColor" Value="#131313" />
             <Setter Property="FontSize" Value="15" />
         </Style>
 
-        <Style x:Key="PickerStyle" TargetType="Picker">
-            <Setter Property="FontFamily" Value="RalewayMedium" />
-            <Setter Property="TextColor" Value="#131313" />
-            <Setter Property="TitleColor" Value="#131313" />
-            <Setter Property="FontSize" Value="16" />
+        <!--<Style ApplyToDerivedTypes="True" TargetType="Picker">
+            <Setter Property="FontFamily" Value="ProximaNovaRegular" />
+            <Setter Property="TextColor" Value="{StaticResource PrimaryColor}" />
+            <Setter Property="TitleColor" Value="{StaticResource PrimaryColor}" />
+            <Setter Property="HorizontalTextAlignment"  Value="Center" />
+            <Setter Property="FontSize" Value="15" />
+        </Style>-->
+
+        <Style ApplyToDerivedTypes="True" TargetType="NavigationPage">
+            <Setter Property="BarBackgroundColor" Value="Red" />
+            <Setter Property="BarTextColor" Value="Green" />
+            <!--<Setter Property="ios:NavigationPage.HideNavigationBarSeparator" Value="True" />-->
+        </Style>
+
+        <!--<Style ApplyToDerivedTypes="True" TargetType="ContentPage">
+        -->
+        <!--<Setter Property="BackgroundColor" Value="{StaticResource AppBackgroundColor}" />-->
+        <!--
+            <Setter Property="ios:Page.UseSafeArea" Value="False" />
+            <Setter Property="NavigationPage.HasNavigationBar" Value="False" />
+        -->
+        <!--<Setter Property="NavigationPage.BackButtonTitle" Value="" />-->
+        <!--
+        </Style>-->
+
+        <Style ApplyToDerivedTypes="True" TargetType="xct:Popup">
+            <Setter Property="Color" Value="Transparent" />
+            <Setter Property="Size" Value="300,320" />
         </Style>
 
         <Style x:Key="XctTabViewStyle" TargetType="xct:TabViewItem">
@@ -72,7 +96,7 @@
             <Setter Property="TextColor" Value="#b4b4cb" />
             <Setter Property="TextColorSelected" Value="#1F1E65" />
             <Setter Property="BackgroundColor" Value="WhiteSmoke" />
-            <Setter Property="FontFamily" Value="RobotoRegular" />
+            <Setter Property="FontFamily" Value="ProximaNovaRegular" />
             <Setter Property="HeightRequest" Value="60" />
         </Style>
 
@@ -88,7 +112,7 @@
             <!--<Setter Property="BadgeBorderColorSelected" Value="Green" />-->
             <Setter Property="BadgeBackgroundColor" Value="Red" />
             <!--<Setter Property="BadgeBackgroundColorSelected" Value="Green" />-->
-            <Setter Property="FontFamily" Value="RobotoRegular" />
+            <Setter Property="FontFamily" Value="ProximaNovaRegular" />
             <Setter Property="HeightRequest" Value="60" />
         </Style>
 

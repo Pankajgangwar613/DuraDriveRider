@@ -4,6 +4,7 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:Pages="clr-namespace:DuraDriveRider.Infrastructure"
+    xmlns:material="clr-namespace:XF.Material.Forms.UI;assembly=XF.Material"
     xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
     xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
     x:Name="thispage">
@@ -12,11 +13,12 @@
             <xct:StateToBooleanConverter x:Key="StateToBooleanConverter" />
 
             <DataTemplate x:Key="error_template">
-                <Label Text="Something went horribly wrong!"
-                   VerticalOptions="Center"
-                   VerticalTextAlignment="Center"
-                   HorizontalOptions="Center"
-                   HorizontalTextAlignment="Center"  />
+                <Label
+                    HorizontalOptions="Center"
+                    HorizontalTextAlignment="Center"
+                    Text="Something went horribly wrong!"
+                    VerticalOptions="Center"
+                    VerticalTextAlignment="Center" />
             </DataTemplate>
             <Style x:Key="ActiveIndicator" TargetType="Frame">
                 <Setter Property="BackgroundColor" Value="#978348" />
@@ -49,7 +51,6 @@
                             TextColor="Red"
                             TextTransform="None"
                             VerticalOptions="CenterAndExpand" />
-                        <Button Style="{StaticResource DefaultButtonStyle}" Text="button" />
                     </StackLayout>
                 </ScrollView>
 
@@ -65,6 +66,20 @@
             Text="Order"
             VerticalOptions="EndAndExpand">
             <xct:TabViewItem.Content>
+                <ScrollView VerticalScrollBarVisibility="Never" />
+
+            </xct:TabViewItem.Content>
+        </xct:TabViewItem>
+
+        <!--  Wallet  -->
+        <xct:TabViewItem
+            x:Name="Wallet"
+            Icon="wallet"
+            IconSelected="wallet_active"
+            Style="{StaticResource XctTabViewStyle}"
+            Text="E-Wallet"
+            VerticalOptions="EndAndExpand">
+            <xct:TabViewItem.Content>
                 <ScrollView VerticalScrollBarVisibility="Never">
                     <Grid RowDefinitions="120,*">
                         <yummy:PancakeView
@@ -72,7 +87,7 @@
                             CornerRadius="0,0,10,10"
                             HeightRequest="95"
                             VerticalOptions="StartAndExpand">
-                            <Grid  Margin="15,10">
+                            <Grid Margin="15,10">
                                 <Grid InputTransparent="False">
                                     <Picker
                                         Title="Hi, John"
@@ -86,23 +101,32 @@
                                             <xct:RemoveBorderEffect />
                                         </Picker.Effects>
                                     </Picker>
-                                    <Image InputTransparent="True" Margin="10,0,0,0"
-                                        HeightRequest="15" Rotation="90"
+                                    <Image
+                                        Margin="10,0,0,0"
+                                        HeightRequest="15"
                                         HorizontalOptions="CenterAndExpand"
+                                        InputTransparent="True"
+                                        Rotation="90"
                                         Source="backarrowwhite"
                                         VerticalOptions="Center"
                                         WidthRequest="15" />
                                 </Grid>
-                                <StackLayout Grid.Column="1" HorizontalOptions="EndAndExpand" Orientation="Horizontal">
-                                    <Image InputTransparent="True" Margin="10,0"
-                                        HeightRequest="22"  
+                                <StackLayout
+                                    Grid.Column="1"
+                                    HorizontalOptions="EndAndExpand"
+                                    Orientation="Horizontal">
+                                    <Image
+                                        Margin="10,0"
+                                        HeightRequest="22"
                                         HorizontalOptions="Center"
+                                        InputTransparent="True"
                                         Source="help"
                                         VerticalOptions="Center"
                                         WidthRequest="22" />
-                                    <Image InputTransparent="True" 
-                                        HeightRequest="22"  
+                                    <Image
+                                        HeightRequest="22"
                                         HorizontalOptions="Center"
+                                        InputTransparent="True"
                                         Source="notification"
                                         VerticalOptions="Center"
                                         WidthRequest="22" />
@@ -111,25 +135,142 @@
                         </yummy:PancakeView>
 
                         <ScrollView Grid.Row="1" VerticalScrollBarVisibility="Never">
-                            <StackLayout />
+                            <StackLayout Padding="15,15,15,0">
+                                <Grid>
+                                    <Image Source="wallet_bg" />
+                                    <Grid Padding="15">
+                                        <StackLayout>
+                                            <StackLayout VerticalOptions="StartAndExpand">
+                                                <Label
+                                                    FontFamily="ProximaNovaSemibold"
+                                                    FontSize="10"
+                                                    Text="E-wallet Balance" />
+                                                <Label
+                                                    FontFamily="ProximaNovaSemibold"
+                                                    FontSize="22"
+                                                    Text="₱ 500.00" />
+                                            </StackLayout>
+                                            <StackLayout VerticalOptions="EndAndExpand">
+                                                <Label
+                                                    FontFamily="ProximaNovaSemibold"
+                                                    FontSize="10"
+                                                    Text="Cash Wallet" />
+                                                <Label
+                                                    FontFamily="ProximaNovaSemibold"
+                                                    FontSize="22"
+                                                    Text="₱ 2500.00" />
+                                            </StackLayout>
+                                        </StackLayout>
+                                        <StackLayout Grid.Column="1" Padding="8,0">
+                                            <Button
+                                                Margin="0,10,0,0"
+                                                Command="{Binding TopUpCommand}"
+                                                FontSize="15"
+                                                Text="Top Up" />
+                                            <Button
+                                                Command="{Binding RequestCashoutCommand}"
+                                                FontSize="15"
+                                                Text="Request Cashout"
+                                                VerticalOptions="EndAndExpand" />
+                                        </StackLayout>
+                                    </Grid>
+                                </Grid>
+                                <StackLayout Padding="0,10" Orientation="Horizontal">
+                                    <Label
+                                        FontFamily="ProximaNovaBold"
+                                        Text="Online Transactions"
+                                        TextColor="#C7C6D8" />
+
+                                    <Frame
+                                        Margin="2,0" Padding="0"
+                                        BackgroundColor="#211E66"
+                                        BorderColor="#211E66">
+                                        <Grid InputTransparent="False">
+                                            <Picker
+                                                Title="select Payment" FontSize="14" HorizontalTextAlignment="Center"
+                                                ItemDisplayBinding="{Binding .}" SelectedItem="{Binding PaymentSelected}"
+                                                ItemsSource="{Binding PaymentList}"
+                                                TextColor="White">
+                                                <Picker.Effects>
+                                                    <xct:RemoveBorderEffect />
+                                                </Picker.Effects>
+                                            </Picker>
+                                            <Image
+                                                HeightRequest="20"
+                                                HorizontalOptions="EndAndExpand"
+                                                InputTransparent="True"
+                                                Source="filled_dropdown"
+                                                VerticalOptions="Center"
+                                                WidthRequest="20" />
+
+                                        </Grid>
+                                    </Frame>
+                                    <!--<material:MaterialMenuButton
+                                        ButtonType="Text"
+                                        Choices="{Binding Actions}"
+                                        Command="{Binding MaterialMenuButton_MenuSelected}"
+                                        CornerRadius="24"
+                                        TintColor="Red" />-->
+                                </StackLayout>
+
+                                <StackLayout>
+                                    <CollectionView
+                                        Margin="0,5"
+                                        ItemsSource="{Binding EWalletOfList}"
+                                        VerticalOptions="FillAndExpand">
+                                        <CollectionView.ItemsLayout>
+                                            <GridItemsLayout Orientation="Vertical" VerticalItemSpacing="20" />
+                                        </CollectionView.ItemsLayout>
+                                        <CollectionView.ItemTemplate>
+                                            <DataTemplate>
+                                                <Frame
+                                                    BackgroundColor="#e6e6ff"
+                                                    BorderColor="#e6e6ff"
+                                                    CornerRadius="5">
+                                                    <StackLayout Orientation="Horizontal">
+                                                        <StackLayout.GestureRecognizers>
+                                                            <TapGestureRecognizer Command="{Binding Path=BindingContext.EWalletCommand, Source={x:Reference thispage}}" CommandParameter="{Binding .}" />
+                                                        </StackLayout.GestureRecognizers>
+                                                        <StackLayout HorizontalOptions="StartAndExpand">
+                                                            <Label
+                                                                FontFamily="ProximaNovaRegular"
+                                                                FontSize="12"
+                                                                Text="Order id"
+                                                                TextColor="#000000"
+                                                                VerticalOptions="CenterAndExpand" />
+
+                                                            <Label
+                                                                FontFamily="ProximaNovaBold"
+                                                                FontSize="14"
+                                                                Text="{Binding TitleName}"
+                                                                TextColor="#000000"
+                                                                VerticalOptions="CenterAndExpand" />
+                                                        </StackLayout>
+                                                        <StackLayout Grid.Column="1" HorizontalOptions="EndAndExpand">
+                                                            <Label
+                                                                FontFamily="ProximaNovaRegular"
+                                                                FontSize="12"
+                                                                Text="05 Feb 2021"
+                                                                TextColor="#000000"
+                                                                VerticalOptions="CenterAndExpand" />
+
+                                                            <Label
+                                                                FontFamily="ProximaNovaBold"
+                                                                FontSize="14"
+                                                                Text="₱ 30.00"
+                                                                TextColor="#000000"
+                                                                VerticalOptions="CenterAndExpand" />
+                                                        </StackLayout>
+                                                    </StackLayout>
+                                                </Frame>
+                                            </DataTemplate>
+                                        </CollectionView.ItemTemplate>
+                                    </CollectionView>
+                                </StackLayout>
+
+                            </StackLayout>
                         </ScrollView>
                     </Grid>
-                </ScrollView>
-
-            </xct:TabViewItem.Content>
-        </xct:TabViewItem>
-
-        <!--  Wallet  -->
-        <xct:TabViewItem
-            x:Name="Wallet"
-            Icon="wallet"
-            IconSelected="wallet_active"
-            Style="{StaticResource XctTabViewStyle}"
-            Text="Wallet"
-            VerticalOptions="EndAndExpand">
-            <xct:TabViewItem.Content>
-                <ScrollView VerticalScrollBarVisibility="Never">
-                    
                 </ScrollView>
 
             </xct:TabViewItem.Content>
@@ -168,14 +309,12 @@
                                     <Label
                                         FontSize="18"
                                         HorizontalOptions="Start"
-                                        Style="{StaticResource DefaultLabelStyle}"
                                         Text="John Doe"
                                         TextColor="White"
                                         VerticalOptions="EndAndExpand" />
                                     <Label
                                         FontSize="16"
                                         HorizontalOptions="Start"
-                                        Style="{StaticResource DefaultLabelStyle}"
                                         Text="DD94874"
                                         TextColor="White"
                                         VerticalOptions="StartAndExpand" />
@@ -188,7 +327,6 @@
                                             WidthRequest="14" />
                                         <Label
                                             HorizontalOptions="Start"
-                                            Style="{StaticResource DefaultLabelStyle}"
                                             Text="Verified"
                                             TextColor="#0BAC00"
                                             VerticalOptions="Center" />
@@ -204,7 +342,6 @@
                                     VerticalOptions="CenterAndExpand">
                                     <Label
                                         HorizontalOptions="Start"
-                                        Style="{StaticResource DefaultLabelStyle}"
                                         Text="View Profile"
                                         TextColor="White"
                                         VerticalOptions="Center" />
@@ -235,8 +372,7 @@
                                         <Frame
                                             BackgroundColor="#EBE9FF"
                                             BorderColor="#EBE9FF"
-                                            CornerRadius="5"
-                                            Style="{StaticResource FrameStyle}">
+                                            CornerRadius="5">
                                             <StackLayout Orientation="Horizontal">
                                                 <StackLayout.GestureRecognizers>
                                                     <TapGestureRecognizer Command="{Binding Path=BindingContext.ProfileTabCommand, Source={x:Reference thispage}}" CommandParameter="{Binding .}" />
