@@ -1,4 +1,5 @@
-﻿using DuraDriveRider.Pages.XctTabView.Views;
+﻿using DuraDriveRider.Pages.Auth.Views;
+using DuraDriveRider.Pages.XctTabView.Views;
 using DuraDriveRider.Resources;
 using System;
 using Xamarin.CommunityToolkit.Helpers;
@@ -14,8 +15,8 @@ namespace DuraDriveRider
         {
             InitializeComponent();  
             XF.Material.Forms.Material.Init(this);
-           // MainPage = new MaterialNavigationPage(new MainPage());
-            App.Current.MainPage = new HomeXctTab();
+           MainPage = new MaterialNavigationPage(new LoginPage());
+          // App.Current.MainPage = new HomeXct();
             LocalizationResourceManager.Current.Init(AppResources.ResourceManager);
             //AppResources.Culture = CrossMultilingual.Current.DeviceCultureInfo; 
             //SetFlags(new string[] { "Shell_UWP_Experimental", "AnotherFeature_Experimental" });
