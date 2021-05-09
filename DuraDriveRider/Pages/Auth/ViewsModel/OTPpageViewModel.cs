@@ -10,7 +10,7 @@ namespace DuraDriveRider.Pages.Auth.ViewsModel
 {
    public class OTPpageViewModel
     {
-        public ICommand GetOtpCommand => new Command(async (obj) =>
+        public ICommand DoneCommand => new Command(async (obj) =>
         {
             await RichNavigation.PushAsync(new OTPpage(), typeof(OTPpage));
         });

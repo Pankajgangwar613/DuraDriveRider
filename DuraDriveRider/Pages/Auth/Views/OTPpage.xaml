@@ -7,7 +7,7 @@
 
             <StackLayout>
 
-                <Frame BackgroundColor="DarkBlue"  HeightRequest="500" HorizontalOptions="FillAndExpand"/>
+                <Frame BackgroundColor="#211E66"  HeightRequest="500" HorizontalOptions="FillAndExpand"/>
 
             </StackLayout>
             <StackLayout>
@@ -17,25 +17,36 @@
                 <Yummy:PancakeView CornerRadius="25,25,25,25" Padding="20" BackgroundColor="White" HeightRequest="350" HorizontalOptions="FillAndExpand">
                     <StackLayout Margin="10" >
                         <Label Text="Verify Mobile No " TextColor="Black" FontSize="15" FontAttributes="Bold"/>
-                        <Label Text="Enter the OTP we sent on xxxxxxx789 " TextColor="Black" FontSize="12"/>
+                        <Label Text="Enter the OTP we sent on xxxxxxx789. " TextColor="#000000" FontSize="12"/>
                         <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-                            <Frame BackgroundColor="White" BorderColor="DarkGray" VerticalOptions="Fill" CornerRadius="5">
+                            <Frame>
                                 <Entry Text=""/>
                             </Frame>
-                            <Frame >
-                                <Entry Placeholder="hjhk"/>
+                            <Frame  >
+                                <Entry Placeholder=""/>
                             </Frame>
-                            <Frame BackgroundColor="White" BorderColor="DarkGray" VerticalOptions="Fill" CornerRadius="5">
-                                <Entry Text=""/>
+                            <Frame>
+                                <Entry Text="" Placeholder=""/>
                             </Frame>
-                            <Frame BackgroundColor="White" BorderColor="DarkGray" VerticalOptions="Fill" CornerRadius="5">
+                            <Frame>
                                 <Entry Text=""/>
                             </Frame>
 
                         </StackLayout>
 
                         <Button Text="Done" Command="{Binding DoneCommand}" Margin="0,50,0,0" />
-                        <Picker Title="Resend otp" TitleColor="Red" FontSize="8" VerticalOptions="End" HorizontalOptions="Center"/>
+                        <Label Margin="0,20,0,0" HorizontalOptions="Center">
+                            <Label.FormattedText>
+                                <FormattedString >
+
+                                    <Span Text="Resend OTP" TextDecorations="Underline" FontSize="14" FontFamily="ProximaNovaSemibold"  TextColor="#D72625" />
+                                </FormattedString>
+                            </Label.FormattedText>
+
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding OTPCommand}"/>
+                            </Label.GestureRecognizers>
+                        </Label>
                     </StackLayout>
                 </Yummy:PancakeView>
 
