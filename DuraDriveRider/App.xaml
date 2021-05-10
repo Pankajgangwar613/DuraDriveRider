@@ -87,6 +87,17 @@
             <Setter Property="FontSize" Value="15" />
         </Style>
 
+        <Style ApplyToDerivedTypes="True" TargetType="DatePicker">
+            <Setter Property="FontFamily" Value="ProximaNovaRegular" />
+            <Setter Property="TextColor" Value="#7F7F7F" />
+            <Setter Property="Format" Value="dd/MM/yyyy" />
+            <Setter Property="MinimumDate" Value="12/31/2001" />
+            <Setter Property="MaximumDate" Value="12/31/2050" />
+            <Setter Property="FontSize" Value="15" />
+            <Setter Property="VerticalOptions" Value="Center" />
+            <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+        </Style>
+
         <!--<Style ApplyToDerivedTypes="True" TargetType="xct:AvatarView">
             <Setter Property="Size" Value="40" />
             <Setter Property="Color" Value="Green" />
@@ -137,8 +148,9 @@
         -->
 
         <Style ApplyToDerivedTypes="True" TargetType="xct:Popup">
+            <!--<Setter Property="IsLightDismissEnabled" Value="True" />-->
             <Setter Property="Color" Value="Transparent" />
-            <Setter Property="Size" Value="300,330" />
+            <Setter Property="Size" Value="300,330" /> 
         </Style>
 
         <Style x:Key="XctTabViewStyle" TargetType="xct:TabViewItem">

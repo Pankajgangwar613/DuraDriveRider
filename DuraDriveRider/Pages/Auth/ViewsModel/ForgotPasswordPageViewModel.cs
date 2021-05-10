@@ -13,7 +13,8 @@ namespace DuraDriveRider.Pages.Auth.ViewsModel
     {
         public ICommand GetOtpCommand => new Command(async (obj) =>
         {
-            await RichNavigation.PushAsync(new OTPpage(), typeof(OTPpage));
+            bool OpenPersonalInfo = true;
+            await RichNavigation.PushAsync(new OTPpage(OpenPersonalInfo), typeof(OTPpage));
         });
     }
 }

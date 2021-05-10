@@ -13,11 +13,14 @@ namespace DuraDriveRider.Pages.Auth.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class OTPpage : ContentPage
     {
-        public OTPpage()
+        private bool openPersonalInfo; 
+        public OTPpage(bool openPersonalInfo)
         {
+            this.openPersonalInfo = openPersonalInfo;
             InitializeComponent();
-            BindingContext = new OTPpageViewModel();
+            BindingContext = new OTPpageViewModel(openPersonalInfo);
         }
+
         void VerifyEntryText_TextChanged(object sender, Xamarin.Forms.TextChangedEventArgs e)
         {
             if (sender != null)

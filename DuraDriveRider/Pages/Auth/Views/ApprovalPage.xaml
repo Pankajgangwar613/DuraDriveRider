@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Pages:BaseContentPage
+    x:Class="DuraDriveRider.Pages.Auth.Views.ApprovalPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:Pages="clr-namespace:DuraDriveRider.Infrastructure"
+    BackgroundColor="White">
+    <ContentPage.Content>
+        <StackLayout
+            Padding="30,10"
+            BackgroundColor="White"
+            Spacing="15"
+            VerticalOptions="CenterAndExpand">
+            <Image HeightRequest="150" WidthRequest="100" Source="SuccessApproval" />
+            <Label
+                FontAttributes="Bold"
+                FontFamily="ProximaNovaSemibold"
+                FontSize="18"
+                HorizontalOptions="Center"
+                Text="Superb!"
+                TextColor="#211E66" />
+            <Label
+                FontAttributes="Bold"
+                FontFamily="ProximaNovaSemibold"
+                HorizontalOptions="Center"
+                Text="Your Application is successfully submitted."
+                TextColor="Black" />
+            <Label
+                FontFamily="ProximaNovaRegular"
+                HorizontalOptions="CenterAndExpand"
+                HorizontalTextAlignment="Center"
+                Text="Our team will verify your documents and will activate your profile asap."
+                TextColor="Gray" />
+            <Button Margin="5,15" Text="Waiting For Approval" />
+        </StackLayout>
+    </ContentPage.Content>
+</Pages:BaseContentPage>

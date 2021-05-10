@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<xct:Popup
+    x:Class="DuraDriveRider.Pages.Auth.PopUp.ReferralCodePopup"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+    IsLightDismissEnabled="False"
+    Size="320,420">
+    <Frame Padding="0">
+        <StackLayout>
+            <StackLayout BackgroundColor="#EBE9FF" HeightRequest="200">
+                <Image
+                    HeightRequest="180"
+                    Source="referral_graphic"
+                    WidthRequest="180" />
+            </StackLayout>
+            <StackLayout HeightRequest="200"
+                Margin="10,0"
+                Padding="0"
+                BackgroundColor="White">
+                <Label
+                    FontAttributes="Bold"
+                    FontFamily="ProximaNovaSemibold"
+                    FontSize="Medium"
+                    Text="Have Referral Code?"
+                    TextColor="Black" />
+                <Label
+                    FontSize="12"
+                    Text="Enter referral code below, you and your friend will get reward"
+                    TextColor="Black" />
+                <Grid Margin="0,6,0,0" InputTransparent="False">
+                    <Entry HorizontalOptions="FillAndExpand" Placeholder="Enter code here">
+                        <Entry.Effects>
+                            <xct:RemoveBorderEffect />
+                        </Entry.Effects>
+                    </Entry>
+                    <BoxView VerticalOptions="EndAndExpand" />
+                </Grid>
+                <Button
+                    Margin="2,6,2,10"
+                    Command="{Binding SubmitCommand}"
+                    Text="Submit" />
+                <StackLayout >
+                    <Label 
+                   TextDecorations="Underline"
+                    Text="Skip" HorizontalOptions="Center" VerticalOptions="EndAndExpand"
+                    TextColor="#D72625" >
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer  Command="{Binding SkipCommand}"/>
+                        </Label.GestureRecognizers>
+                    </Label> 
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </Frame>
+</xct:Popup>

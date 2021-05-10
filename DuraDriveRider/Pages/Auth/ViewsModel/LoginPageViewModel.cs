@@ -27,12 +27,13 @@ namespace DuraDriveRider.Pages.Auth.ViewsModel
         });
         public ICommand LoginCommand => new Command(async (obj) =>
         {
-            App.Current.MainPage = new HomeXctTab();
+            //App.Current.MainPage = new HomeXctTab();
+            await RichNavigation.PushAsync(new ApprovalPage(), typeof(ApprovalPage));
         });
 
         public ICommand RegisterCommand => new Command(async (obj) =>
         {
-            await RichNavigation.PushAsync(new RegisterPage(), typeof(RegisterPage));
+            await RichNavigation.PushAsync(new RegisterPage(), typeof(RegisterPage)); 
         });       
     }
 }
