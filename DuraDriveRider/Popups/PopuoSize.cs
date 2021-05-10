@@ -8,7 +8,11 @@ namespace DuraDriveRider.Popups
 {
   public static class PopuoSize
     {
+		//100,100
 		public static Size Small => new Size(100, 100);
+		
+		//260,100
+		public static Size Size260By100 => new Size(260, 100);
 
 		public static Size Default => new Size(300, 300);
 

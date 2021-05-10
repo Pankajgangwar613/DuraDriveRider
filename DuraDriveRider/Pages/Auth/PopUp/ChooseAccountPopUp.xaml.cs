@@ -16,5 +16,10 @@ namespace DuraDriveRider.Pages.Auth.PopUp
         {
             InitializeComponent();
         }
+
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            Dismiss(null);
+        }
     }
 }

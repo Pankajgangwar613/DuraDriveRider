@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Pages:BaseContentPage  xmlns:Pages="clr-namespace:DuraDriveRider.Infrastructure" xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:Yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+                        x:Class="DuraDriveRider.Pages.Auth.Views.RegisterPage">
+    <StackLayout>
+        <StackLayout
+            Padding="10,15"
+            Orientation="Horizontal"
+            Spacing="1">
+            <Image
+                HeightRequest="20"
+                HorizontalOptions="Start"
+                Rotation="180"
+                Source="backarrowwhite"
+                WidthRequest="20" />
+            <Label FontSize="16" Text="Back" />
+            <StackLayout.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding ForgotCommand}" />
+            </StackLayout.GestureRecognizers>
+        </StackLayout>
+
+        <StackLayout>
+            <Image
+                Margin="0,60,0,0"
+                HeightRequest="150"
+                HorizontalOptions="CenterAndExpand"
+                Source="logo_white.png"
+                VerticalOptions="StartAndExpand"
+                WidthRequest="150" />
+
+        </StackLayout>
+        <Yummy:PancakeView CornerRadius="20,20,0,0" VerticalOptions="EndAndExpand">
+            <StackLayout>
+                <Label
+                    FontAttributes="Bold"
+                    FontFamily="ProximaNovaSemibold"
+                    FontSize="16"
+                    Text="Register"
+                    TextColor="Black" />
+                <Label FontFamily="ProximaNovaSemibold" VerticalOptions="CenterAndExpand" TextColor="Black">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Got to know, you are not register with " />
+                            <Span
+                                FontAttributes="Bold"
+                                Text="DURADRIVE"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label> 
+                
+                <StackLayout> 
+                    <Grid
+                        Margin="0,5"
+                        ColumnDefinitions="2*,.1*,8*"
+                        InputTransparent="False">
+                        <StackLayout Padding="0,0,10,0" Orientation="Horizontal">
+                            <Picker
+                                Title="+ 63"
+                                ItemDisplayBinding="{Binding .}"
+                                ItemsSource="{Binding CountryCodeList}"
+                                SelectedItem="{Binding CountrySelected}"
+                                TextColor="Black"
+                                TitleColor="Black"
+                                VerticalOptions="CenterAndExpand">
+                                <Picker.Effects>
+                                    <xct:RemoveBorderEffect />
+                                </Picker.Effects>
+                            </Picker>
+                            <Image
+                                
+                                HeightRequest="15"
+                                HorizontalOptions="StartAndExpand"
+                                InputTransparent="True"
+                                Source="filled_dropdown"
+                                VerticalOptions="Center"
+                                WidthRequest="15" />
+                        </StackLayout>
+                        <BoxView
+                            Grid.Column="1"
+                            HeightRequest="20"
+                            HorizontalOptions="CenterAndExpand" 
+                            VerticalOptions="CenterAndExpand"
+                            WidthRequest="1" />
+
+                        <Entry
+                            Grid.Column="2"
+                            Keyboard="Numeric"
+                            Placeholder="1234567890"
+                            PlaceholderColor="Black"
+                            TextColor="Black">
+                            <Entry.Effects>
+                                <xct:RemoveBorderEffect />
+                            </Entry.Effects>
+                        </Entry>
+                        <BoxView Grid.ColumnSpan="3" VerticalOptions="EndAndExpand" />
+                    </Grid>
+
+                    <Grid VerticalOptions="CenterAndExpand">
+                        <Entry
+                            Placeholder="Email Address" >
+                            <Entry.Effects>
+                                <xct:RemoveBorderEffect />
+                            </Entry.Effects>
+                        </Entry>
+                        <BoxView VerticalOptions="EndAndExpand" />
+                    </Grid>
+                    <Grid Margin="0,10" VerticalOptions="CenterAndExpand">
+                        <Entry Placeholder="Create Password">
+                            <Entry.Effects>
+                                <xct:RemoveBorderEffect />
+                            </Entry.Effects>
+                        </Entry>
+                        <BoxView VerticalOptions="EndAndExpand" />
+                    </Grid>
+                    <Grid VerticalOptions="CenterAndExpand">
+                        <Entry Placeholder="Confirm Password">
+                            <Entry.Effects>
+                                <xct:RemoveBorderEffect />
+                            </Entry.Effects>
+                        </Entry>
+                        <BoxView VerticalOptions="EndAndExpand" />
+                    </Grid>
+
+                    <StackLayout Margin="0,5" Orientation="Horizontal">
+                        <Image Source="check" HeightRequest="20" WidthRequest="20" HorizontalOptions="Start"/>
+                        <Label  VerticalOptions="CenterAndExpand" HorizontalOptions="Start">
+                            <Label.FormattedText>
+                                <FormattedString >
+                                    <Span Text="I accept the " TextColor="Black"/>
+                                    <Span Text="Terms of Services" TextDecorations="Underline" FontFamily="ProximaNovaSemibold"  TextColor="#D72625" />
+                                </FormattedString>
+                            </Label.FormattedText>
+
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding RegisterCommand}"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </StackLayout>
+
+
+                    <Button
+                        Margin="0,10"
+                        Command="{Binding RegisterCommand}"
+                        Text="Register" />
+                </StackLayout>
+            </StackLayout> 
+        </Yummy:PancakeView>
+
+    </StackLayout>
+
+    </Pages:BaseContentPage>

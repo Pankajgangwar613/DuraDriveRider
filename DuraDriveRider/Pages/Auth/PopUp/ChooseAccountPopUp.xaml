@@ -7,7 +7,7 @@
     xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
     Size="{x:Static local:PopuoSize.Default}" IsLightDismissEnabled="True">
     <Frame >
-        <StackLayout>
+        <StackLayout> 
             <Label FontSize="Large" Text="dds" />
         </StackLayout>
     </Frame>

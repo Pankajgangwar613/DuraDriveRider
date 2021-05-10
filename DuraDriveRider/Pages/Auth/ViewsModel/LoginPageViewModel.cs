@@ -1,6 +1,7 @@
 ﻿using DuraDriveRider.NavigationService;
 using DuraDriveRider.Pages.Auth.Views;
 using DuraDriveRider.Pages.XctTabView.Views;
+using DuraDriveRider.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -10,7 +11,7 @@ using Xamarin.Forms;
 
 namespace DuraDriveRider.Pages.Auth.ViewsModel
 {
-   public class LoginPageViewModel
+   public class LoginPageViewModel : BaseViewModel
     {
         public ObservableCollection<string> LoginList { get; set; } = new ObservableCollection<string>
         {
@@ -31,7 +32,7 @@ namespace DuraDriveRider.Pages.Auth.ViewsModel
 
         public ICommand RegisterCommand => new Command(async (obj) =>
         {
-            //await RichNavigation.PushAsync(new ForgotPasswordPage(), typeof(ForgotPasswordPage));
+            await RichNavigation.PushAsync(new RegisterPage(), typeof(RegisterPage));
         });       
     }
 }

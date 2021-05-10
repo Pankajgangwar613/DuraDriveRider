@@ -19,6 +19,9 @@ namespace DuraDriveRider.ViewModel
         });
         public ICommand ClosePopUpCommand => new Command(async (obj) =>
         {
+             //Navigation.ShowPopup(new SuccessfullyPopup());
+            //await Task.Delay(500);
+            //Dismiss(null);
             await PopupNavigation.PopAsync();
         });
 
