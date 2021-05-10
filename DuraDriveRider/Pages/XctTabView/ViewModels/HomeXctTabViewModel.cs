@@ -1,5 +1,6 @@
 ﻿using Acr.UserDialogs;
 using DuraDriveRider.NavigationService;
+using DuraDriveRider.Pages.Auth.Views;
 using DuraDriveRider.Pages.XctTabView.Model;
 using DuraDriveRider.ViewModel;
 using System;
@@ -17,7 +18,7 @@ using XF.Material.Forms.UI.Dialogs;
 
 namespace DuraDriveRider.Pages.XctTabView.ViewModels
 {
-   public class HomeXctTabViewModel : BaseViewModel
+    public class HomeXctTabViewModel : BaseViewModel
     {
         private Color _personalDetailsTextColor = Color.Black;
         public Color PersonalDetailsTextColor
@@ -114,7 +115,6 @@ namespace DuraDriveRider.Pages.XctTabView.ViewModels
             set { _accountNumber = value; OnPropertyChanged(); }
         }
         public ICommand FullscreenLoadingCommand { get; }
-
         public ICommand CycleStatesCommand { get; }
 
         public HomeXctTabViewModel()
@@ -187,7 +187,6 @@ namespace DuraDriveRider.Pages.XctTabView.ViewModels
             PaymentDetailsTextColor = Color.FromHex("#75747F"); ;
             PaymentDetailsBoxviewColor = Color.Transparent;
         });
-
         public ICommand PaymentDetailsCommand => new Command(async (obj) =>
         {
             PersonalDetailsIsVisible = false;
@@ -203,15 +202,28 @@ namespace DuraDriveRider.Pages.XctTabView.ViewModels
 
         public ObservableCollection<OrderModel> DuraExpressOfList { get; set; } = new ObservableCollection<OrderModel>()
         {
-          //  new OrderModel{ TitleName = "#14565636664" },
+            new OrderModel{  Name="Dura Express", Status="Delevered", StatusTextColor="#009700", StatusBgColor="#98FFB0", Address="1976 Capt. M. Reyes, Makati, Metro Manila Phillipnes", Charges="Earned : ₱ 30.90",ChargesTextColor="#109A00", date="July 25 2020 at 05:30 pm" },
+            new OrderModel{  Name="Dura Express", Status="Delevered", StatusTextColor="#C80000", StatusBgColor="#FFB8B8", Address="2540 Makati, Metro Manila Phillipnes", Charges="Earned : ₱ 30.90",ChargesTextColor="#D72625", date="July 25 2020 at 05:30 pm" },
+            new OrderModel{  Name="Dura Express", Status="Delevered", StatusTextColor="#009700", StatusBgColor="#98FFB0", Address="1976 Capt. M. Reyes, Makati, Metro Manila Phillipnes", Charges="Earned : ₱ 30.90",ChargesTextColor="#109A00", date="July 25 2020 at 05:30 pm" },
+        };
+        public ObservableCollection<OrderModel> DuraShopsOfList { get; set; } = new ObservableCollection<OrderModel>()
+        {
+            new OrderModel{  Name="Dura Express", Status="Delevered", StatusTextColor="#009700", StatusBgColor="#98FFB0", Address="1976 Capt. M. Reyes, Makati, Metro Manila Phillipnes", Charges="Earned : ₱ 30.90",ChargesTextColor="#109A00", date="July 25 2020 at 05:30 pm" },
+            new OrderModel{  Name="Dura Express", Status="Delevered", StatusTextColor="#009700", StatusBgColor="#98FFB0", Address="1976 Capt. M. Reyes, Makati, Metro Manila Phillipnes", Charges="Earned : ₱ 30.90",ChargesTextColor="#109A00", date="July 25 2020 at 05:30 pm" },
+        };
+        public ObservableCollection<OrderModel> DuraOfList { get; set; } = new ObservableCollection<OrderModel>()
+        {
+            new OrderModel{  Name="Dura Express", Status="Delevered", StatusTextColor="#009700", StatusBgColor="#98FFB0", Address="1976 Capt. M. Reyes, Makati, Metro Manila Phillipnes", Charges="Earned : ₱ 30.90",ChargesTextColor="#109A00", date="July 25 2020 at 05:30 pm" },
+            new OrderModel{  Name="Dura Express", Status="Delevered", StatusTextColor="#C80000", StatusBgColor="#FFB8B8", Address="2540 Makati, Metro Manila Phillipnes", Charges="Earned : ₱ 30.90",ChargesTextColor="#D72625", date="July 25 2020 at 05:30 pm" },
+            new OrderModel{  Name="Dura Express", Status="Delevered", StatusTextColor="#009700", StatusBgColor="#98FFB0", Address="1976 Capt. M. Reyes, Makati, Metro Manila Phillipnes", Charges="Earned : ₱ 30.90",ChargesTextColor="#109A00", date="July 25 2020 at 05:30 pm" },
         };
 
         //Wallet
-        public ObservableCollection<string> ProfileNameList { get; set; }=new ObservableCollection<string>
+        public ObservableCollection<string> ProfileNameList { get; set; } = new ObservableCollection<string>
         {
             "hi, John"
         };
-        
+
 
         public ObservableCollection<string> PaymentList { get; set; } = new ObservableCollection<string>
         {
@@ -246,15 +258,15 @@ namespace DuraDriveRider.Pages.XctTabView.ViewModels
 
         public ObservableCollection<ProfileModel> EWalletOfList { get; set; } = new ObservableCollection<ProfileModel>()
         {
-            new ProfileModel{ TitleName = "#14565636664" }, 
-            new ProfileModel{ TitleName = "#14565636664" }, 
-            new ProfileModel{ TitleName = "#14565636664" }, 
-            new ProfileModel{ TitleName = "#14565636664" }, 
-            new ProfileModel{ TitleName = "#14565636664" }, 
-            new ProfileModel{ TitleName = "#14565636664" }, 
-            new ProfileModel{ TitleName = "#14565636664" }, 
-            new ProfileModel{ TitleName = "#14565636664" }, 
-            new ProfileModel{ TitleName = "#14565636664" }, 
+            new ProfileModel{ TitleName = "#14565636664" },
+            new ProfileModel{ TitleName = "#14565636664" },
+            new ProfileModel{ TitleName = "#14565636664" },
+            new ProfileModel{ TitleName = "#14565636664" },
+            new ProfileModel{ TitleName = "#14565636664" },
+            new ProfileModel{ TitleName = "#14565636664" },
+            new ProfileModel{ TitleName = "#14565636664" },
+            new ProfileModel{ TitleName = "#14565636664" },
+            new ProfileModel{ TitleName = "#14565636664" },
         };
         //Profile
         public ObservableCollection<ProfileModel> ProfileItems { get; set; } = new ObservableCollection<ProfileModel>()
@@ -269,13 +281,13 @@ namespace DuraDriveRider.Pages.XctTabView.ViewModels
         };
 
         public ICommand ViewProfileCommand => new Command(async (obj) =>
-        { 
+        {
             //await RichNavigation.PushAsync(new MyPointsPage(), typeof(MyPointsPage));
         });
-        
+
         public ICommand LogOutCommand => new Command(async (obj) =>
         {
-            //App.Current.MainPage = new MaterialNavigationPage(new LogInPage());
+            App.Current.MainPage = new MaterialNavigationPage(new LoginPage());
             //Settings.IsWalkthroughCompleted = false;
         });
 
@@ -285,7 +297,7 @@ namespace DuraDriveRider.Pages.XctTabView.ViewModels
             switch (ProfileMdl.id)
             {
                 case 1:
-                   // await RichNavigation.PushAsync(new MyPointsPage(), typeof(MyPointsPage));
+                    // await RichNavigation.PushAsync(new MyPointsPage(), typeof(MyPointsPage));
                     break;
                 case 2:
                     //await RichNavigation.PushAsync(new HealthConditionPage(), typeof(HealthConditionPage));
@@ -300,13 +312,13 @@ namespace DuraDriveRider.Pages.XctTabView.ViewModels
                     //await RichNavigation.PushAsync(new SettingsPage(), typeof(SettingsPage));
                     break;
                 case 6:
-                  //  await RichNavigation.PushAsync(new ContactUsPage(), typeof(ContactUsPage));
-                    break; 
+                    //  await RichNavigation.PushAsync(new ContactUsPage(), typeof(ContactUsPage));
+                    break;
                 case 9:
                     // App.Current.MainPage = new MaterialNavigationPage(new LogInPage());
                     //Settings.IsWalkthroughCompleted = false;
                     break;
             }
-        });    
+        });
     }
 }

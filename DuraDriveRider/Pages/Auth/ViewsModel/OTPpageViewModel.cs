@@ -12,7 +12,7 @@ namespace DuraDriveRider.Pages.Auth.ViewsModel
     {
         public ICommand DoneCommand => new Command(async (obj) =>
         {
-            await RichNavigation.PushAsync(new OTPpage(), typeof(OTPpage));
+            await RichNavigation.PushAsync(new NewPasswordPage(), typeof(NewPasswordPage));
         });
     }
 }

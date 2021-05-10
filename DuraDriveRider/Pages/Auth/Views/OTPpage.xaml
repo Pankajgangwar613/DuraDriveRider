@@ -1,59 +1,153 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage  xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:Yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
-             x:Class="DuraDriveRider.Pages.Auth.Views.OTPpage">
+<ContentPage
+    x:Class="DuraDriveRider.Pages.Auth.Views.OTPpage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:Yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit">
     <StackLayout>
-        <Grid>
-
+        <StackLayout>
+            <Image
+                Margin="0,70,0,0"
+                HeightRequest="200"
+                HorizontalOptions="CenterAndExpand"
+                Source="logo_white.png"
+                VerticalOptions="Center"
+                WidthRequest="150" />
+        </StackLayout>
+        <Yummy:PancakeView CornerRadius="20,20,0,0" VerticalOptions="EndAndExpand">
             <StackLayout>
+                <Label
+                    FontAttributes="Bold"
+                    FontFamily="ProximaNovaSemibold"
+                    FontSize="16"
+                    Text="Verify Mobile Number"
+                    TextColor="Black" />
+                <Label FontFamily="ProximaNovaSemibold" TextColor="Black">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Enter the OTP we sent on " />
+                            <Span
+                                FontAttributes="Bold"
+                                Text="xxxxxxx789."
+                                TextDecorations="Underline" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <StackLayout
+                    Margin="0,30"
+                    HorizontalOptions="CenterAndExpand"
+                    Orientation="Horizontal"
+                    Spacing="15">
+                    <Frame
+                        Padding="0,0,0,0"
+                        BorderColor="LightGray"
+                        CornerRadius="5"
+                        HeightRequest="50"
+                        HorizontalOptions="CenterAndExpand"
+                        VerticalOptions="Center"
+                        WidthRequest="45">
+                        <Entry
+                            x:Name="Pin1"
+                            AutomationId="1"
+                            HorizontalTextAlignment="Center"
+                            Keyboard="Numeric"
+                            MaxLength="1"
+                            Text="{Binding Otp1}"
+                            TextChanged="VerifyEntryText_TextChanged"
+                            VerticalTextAlignment="Center">
+                            <Entry.Effects>
+                                <xct:RemoveBorderEffect />
+                            </Entry.Effects>
+                        </Entry>
+                    </Frame>
+                    <Frame
+                        Padding="0,0,0,0"
+                        BorderColor="LightGray"
+                        CornerRadius="5"
+                        HeightRequest="50"
+                        HorizontalOptions="CenterAndExpand"
+                        VerticalOptions="Center"
+                        WidthRequest="45">
+                        <Entry
+                            x:Name="Pin2"
+                            AutomationId="2"
+                            HorizontalTextAlignment="Center"
+                            Keyboard="Numeric"
+                            MaxLength="1"
+                            Text="{Binding Opt2}"
+                            TextChanged="VerifyEntryText_TextChanged"
+                            VerticalTextAlignment="Center">
+                            <Entry.Effects>
+                                <xct:RemoveBorderEffect />
+                            </Entry.Effects>
+                        </Entry>
+                    </Frame>
+                    <Frame
+                        Padding="0,0,0,0"
+                        BorderColor="LightGray"
+                        CornerRadius="5"
+                        HeightRequest="50"
+                        HorizontalOptions="CenterAndExpand"
+                        VerticalOptions="Center"
+                        WidthRequest="45">
+                        <Entry
+                            x:Name="Pin3"
+                            AutomationId="3"
+                            HorizontalTextAlignment="Center"
+                            Keyboard="Numeric"
+                            MaxLength="1"
+                            Text="{Binding Opt3}"
+                            TextChanged="VerifyEntryText_TextChanged"
+                            VerticalTextAlignment="Center">
+                            <Entry.Effects>
+                                <xct:RemoveBorderEffect />
+                            </Entry.Effects>
+                        </Entry>
+                    </Frame>
+                    <Frame
+                        Padding="0,0,0,0"
+                        BorderColor="LightGray"
+                        CornerRadius="5"
+                        HeightRequest="50"
+                        HorizontalOptions="CenterAndExpand"
+                        VerticalOptions="Center"
+                        WidthRequest="45">
+                        <Entry
+                            x:Name="Pin4"
+                            AutomationId="4"
+                            HorizontalTextAlignment="Center"
+                            Keyboard="Numeric"
+                            MaxLength="1"
+                            Text="{Binding Opt4}"
+                            TextChanged="VerifyEntryText_TextChanged"
+                            VerticalTextAlignment="Center">
+                            <Entry.Effects>
+                                <xct:RemoveBorderEffect />
+                            </Entry.Effects>
+                        </Entry>
+                    </Frame>
+                </StackLayout>
+                <Button Command="{Binding DoneCommand}" Text="Done" />
+                <Label Margin="0,20,0,0" HorizontalOptions="Center">
+                    <Label.FormattedText>
+                        <FormattedString>
 
-                <Frame BackgroundColor="#211E66"  HeightRequest="500" HorizontalOptions="FillAndExpand"/>
+                            <Span
+                                FontFamily="ProximaNovaSemibold"
+                                FontSize="14"
+                                Text="Resend OTP"
+                                TextColor="#D72625"
+                                TextDecorations="Underline" />
+                        </FormattedString>
+                    </Label.FormattedText>
 
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding DoneCommand}" />
+                    </Label.GestureRecognizers>
+                </Label>
             </StackLayout>
-            <StackLayout>
-                <Image HorizontalOptions="CenterAndExpand" VerticalOptions="Center" HeightRequest="200" WidthRequest="150" Source="logo_white.png" Margin="0,70,0,0"/>
-            </StackLayout>
-            <StackLayout Margin="0,470,0,0" VerticalOptions="Fill" HorizontalOptions="FillAndExpand">
-                <Yummy:PancakeView CornerRadius="25,25,25,25" Padding="20" BackgroundColor="White" HeightRequest="350" HorizontalOptions="FillAndExpand">
-                    <StackLayout Margin="10" >
-                        <Label Text="Verify Mobile No " TextColor="Black" FontSize="15" FontAttributes="Bold"/>
-                        <Label Text="Enter the OTP we sent on xxxxxxx789. " TextColor="#000000" FontSize="12"/>
-                        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-                            <Frame>
-                                <Entry Text=""/>
-                            </Frame>
-                            <Frame  >
-                                <Entry Placeholder=""/>
-                            </Frame>
-                            <Frame>
-                                <Entry Text="" Placeholder=""/>
-                            </Frame>
-                            <Frame>
-                                <Entry Text=""/>
-                            </Frame>
-
-                        </StackLayout>
-
-                        <Button Text="Done" Command="{Binding DoneCommand}" Margin="0,50,0,0" />
-                        <Label Margin="0,20,0,0" HorizontalOptions="Center">
-                            <Label.FormattedText>
-                                <FormattedString >
-
-                                    <Span Text="Resend OTP" TextDecorations="Underline" FontSize="14" FontFamily="ProximaNovaSemibold"  TextColor="#D72625" />
-                                </FormattedString>
-                            </Label.FormattedText>
-
-                            <Label.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding OTPCommand}"/>
-                            </Label.GestureRecognizers>
-                        </Label>
-                    </StackLayout>
-                </Yummy:PancakeView>
-
-
-            </StackLayout>
-
-        </Grid>
+        </Yummy:PancakeView>
 
     </StackLayout>
 </ContentPage>

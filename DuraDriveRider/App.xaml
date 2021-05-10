@@ -3,28 +3,31 @@
     x:Class="DuraDriveRider.App"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-   xmlns:Yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+    xmlns:Pages="clr-namespace:DuraDriveRider.Infrastructure"
+    xmlns:Yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
     xmlns:xct="http://xamarin.com/schemas/2020/toolkit">
     <Application.Resources>
 
-        <Color x:Key="StatusBarColor">#131313</Color>
         <Color x:Key="PrimaryColor">White</Color>
         <Color x:Key="SecondaryColor">Black</Color>
+        <Color x:Key="StatusBarColor">#131313</Color>
+        <Color x:Key="ContentPageBgColor">#211E66</Color>
+
 
         <Style ApplyToDerivedTypes="True" TargetType="Button">
             <Setter Property="FontFamily" Value="ProximaNovaRegular" />
             <Setter Property="Padding" Value="0" />
             <Setter Property="TextTransform" Value="None" />
-            <Setter Property="CornerRadius" Value="8" />
+            <Setter Property="CornerRadius" Value="6" />
             <Setter Property="BackgroundColor" Value="#211E66" />
-            <Setter Property="TextColor" Value="{StaticResource PrimaryColor}" />
+            <Setter Property="TextColor" Value="{DynamicResource PrimaryColor}" />
             <Setter Property="FontSize" Value="18" />
             <Setter Property="HeightRequest" Value="46" />
             <Setter Property="HorizontalOptions" Value="FillAndExpand" />
             <Setter Property="VerticalOptions" Value="CenterAndExpand" />
             <Setter Property="BorderColor" Value="#211E66" />
             <Setter Property="BorderWidth" Value="1" />
-            <Setter Property="Margin"  Value="1,0" />
+            <Setter Property="Margin" Value="1,0" />
             <Setter Property="xct:VisualFeedbackEffect.FeedbackColor" Value="DarkBlue" />
         </Style>
 
@@ -32,7 +35,7 @@
             <Setter Property="FontFamily" Value="ProximaNovaRegular" />
             <Setter Property="VerticalOptions" Value="CenterAndExpand" />
             <Setter Property="HorizontalOptions" Value="StartAndExpand" />
-            <Setter Property="TextColor" Value="{StaticResource PrimaryColor}" />
+            <Setter Property="TextColor" Value="{DynamicResource PrimaryColor}" />
             <Setter Property="FontSize" Value="14" />
         </Style>
 
@@ -52,6 +55,7 @@
             <Setter Property="VerticalOptions" Value="FillAndExpand" />
             <Setter Property="HorizontalOptions" Value="FillAndExpand" />
             <Setter Property="HasShadow" Value="False" />
+            <Setter Property="IsClippedToBounds" Value="true" />
         </Style>
         <Style ApplyToDerivedTypes="True" TargetType="Yummy:PancakeView">
             <Setter Property="BackgroundColor" Value="White" />
@@ -59,13 +63,16 @@
             <Setter Property="Padding" Value="20" />
             <Setter Property="VerticalOptions" Value="StartAndExpand" />
             <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+            <Setter Property="IsClippedToBounds" Value="true" />
         </Style>
 
         <Style ApplyToDerivedTypes="True" TargetType="Entry">
             <Setter Property="FontFamily" Value="ProximaNovaRegular" />
-            <Setter Property="TextColor" Value="#131313" />
-            <Setter Property="PlaceholderColor" Value="#131313" />
-            <Setter Property="FontSize" Value="15" />
+            <Setter Property="TextColor" Value="#7F7F7F" />
+            <Setter Property="PlaceholderColor" Value="#7F7F7F" />
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+            <Setter Property="VerticalOptions" Value="CenterAndExpand" />
         </Style>
 
         <Style ApplyToDerivedTypes="True" TargetType="Image">
@@ -73,13 +80,39 @@
             <Setter Property="VerticalOptions" Value="CenterAndExpand" />
         </Style>
 
-        <!--<Style ApplyToDerivedTypes="True" TargetType="Picker">
+        <Style ApplyToDerivedTypes="True" TargetType="Picker">
             <Setter Property="FontFamily" Value="ProximaNovaRegular" />
-            <Setter Property="TextColor" Value="{StaticResource PrimaryColor}" />
-            <Setter Property="TitleColor" Value="{StaticResource PrimaryColor}" />
-            <Setter Property="HorizontalTextAlignment"  Value="Center" />
+            <Setter Property="TextColor" Value="{DynamicResource PrimaryColor}" />
+            <Setter Property="TitleColor" Value="{DynamicResource PrimaryColor}" />
             <Setter Property="FontSize" Value="15" />
+        </Style>
+
+        <!--<Style ApplyToDerivedTypes="True" TargetType="xct:AvatarView">
+            <Setter Property="Size" Value="40" />
+            <Setter Property="Color" Value="Green" />
+            <Setter Property="TextColor" Value="White" />
+            <Setter Property="HorizontalOptions" Value="Center" />
+            <Setter Property="VerticalOptions" Value="Center" />
         </Style>-->
+
+        <Style ApplyToDerivedTypes="True" TargetType="xct:BadgeView">
+            <Setter Property="BackgroundColor" Value="Red" />
+            <Setter Property="FontSize" Value="10" />
+            <Setter Property="TextColor" Value="White" />
+            <Setter Property="HorizontalOptions" Value="Center" />
+            <Setter Property="VerticalOptions" Value="Center" />
+        </Style>
+
+        <Style ApplyToDerivedTypes="True" TargetType="xct:Shield">
+            <!--<Setter Property="Color"  Value="Green" />-->
+            <Setter Property="SubjectTextColor" Value="Red" />
+            <Setter Property="SubjectBackgroundColor" Value="Gray" />
+            <Setter Property="TextColor" Value="Blue" />
+            <Setter Property="StatusTextColor" Value="Gray" />
+            <Setter Property="StatusBackgroundColor" Value="Red" />
+            <Setter Property="HorizontalOptions" Value="Center" />
+            <Setter Property="VerticalOptions" Value="Center" />
+        </Style>
 
         <Style ApplyToDerivedTypes="True" TargetType="NavigationPage">
             <Setter Property="BarBackgroundColor" Value="Red" />
@@ -87,20 +120,25 @@
             <!--<Setter Property="ios:NavigationPage.HideNavigationBarSeparator" Value="True" />-->
         </Style>
 
-        <!--<Style ApplyToDerivedTypes="True" TargetType="ContentPage">
-        -->
-        <!--<Setter Property="BackgroundColor" Value="{StaticResource AppBackgroundColor}" />-->
-        <!--
-            <Setter Property="ios:Page.UseSafeArea" Value="False" />
+        <Style ApplyToDerivedTypes="True" TargetType="ContentPage">
+            <Setter Property="BackgroundColor" Value="{DynamicResource ContentPageBgColor}" />
+            <!--<Setter Property="ios:Page.UseSafeArea" Value="False" />-->
             <Setter Property="NavigationPage.HasNavigationBar" Value="False" />
-        -->
-        <!--<Setter Property="NavigationPage.BackButtonTitle" Value="" />-->
+            <!--<Setter Property="NavigationPage.BackButtonTitle" Value="" />-->
+        </Style>
+
         <!--
-        </Style>-->
+            Every where Shadow
+            xct:ShadowEffect.Color="Red"
+            xct:ShadowEffect.OffsetX="100"
+            xct:ShadowEffect.OffsetY="100"
+            xct:ShadowEffect.Opacity="1"
+            xct:ShadowEffect.Radius="33"
+        -->
 
         <Style ApplyToDerivedTypes="True" TargetType="xct:Popup">
             <Setter Property="Color" Value="Transparent" />
-            <Setter Property="Size" Value="300,320" />
+            <Setter Property="Size" Value="300,330" />
         </Style>
 
         <Style x:Key="XctTabViewStyle" TargetType="xct:TabViewItem">
@@ -112,8 +150,6 @@
             <Setter Property="FontFamily" Value="ProximaNovaRegular" />
             <Setter Property="HeightRequest" Value="60" />
         </Style>
-
-
         <Style x:Key="XctTabViewBadgeStyle" TargetType="xct:TabViewItem">
             <Setter Property="FontSize" Value="12" />
             <Setter Property="FontSizeSelected" Value="12" />

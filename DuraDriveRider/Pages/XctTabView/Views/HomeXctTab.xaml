@@ -44,7 +44,7 @@
             VerticalOptions="EndAndExpand">
             <xct:TabViewItem.Content>
                 <ScrollView VerticalScrollBarVisibility="Never">
-                    <StackLayout Padding="20">
+                    <StackLayout Padding="20" VerticalOptions="StartAndExpand">
                         <Label
                             FontSize="44"
                             Text="Home"
@@ -129,16 +129,17 @@
                                     TextColor="#000000" />
 
                                 <Frame
-                                    Margin="2,0"
-                                    Padding="0"
+                                    Padding="10,0"
                                     BackgroundColor="#211E66"
-                                    BorderColor="#211E66">
+                                    BorderColor="#211E66"
+                                    CornerRadius="5"
+                                    HeightRequest="35"
+                                    HorizontalOptions="EndAndExpand"
+                                    WidthRequest="90">
                                     <Grid InputTransparent="False">
                                         <Picker
                                             Title="Days"
                                             FontFamily="ProximaNovaRegular"
-                                            FontSize="14"
-                                            HorizontalTextAlignment="Center"
                                             ItemDisplayBinding="{Binding .}"
                                             ItemsSource="{Binding DaysList}"
                                             SelectedItem="{Binding DaysSelected}"
@@ -152,7 +153,7 @@
                                             HeightRequest="20"
                                             HorizontalOptions="EndAndExpand"
                                             InputTransparent="True"
-                                            Source="filled_dropdown"
+                                            Source="filled_dropdownwhite"
                                             VerticalOptions="Center"
                                             WidthRequest="20" />
                                     </Grid>
@@ -162,7 +163,8 @@
                             <Frame
                                 Padding="0"
                                 BackgroundColor="#EBE9FF"
-                                CornerRadius="5">
+                                CornerRadius="5"
+                                VerticalOptions="StartAndExpand">
                                 <Grid
                                     Grid.Row="2"
                                     ColumnSpacing="0"
@@ -213,26 +215,23 @@
                                 </Grid>
                             </Frame>
 
-
-                            <StackLayout>
-                                <CollectionView
-                                    Margin="0,10,0,5"
-                                    ItemsSource="{Binding DuraExpressOfList}"
-                                    VerticalOptions="FillAndExpand">
-                                    <CollectionView.ItemsLayout>
-                                        <GridItemsLayout Orientation="Vertical" VerticalItemSpacing="20" />
-                                    </CollectionView.ItemsLayout>
-                                    <CollectionView.ItemTemplate>
-                                        <DataTemplate>
-                                            <Frame
-                                                BackgroundColor="#e6e6ff"
-                                                BorderColor="#e6e6ff"
-                                                CornerRadius="5">
-                                                <StackLayout Orientation="Horizontal">
-                                                    <StackLayout.GestureRecognizers>
-                                                        <TapGestureRecognizer Command="{Binding Path=BindingContext.EWalletCommand, Source={x:Reference thispage}}" CommandParameter="{Binding .}" />
-                                                    </StackLayout.GestureRecognizers>
-                                                    <StackLayout>
+                            <CollectionView
+                                Margin="0,10,0,5"
+                                IsVisible="{Binding PersonalDetailsIsVisible}"
+                                ItemsSource="{Binding DuraExpressOfList}"
+                                VerticalOptions="FillAndExpand">
+                                <CollectionView.ItemsLayout>
+                                    <GridItemsLayout Orientation="Vertical" VerticalItemSpacing="20" />
+                                </CollectionView.ItemsLayout>
+                                <CollectionView.ItemTemplate>
+                                    <DataTemplate>
+                                        <Frame
+                                            Padding="10,0,0,8"
+                                            HasShadow="True"
+                                            VerticalOptions="StartAndExpand">
+                                            <StackLayout>
+                                                <Grid>
+                                                    <StackLayout Orientation="Horizontal">
                                                         <Label
                                                             FontFamily="ProximaNovaRegular"
                                                             FontSize="12"
@@ -242,32 +241,387 @@
 
                                                         <Label
                                                             FontFamily="ProximaNovaBold"
-                                                            FontSize="14"
-                                                            Text="{Binding TitleName}"
+                                                            HorizontalOptions="StartAndExpand"
+                                                            Text="{Binding Name}"
                                                             TextColor="#000000"
                                                             VerticalOptions="CenterAndExpand" />
                                                     </StackLayout>
-                                                    <StackLayout Grid.Column="1" HorizontalOptions="EndAndExpand">
+                                                    <yummy:PancakeView
+                                                        Grid.Column="1"
+                                                        Padding="6"
+                                                        BackgroundColor="{Binding StatusBgColor}"
+                                                        CornerRadius="0,0,12,0"
+                                                        HorizontalOptions="EndAndExpand">
+                                                        <Label
+                                                            FontFamily="ProximaNovaRegular"
+                                                            FontSize="14"
+                                                            HorizontalOptions="CenterAndExpand"
+                                                            Text="{Binding Status}"
+                                                            TextColor="{Binding StatusTextColor}"
+                                                            VerticalOptions="CenterAndExpand" />
+                                                    </yummy:PancakeView>
+
+                                                </Grid>
+                                                <StackLayout Orientation="Horizontal">
+                                                    <StackLayout Spacing="0">
+                                                        <xct:AvatarView
+                                                            HorizontalOptions="Start"
+                                                            Size="10"
+                                                            TextColor="Transparent"
+                                                            VerticalOptions="Center"
+                                                            Color="#6EB76C" />
+                                                        <BoxView
+                                                            Margin="4,0"
+                                                            HorizontalOptions="Start"
+                                                            VerticalOptions="FillAndExpand"
+                                                            WidthRequest="2" />
+
+                                                        <xct:AvatarView
+                                                            HorizontalOptions="Start"
+                                                            Size="10"
+                                                            TextColor="Transparent"
+                                                            VerticalOptions="Center"
+                                                            Color="#F67A7A" />
+                                                    </StackLayout>
+                                                    <StackLayout Spacing="5">
+                                                        <StackLayout Orientation="Horizontal">
+                                                            <Label
+                                                                Margin="0,0,0,0"
+                                                                FontFamily="ProximaNovaRegular"
+                                                                FontSize="12"
+                                                                HorizontalOptions="Start"
+                                                                Text="Pickup"
+                                                                TextColor="#000000"
+                                                                VerticalOptions="StartAndExpand"
+                                                                WidthRequest="60" />
+                                                            <Label
+                                                                FontFamily="ProximaNovaRegular"
+                                                                FontSize="12"
+                                                                HorizontalOptions="Start"
+                                                                Text="{Binding Address}"
+                                                                TextColor="#000000"
+                                                                VerticalOptions="StartAndExpand" />
+                                                        </StackLayout>
+                                                        <StackLayout Orientation="Horizontal">
+                                                            <Label
+                                                                Margin="0,0,0,0"
+                                                                FontFamily="ProximaNovaRegular"
+                                                                FontSize="12"
+                                                                HorizontalOptions="Start"
+                                                                Text="Drop Off"
+                                                                TextColor="#000000"
+                                                                VerticalOptions="EndAndExpand"
+                                                                WidthRequest="60" />
+                                                            <Label
+                                                                Margin="0,0,0,0"
+                                                                FontFamily="ProximaNovaRegular"
+                                                                FontSize="12"
+                                                                HorizontalOptions="Start"
+                                                                Text="{Binding Address}"
+                                                                TextColor="#000000"
+                                                                VerticalOptions="EndAndExpand"
+                                                                VerticalTextAlignment="Center" />
+                                                        </StackLayout>
+
+                                                    </StackLayout>
+                                                </StackLayout>
+
+                                                <Grid Padding="0,8,0,2">
+                                                    <Label
+                                                        FontFamily="ProximaNovaBold"
+                                                        FontSize="14"
+                                                        HorizontalOptions="StartAndExpand"
+                                                        Text="{Binding Charges}"
+                                                        TextColor="{Binding ChargesTextColor}"
+                                                        VerticalOptions="Center" />
+                                                    <Label
+                                                        Margin="0,0,0,0"
+                                                        FontFamily="ProximaNovaRegular"
+                                                        FontSize="12"
+                                                        HorizontalOptions="EndAndExpand"
+                                                        Text="{Binding date}"
+                                                        TextColor="#676767" />
+                                                </Grid>
+                                                <StackLayout.GestureRecognizers>
+                                                    <TapGestureRecognizer Command="{Binding Path=BindingContext.EWalletCommand, Source={x:Reference thispage}}" CommandParameter="{Binding .}" />
+                                                </StackLayout.GestureRecognizers>
+                                            </StackLayout>
+                                        </Frame>
+                                    </DataTemplate>
+                                </CollectionView.ItemTemplate>
+                            </CollectionView>
+
+                            <CollectionView
+                                Margin="0,10,0,5"
+                                IsVisible="{Binding OfficialDetailsIsVisible}"
+                                ItemsSource="{Binding DuraShopsOfList}"
+                                VerticalOptions="FillAndExpand">
+                                <CollectionView.ItemsLayout>
+                                    <GridItemsLayout Orientation="Vertical" VerticalItemSpacing="20" />
+                                </CollectionView.ItemsLayout>
+                                <CollectionView.ItemTemplate>
+                                    <DataTemplate>
+                                        <Frame
+                                            Padding="10,0,0,8"
+                                            HasShadow="True"
+                                            VerticalOptions="StartAndExpand">
+                                            <StackLayout>
+                                                <Grid>
+                                                    <StackLayout Orientation="Horizontal">
                                                         <Label
                                                             FontFamily="ProximaNovaRegular"
                                                             FontSize="12"
-                                                            Text="05 Feb 2021"
+                                                            Text="Service Type"
                                                             TextColor="#000000"
                                                             VerticalOptions="CenterAndExpand" />
 
                                                         <Label
                                                             FontFamily="ProximaNovaBold"
-                                                            FontSize="14"
-                                                            Text="₱ 30.00"
+                                                            HorizontalOptions="StartAndExpand"
+                                                            Text="{Binding Name}"
                                                             TextColor="#000000"
                                                             VerticalOptions="CenterAndExpand" />
                                                     </StackLayout>
+                                                    <yummy:PancakeView
+                                                        Grid.Column="1"
+                                                        Padding="6"
+                                                        BackgroundColor="{Binding StatusBgColor}"
+                                                        CornerRadius="0,0,12,0"
+                                                        HorizontalOptions="EndAndExpand">
+                                                        <Label
+                                                            FontFamily="ProximaNovaRegular"
+                                                            FontSize="14"
+                                                            HorizontalOptions="CenterAndExpand"
+                                                            Text="{Binding Status}"
+                                                            TextColor="{Binding StatusTextColor}"
+                                                            VerticalOptions="CenterAndExpand" />
+                                                    </yummy:PancakeView>
+
+                                                </Grid>
+                                                <StackLayout Orientation="Horizontal">
+                                                    <StackLayout Spacing="0">
+                                                        <xct:AvatarView
+                                                            HorizontalOptions="Start"
+                                                            Size="10"
+                                                            TextColor="Transparent"
+                                                            VerticalOptions="Center"
+                                                            Color="#6EB76C" />
+                                                        <BoxView
+                                                            Margin="4,0"
+                                                            HorizontalOptions="Start"
+                                                            VerticalOptions="FillAndExpand"
+                                                            WidthRequest="2" />
+
+                                                        <xct:AvatarView
+                                                            HorizontalOptions="Start"
+                                                            Size="10"
+                                                            TextColor="Transparent"
+                                                            VerticalOptions="Center"
+                                                            Color="#F67A7A" />
+                                                    </StackLayout>
+                                                    <StackLayout Spacing="5">
+                                                        <StackLayout Orientation="Horizontal">
+                                                            <Label
+                                                                Margin="0,0,0,0"
+                                                                FontFamily="ProximaNovaRegular"
+                                                                FontSize="12"
+                                                                HorizontalOptions="Start"
+                                                                Text="Pickup"
+                                                                TextColor="#000000"
+                                                                VerticalOptions="StartAndExpand"
+                                                                WidthRequest="60" />
+                                                            <Label
+                                                                FontFamily="ProximaNovaRegular"
+                                                                FontSize="12"
+                                                                HorizontalOptions="Start"
+                                                                Text="{Binding Address}"
+                                                                TextColor="#000000"
+                                                                VerticalOptions="StartAndExpand" />
+                                                        </StackLayout>
+                                                        <StackLayout Orientation="Horizontal">
+                                                            <Label
+                                                                Margin="0,0,0,0"
+                                                                FontFamily="ProximaNovaRegular"
+                                                                FontSize="12"
+                                                                HorizontalOptions="Start"
+                                                                Text="Drop Off"
+                                                                TextColor="#000000"
+                                                                VerticalOptions="EndAndExpand"
+                                                                WidthRequest="60" />
+                                                            <Label
+                                                                Margin="0,0,0,0"
+                                                                FontFamily="ProximaNovaRegular"
+                                                                FontSize="12"
+                                                                HorizontalOptions="Start"
+                                                                Text="{Binding Address}"
+                                                                TextColor="#000000"
+                                                                VerticalOptions="EndAndExpand"
+                                                                VerticalTextAlignment="Center" />
+                                                        </StackLayout>
+
+                                                    </StackLayout>
                                                 </StackLayout>
-                                            </Frame>
-                                        </DataTemplate>
-                                    </CollectionView.ItemTemplate>
-                                </CollectionView>
-                            </StackLayout>
+
+                                                <Grid Padding="0,8,0,2">
+                                                    <Label
+                                                        FontFamily="ProximaNovaBold"
+                                                        FontSize="14"
+                                                        HorizontalOptions="StartAndExpand"
+                                                        Text="{Binding Charges}"
+                                                        TextColor="{Binding ChargesTextColor}"
+                                                        VerticalOptions="Center" />
+                                                    <Label
+                                                        Margin="0,0,0,0"
+                                                        FontFamily="ProximaNovaRegular"
+                                                        FontSize="12"
+                                                        HorizontalOptions="EndAndExpand"
+                                                        Text="{Binding date}"
+                                                        TextColor="#676767" />
+                                                </Grid>
+                                                <StackLayout.GestureRecognizers>
+                                                    <TapGestureRecognizer Command="{Binding Path=BindingContext.EWalletCommand, Source={x:Reference thispage}}" CommandParameter="{Binding .}" />
+                                                </StackLayout.GestureRecognizers>
+                                            </StackLayout>
+                                        </Frame>
+                                    </DataTemplate>
+                                </CollectionView.ItemTemplate>
+                            </CollectionView>
+
+                            <CollectionView
+                                Margin="0,10,0,5"
+                                IsVisible="{Binding PaymentDetailsIsVisible}"
+                                ItemsSource="{Binding DuraOfList}"
+                                VerticalOptions="FillAndExpand">
+                                <CollectionView.ItemsLayout>
+                                    <GridItemsLayout Orientation="Vertical" VerticalItemSpacing="20" />
+                                </CollectionView.ItemsLayout>
+                                <CollectionView.ItemTemplate>
+                                    <DataTemplate>
+                                        <Frame
+                                            Padding="10,0,0,8"
+                                            HasShadow="True"
+                                            VerticalOptions="StartAndExpand">
+                                            <StackLayout>
+                                                <Grid>
+                                                    <StackLayout Orientation="Horizontal">
+                                                        <Label
+                                                            FontFamily="ProximaNovaRegular"
+                                                            FontSize="12"
+                                                            Text="Service Type"
+                                                            TextColor="#000000"
+                                                            VerticalOptions="CenterAndExpand" />
+
+                                                        <Label
+                                                            FontFamily="ProximaNovaBold"
+                                                            HorizontalOptions="StartAndExpand"
+                                                            Text="{Binding Name}"
+                                                            TextColor="#000000"
+                                                            VerticalOptions="CenterAndExpand" />
+                                                    </StackLayout>
+                                                    <yummy:PancakeView
+                                                        Grid.Column="1"
+                                                        Padding="6"
+                                                        BackgroundColor="{Binding StatusBgColor}"
+                                                        CornerRadius="0,0,12,0"
+                                                        HorizontalOptions="EndAndExpand">
+                                                        <Label
+                                                            FontFamily="ProximaNovaRegular"
+                                                            FontSize="14"
+                                                            HorizontalOptions="CenterAndExpand"
+                                                            Text="{Binding Status}"
+                                                            TextColor="{Binding StatusTextColor}"
+                                                            VerticalOptions="CenterAndExpand" />
+                                                    </yummy:PancakeView>
+
+                                                </Grid>
+                                                <StackLayout Orientation="Horizontal">
+                                                    <StackLayout Spacing="0">
+                                                        <xct:AvatarView
+                                                            HorizontalOptions="Start"
+                                                            Size="10"
+                                                            TextColor="Transparent"
+                                                            VerticalOptions="Center"
+                                                            Color="#6EB76C" />
+                                                        <BoxView
+                                                            Margin="4,0"
+                                                            HorizontalOptions="Start"
+                                                            VerticalOptions="FillAndExpand"
+                                                            WidthRequest="2" />
+
+                                                        <xct:AvatarView
+                                                            HorizontalOptions="Start"
+                                                            Size="10"
+                                                            TextColor="Transparent"
+                                                            VerticalOptions="Center"
+                                                            Color="#F67A7A" />
+                                                    </StackLayout>
+                                                    <StackLayout Spacing="5">
+                                                        <StackLayout Orientation="Horizontal">
+                                                            <Label
+                                                                Margin="0,0,0,0"
+                                                                FontFamily="ProximaNovaRegular"
+                                                                FontSize="12"
+                                                                HorizontalOptions="Start"
+                                                                Text="Pickup"
+                                                                TextColor="#000000"
+                                                                VerticalOptions="StartAndExpand"
+                                                                WidthRequest="60" />
+                                                            <Label
+                                                                FontFamily="ProximaNovaRegular"
+                                                                FontSize="12"
+                                                                HorizontalOptions="Start"
+                                                                Text="{Binding Address}"
+                                                                TextColor="#000000"
+                                                                VerticalOptions="StartAndExpand" />
+                                                        </StackLayout>
+                                                        <StackLayout Orientation="Horizontal">
+                                                            <Label
+                                                                Margin="0,0,0,0"
+                                                                FontFamily="ProximaNovaRegular"
+                                                                FontSize="12"
+                                                                HorizontalOptions="Start"
+                                                                Text="Drop Off"
+                                                                TextColor="#000000"
+                                                                VerticalOptions="EndAndExpand"
+                                                                WidthRequest="60" />
+                                                            <Label
+                                                                Margin="0,0,0,0"
+                                                                FontFamily="ProximaNovaRegular"
+                                                                FontSize="12"
+                                                                HorizontalOptions="Start"
+                                                                Text="{Binding Address}"
+                                                                TextColor="#000000"
+                                                                VerticalOptions="EndAndExpand"
+                                                                VerticalTextAlignment="Center" />
+                                                        </StackLayout>
+
+                                                    </StackLayout>
+                                                </StackLayout>
+
+                                                <Grid Padding="0,8,0,2">
+                                                    <Label
+                                                        FontFamily="ProximaNovaBold"
+                                                        FontSize="14"
+                                                        HorizontalOptions="StartAndExpand"
+                                                        Text="{Binding Charges}"
+                                                        TextColor="{Binding ChargesTextColor}"
+                                                        VerticalOptions="Center" />
+                                                    <Label
+                                                        Margin="0,0,0,0"
+                                                        FontFamily="ProximaNovaRegular"
+                                                        FontSize="12"
+                                                        HorizontalOptions="EndAndExpand"
+                                                        Text="{Binding date}"
+                                                        TextColor="#676767" />
+                                                </Grid>
+                                                <StackLayout.GestureRecognizers>
+                                                    <TapGestureRecognizer Command="{Binding Path=BindingContext.EWalletCommand, Source={x:Reference thispage}}" CommandParameter="{Binding .}" />
+                                                </StackLayout.GestureRecognizers>
+                                            </StackLayout>
+                                        </Frame>
+                                    </DataTemplate>
+                                </CollectionView.ItemTemplate>
+                            </CollectionView>
 
                         </StackLayout>
                     </ScrollView>
@@ -385,15 +739,18 @@
                                     TextColor="#C7C6D8" />
 
                                 <Frame
-                                    Margin="2,0"
-                                    Padding="0"
+                                    Padding="5,0"
                                     BackgroundColor="#211E66"
-                                    BorderColor="#211E66">
+                                    BorderColor="#211E66"
+                                    CornerRadius="5"
+                                    HeightRequest="40"
+                                    HorizontalOptions="EndAndExpand"
+                                    VerticalOptions="CenterAndExpand"
+                                    WidthRequest="120">
                                     <Grid InputTransparent="False">
                                         <Picker
                                             Title="select Payment"
-                                            FontSize="14"
-                                            HorizontalTextAlignment="Center"
+                                            HorizontalOptions="Start"
                                             ItemDisplayBinding="{Binding .}"
                                             ItemsSource="{Binding PaymentList}"
                                             SelectedItem="{Binding PaymentSelected}"
@@ -407,7 +764,7 @@
                                             HeightRequest="20"
                                             HorizontalOptions="EndAndExpand"
                                             InputTransparent="True"
-                                            Source="filled_dropdown"
+                                            Source="filled_dropdownwhite"
                                             VerticalOptions="Center"
                                             WidthRequest="20" />
 
