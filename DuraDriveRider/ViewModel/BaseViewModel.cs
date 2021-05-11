@@ -13,22 +13,30 @@ namespace DuraDriveRider.ViewModel
 {
     public class BaseViewModel : ObservableObject
     {
-        public ICommand BackCommand => new Command(async (obj) =>
+        
+        public ICommand BackCommand { get; }
+        public ICommand ClosePopUpCommand { get; }
+        public BaseViewModel()
+        {
+            Initialize();
+            BackCommand = CommandFactory.Create(Back);
+            ClosePopUpCommand = CommandFactory.Create(async () =>
+            {
+                //Navigation.ShowPopup(new SuccessfullyPopup());
+                //await Task.Delay(500);
+                //Dismiss(null);
+                await PopupNavigation.PopAsync();
+            });
+        }
+        async Task Back()
         {
             await RichNavigation.PopAsync();
-        });
-        public ICommand ClosePopUpCommand => new Command(async (obj) =>
-        {
-             //Navigation.ShowPopup(new SuccessfullyPopup());
-            //await Task.Delay(500);
-            //Dismiss(null);
-            await PopupNavigation.PopAsync();
-        });
+        }
 
-        public ICommand HomeShellCommand => new Command(async (obj) =>
+        public ICommand HomeShellCommand = CommandFactory.Create(async(obj)=>
         {
             //  App.Current.MainPage = new HomeMenuShell();
-        });
+        }); 
 
         public ICommand FlyoutIsPresentedCommand => new Command(async (obj) =>
         {
@@ -55,14 +63,7 @@ namespace DuraDriveRider.ViewModel
 
         public bool IsInitializedBase { get; protected set; }
 
-        public bool IsInitialized { get; protected set; } = false;
-
-        public ICommand ShellNavigateBackCommand { get; private set; }
-        public ICommand ClosePopupCommand { get; private set; }
-        public BaseViewModel()
-        {
-            Initialize();
-        }
+        public bool IsInitialized { get; protected set; } = false;  
 
         private void Initialize()
         {

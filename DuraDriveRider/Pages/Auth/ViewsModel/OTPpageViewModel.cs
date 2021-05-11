@@ -15,6 +15,7 @@ namespace DuraDriveRider.Pages.Auth.ViewsModel
     {
         private bool openPersonalInfo;
         public ICommand DoneCommand { get; }
+        public ICommand ResendOTPCommand { get; }
         public OTPpageViewModel(bool openPersonalInfo)
         {
             this.openPersonalInfo = openPersonalInfo;
@@ -26,6 +27,7 @@ namespace DuraDriveRider.Pages.Auth.ViewsModel
             {
                 DoneCommand = CommandFactory.Create(PersonalInfo);
             }
+            ResendOTPCommand = CommandFactory.Create(ResendOTP);
         }
         async Task Done()
         {
@@ -34,6 +36,10 @@ namespace DuraDriveRider.Pages.Auth.ViewsModel
         async Task PersonalInfo()
         {
             await RichNavigation.PushAsync(new PersonalInfoPage(), typeof(PersonalInfoPage));
+        } 
+        async Task ResendOTP()
+        {
+           // await RichNavigation.PushAsync(new PersonalInfoPage(), typeof(PersonalInfoPage));
         } 
     }
 }

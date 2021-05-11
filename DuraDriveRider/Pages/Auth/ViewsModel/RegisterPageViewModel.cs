@@ -20,6 +20,10 @@ namespace DuraDriveRider.Pages.Auth.ViewsModel
         {
 
         }
+        public ICommand CheckCommand => new Command(async (obj) =>
+        {
+           
+        });
         public ICommand RegisterCommand => new Command(async (obj) =>
         {
             bool OpenPersonalInfo = false;

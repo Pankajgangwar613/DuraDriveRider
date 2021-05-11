@@ -6,7 +6,7 @@
     xmlns:Yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
     xmlns:xct="http://xamarin.com/schemas/2020/toolkit">
     <StackLayout>
-        <StackLayout>
+        <StackLayout> 
             <Image
                 Margin="0,70,0,0"
                 HeightRequest="200"
@@ -143,7 +143,7 @@
                     </Label.FormattedText>
 
                     <Label.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding DoneCommand}" />
+                        <TapGestureRecognizer Command="{Binding ResendOTPCommand}" />
                     </Label.GestureRecognizers>
                 </Label>
             </StackLayout>

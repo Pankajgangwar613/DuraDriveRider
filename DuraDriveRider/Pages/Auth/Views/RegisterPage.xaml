@@ -15,7 +15,7 @@
                 WidthRequest="20" />
             <Label FontSize="16" Text="Back" />
             <StackLayout.GestureRecognizers>
-                <TapGestureRecognizer Command="{Binding ForgotCommand}" />
+                <TapGestureRecognizer Command="{Binding BackCommand}" />
             </StackLayout.GestureRecognizers>
         </StackLayout>
 
@@ -130,9 +130,8 @@
                                     <Span Text="Terms of Services" TextDecorations="Underline" FontFamily="ProximaNovaSemibold"  TextColor="#D72625" />
                                 </FormattedString>
                             </Label.FormattedText>
-
                             <Label.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding RegisterCommand}"/>
+                                <TapGestureRecognizer Command="{Binding CheckCommand}"/>
                             </Label.GestureRecognizers>
                         </Label>
                     </StackLayout>

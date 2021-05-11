@@ -27,7 +27,7 @@
             <Setter Property="VerticalOptions" Value="CenterAndExpand" />
             <Setter Property="BorderColor" Value="#211E66" />
             <Setter Property="BorderWidth" Value="1" />
-            <Setter Property="Margin" Value="1,0" />
+            <Setter Property="Margin" Value="2,5,2,0" />
             <Setter Property="xct:VisualFeedbackEffect.FeedbackColor" Value="DarkBlue" />
         </Style>
 
