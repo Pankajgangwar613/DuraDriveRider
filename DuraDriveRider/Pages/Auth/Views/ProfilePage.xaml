@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Page:BaseContentPage  xmlns:Page="clr-namespace:DuraDriveRider.Infrastructure" xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:Yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             x:Class="DuraDriveRider.Pages.Auth.Views.ProfilePage">
+    <ContentPage.Content>
+        <StackLayout Margin="0,0,0,0">
+            <Yummy:PancakeView
+            BackgroundColor="White"
+            CornerRadius="20,20,0,0"
+            VerticalOptions="EndAndExpand" Margin="0,0,0,0">
+                <StackLayout>
+                    <Label BackgroundColor="Green"
+                    FontAttributes="Bold"
+                    FontFamily="ProximaNovaSemibold"
+                    FontSize="Medium"
+                    Text="Set your profile photo"
+                    TextColor="Black" />
+                    <Label
+                    FontAttributes="Bold"
+                    FontFamily="ProximaNovaRegular"
+                    FontSize="Medium"
+                    Text="Make sure selfie or photo should be clear face"
+                    TextColor="#7F7F7F" />
+                    <Grid>
+                        <Grid>
+                            <Image Source="photo_placeholder.png"
+                       HorizontalOptions="Center" 
+                       HeightRequest="200" Margin="0,50,0,0"/>
+                        </Grid>
+                        <Image Source="camera.png"
+                           VerticalOptions="End"
+                           HorizontalOptions="Center" 
+                           HeightRequest="40" Margin="20,30,0,0"/>
+                    </Grid>
+
+                    <Button
+                        Margin="0,50,0,0"
+                        Command="{Binding LoginCommand}"
+                        Text="Next" />
+
+
+                </StackLayout>
+            </Yummy:PancakeView>
+        </StackLayout>
+    </ContentPage.Content>
+</Page:BaseContentPage>

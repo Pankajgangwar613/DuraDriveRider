@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DuraDriveRider.NavigationService;
+using DuraDriveRider.Pages.Auth.Views;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,5 +18,17 @@ namespace DuraDriveRider.Pages.Auth.PopUp
         {
             InitializeComponent();
         }
+
+        private async void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+        {
+            Dismiss(null);
+            await RichNavigation.PushAsync(new DocumentPage(), typeof(DocumentPage));
+        }
+
+        private async void Submit_Clicked(object sender, EventArgs e)
+        {
+            Dismiss(null);
+            await RichNavigation.PushAsync(new DocumentPage(), typeof(DocumentPage));
+        } 
     }
 }

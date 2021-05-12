@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Base:BaseContentPage  xmlns:Base="clr-namespace:DuraDriveRider.Infrastructure" xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DuraDriveRider.Pages.Auth.Views.DuraBageServicePage">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout
+            Padding="10,15"
+            Orientation="Horizontal"
+            Spacing="1">
+                <Image
+                HeightRequest="20"
+                HorizontalOptions="Start"
+                Rotation="180"
+                Source="backarrowwhite"
+                WidthRequest="20" />
+                <Label FontSize="16" Text="Back" TextColor="Black" />
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding OtpCommand}" />
+                </StackLayout.GestureRecognizers>
+            </StackLayout>
+            <Image
+            Margin="0,110,0,0"
+            HeightRequest="150"
+            HorizontalOptions="CenterAndExpand"
+            Source="logo_white.png"
+            VerticalOptions="StartAndExpand"
+            WidthRequest="150" />
+            <Yummy:PancakeView
+            BackgroundColor="White"
+            CornerRadius="20,20,0,0"
+            HeightRequest="280"
+            VerticalOptions="EndAndExpand">
+                <StackLayout>
+                    <StackLayout>
+                        <Label
+                    FontAttributes="Bold"
+                    FontFamily="ProximaNovaSemibold"
+                    FontSize="Medium"
+                    Text="DuraBag Service "
+                    TextColor="Black" 
+                     Margin="0,10,0,0"/>
+                        <Label
+                    
+                    FontFamily="ProximaNovaSemibold"
+                    FontSize="Small"
+                    Text="If you don't have DuraBag, you will not get job requiring the additional DuraBag Services "
+                    TextColor="Gray"/>
+
+                    </StackLayout>
+                    <StackLayout >
+                        <Image Source="check.png"
+                       HeightRequest="10"
+                       VerticalOptions="Start"
+                       HorizontalOptions="Start"
+                           Margin="0,10,0,0"/>
+                        <Label Text="Have DuraBag"
+                       FontFamily="ProximaNovaRegular"
+                       VerticalOptions="Start"
+                       TextColor="Black"
+                       HorizontalOptions="Start"
+                        Margin="15,0,0,0"/>
+                        <Image Source="uncheck.png"
+                       HeightRequest="10"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Center"
+                       Margin="30,0,0,0"/>
+                        <Label Text="Don't have DuraBag"
+                       FontFamily="ProximaNovaRegular"
+                       VerticalOptions="End"
+                       TextColor="Black"
+                       HorizontalOptions="End"
+                       Margin="0,-20,0,0"/>
+
+
+
+
+                        <Grid VerticalOptions="CenterAndExpand">
+                            <Entry
+                            Placeholder="Enter DuraBag id" >
+
+                            </Entry>
+
+                        </Grid>
+
+                    </StackLayout>
+
+                    <Button
+                        Margin="0,10" 
+                        Command="{Binding OTPCommand}"
+                        Text="Done"  />
+
+                </StackLayout>
+            </Yummy:PancakeView>
+        </StackLayout>
+    </ContentPage.Content>
+</Base:BaseContentPage>

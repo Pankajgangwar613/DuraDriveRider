@@ -9,11 +9,11 @@ using Xamarin.Forms;
 
 namespace DuraDriveRider.Pages.Auth.ViewsModel
 {
-   public class PersonalInfoPageViewModel : BaseViewModel
+   public class DocumentPageViewModel :BaseViewModel
     {
         public ICommand NextCommand => new Command(async (obj) =>
-        { 
-            await RichNavigation.PushAsync(new DocumentPage(), typeof(DocumentPage));
+        {
+            await RichNavigation.PushAsync(new BankInfoPage(), typeof(BankInfoPage));
         });
     }
 }

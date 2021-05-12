@@ -14,10 +14,11 @@
                     Source="referral_graphic"
                     WidthRequest="180" />
             </StackLayout>
-            <StackLayout HeightRequest="200"
+            <StackLayout
                 Margin="10,0"
                 Padding="0"
-                BackgroundColor="White">
+                BackgroundColor="White"
+                HeightRequest="200">
                 <Label
                     FontAttributes="Bold"
                     FontFamily="ProximaNovaSemibold"
@@ -37,18 +38,22 @@
                     <BoxView VerticalOptions="EndAndExpand" />
                 </Grid>
                 <Button
-                    Margin="2,6,2,10"
+                    x:Name="Submit" 
+                    Margin="2,6,2,10" Clicked="Submit_Clicked"
                     Command="{Binding SubmitCommand}"
                     Text="Submit" />
-                <StackLayout >
-                    <Label 
-                   TextDecorations="Underline"
-                    Text="Skip" HorizontalOptions="Center" VerticalOptions="EndAndExpand"
-                    TextColor="#D72625" >
+                <StackLayout>
+                    <Label
+                        x:Name="Skip"
+                        HorizontalOptions="Center"
+                        Text="Skip"
+                        TextColor="#D72625"
+                        TextDecorations="Underline"
+                        VerticalOptions="EndAndExpand">
                         <Label.GestureRecognizers>
-                            <TapGestureRecognizer  Command="{Binding SkipCommand}"/>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
                         </Label.GestureRecognizers>
-                    </Label> 
+                    </Label>
                 </StackLayout>
             </StackLayout>
         </StackLayout>
