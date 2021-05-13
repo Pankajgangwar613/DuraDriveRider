@@ -1,4 +1,5 @@
 ﻿using DuraDriveRider.Infrastructure;
+using DuraDriveRider.Pages.XctTabView.PopUp;
 using DuraDriveRider.Pages.XctTabView.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -21,6 +22,7 @@ namespace DuraDriveRider.Pages.XctTabView.Views
         {
             InitializeComponent();
             BindingContext = new HomeXctTabViewModel();
+            Navigation.ShowPopup(new DuraExpressPopUp());
         }
         public HomeXctTab(int selectedTab)
         {
@@ -42,6 +44,8 @@ namespace DuraDriveRider.Pages.XctTabView.Views
                 MyTabView.SelectedIndex = 0;
             }
             BindingContext = new HomeXctTabViewModel();
+            //await Task.Delay(500);  
+            Navigation.ShowPopup(new DuraExpressPopUp());
         }
         private void Button_Clicked(object sender, EventArgs e)
         {

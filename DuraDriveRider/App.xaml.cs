@@ -1,4 +1,5 @@
 ﻿using DuraDriveRider.Pages.Auth.Views;
+using DuraDriveRider.Pages.Views;
 using DuraDriveRider.Pages.XctTabView.Views;
 using DuraDriveRider.Resources;
 using System;

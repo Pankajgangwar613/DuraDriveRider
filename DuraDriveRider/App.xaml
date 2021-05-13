@@ -30,7 +30,19 @@
             <Setter Property="Margin" Value="2,5,2,0" />
             <Setter Property="xct:VisualFeedbackEffect.FeedbackColor" Value="DarkBlue" />
         </Style>
-
+        
+        <Style ApplyToDerivedTypes="True" TargetType="ImageButton"> 
+            <Setter Property="BackgroundColor" Value="Transparent" />
+            <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+            <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+            <Setter Property="xct:VisualFeedbackEffect.FeedbackColor" Value="DarkBlue" />
+        </Style>
+        
+        <Style ApplyToDerivedTypes="True" TargetType="Image">
+            <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+            <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+        </Style>
+        
         <Style ApplyToDerivedTypes="True" TargetType="Label">
             <Setter Property="FontFamily" Value="ProximaNovaRegular" />
             <Setter Property="VerticalOptions" Value="CenterAndExpand" />
@@ -72,11 +84,6 @@
             <Setter Property="PlaceholderColor" Value="#7F7F7F" />
             <Setter Property="FontSize" Value="14" />
             <Setter Property="HorizontalOptions" Value="FillAndExpand" />
-            <Setter Property="VerticalOptions" Value="CenterAndExpand" />
-        </Style>
-
-        <Style ApplyToDerivedTypes="True" TargetType="Image">
-            <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
             <Setter Property="VerticalOptions" Value="CenterAndExpand" />
         </Style>
 

@@ -14,14 +14,6 @@
         <ResourceDictionary>
             <xct:StateToBooleanConverter x:Key="StateToBooleanConverter" />
 
-            <DataTemplate x:Key="error_template">
-                <Label
-                    HorizontalOptions="Center"
-                    HorizontalTextAlignment="Center"
-                    Text="Something went horribly wrong!"
-                    VerticalOptions="Center"
-                    VerticalTextAlignment="Center" />
-            </DataTemplate>
             <Style x:Key="ActiveIndicator" TargetType="Frame">
                 <Setter Property="BackgroundColor" Value="#978348" />
             </Style>
@@ -45,13 +37,12 @@
             Text="Home"
             VerticalOptions="EndAndExpand">
             <xct:TabViewItem.Content>
-                <Grid RowDefinitions="120,*">
+                <Grid RowDefinitions="80,*">
                     <yummy:PancakeView
                         BackgroundColor="#211E66"
                         CornerRadius="0,0,10,10"
-                        HeightRequest="95"
                         VerticalOptions="StartAndExpand">
-                        <Grid Margin="15,10">
+                        <Grid Margin="15,0">
                             <Grid InputTransparent="False">
                                 <Picker
                                     Title="Hi, John"
@@ -87,12 +78,10 @@
                                     Source="help"
                                     VerticalOptions="Center"
                                     WidthRequest="22" />
-                                <Image
+                                <ImageButton
+                                    Command="{Binding NotificationCommand}"
                                     HeightRequest="22"
-                                    HorizontalOptions="Center"
-                                    InputTransparent="True"
                                     Source="notification"
-                                    VerticalOptions="Center"
                                     WidthRequest="22" />
                             </StackLayout>
                         </Grid>
@@ -180,7 +169,7 @@
                                                                         <Label
                                                                             FontFamily="ProximaNovaBold"
                                                                             HorizontalOptions="StartAndExpand"
-                                                                            Text="{Binding Name}"   
+                                                                            Text="{Binding Name}"
                                                                             TextColor="#000000"
                                                                             VerticalOptions="CenterAndExpand" />
                                                                     </StackLayout>
@@ -191,7 +180,7 @@
                                                                         CornerRadius="0,0,12,0"
                                                                         HorizontalOptions="EndAndExpand">
                                                                         <Label
-                                                                            FontFamily="ProximaNovaRegular" 
+                                                                            FontFamily="ProximaNovaRegular"
                                                                             HorizontalOptions="StartAndExpand"
                                                                             Text="{Binding Status}"
                                                                             TextColor="{Binding StatusTextColor}"
@@ -312,7 +301,6 @@
             </xct:TabViewItem.Content>
         </xct:TabViewItem>
 
-
         <!--  Order  -->
         <xct:TabViewItem
             x:Name="Order"
@@ -322,13 +310,12 @@
             Text="Order"
             VerticalOptions="EndAndExpand">
             <xct:TabViewItem.Content>
-                <Grid RowDefinitions="120,*">
+                <Grid RowDefinitions="80,*">
                     <yummy:PancakeView
                         BackgroundColor="#211E66"
                         CornerRadius="0,0,10,10"
-                        HeightRequest="95"
                         VerticalOptions="StartAndExpand">
-                        <Grid Margin="15,10">
+                        <Grid Margin="15,0">
                             <Grid InputTransparent="False">
                                 <Picker
                                     Title="Hi, John"
@@ -364,19 +351,17 @@
                                     Source="help"
                                     VerticalOptions="Center"
                                     WidthRequest="22" />
-                                <Image
+                                <ImageButton
+                                    Command="{Binding NotificationCommand}"
                                     HeightRequest="22"
-                                    HorizontalOptions="Center"
-                                    InputTransparent="True"
                                     Source="notification"
-                                    VerticalOptions="Center"
                                     WidthRequest="22" />
                             </StackLayout>
                         </Grid>
                     </yummy:PancakeView>
 
                     <ScrollView Grid.Row="1" VerticalScrollBarVisibility="Never">
-                        <StackLayout Padding="15,15,15,0">
+                        <StackLayout Padding="15,0,15,0">
                             <StackLayout Padding="0,10" Orientation="Horizontal">
                                 <Label
                                     FontFamily="ProximaNovaRegular"
@@ -892,13 +877,12 @@
             Text="E-Wallet"
             VerticalOptions="EndAndExpand">
             <xct:TabViewItem.Content>
-                <Grid RowDefinitions="120,*">
+                <Grid RowDefinitions="80,*">
                     <yummy:PancakeView
                         BackgroundColor="#211E66"
                         CornerRadius="0,0,10,10"
-                        HeightRequest="95"
                         VerticalOptions="StartAndExpand">
-                        <Grid Margin="15,10">
+                        <Grid Margin="15,0">
                             <Grid InputTransparent="False">
                                 <Picker
                                     Title="Hi, John"
@@ -934,12 +918,10 @@
                                     Source="help"
                                     VerticalOptions="Center"
                                     WidthRequest="22" />
-                                <Image
+                                <ImageButton
+                                    Command="{Binding NotificationCommand}"
                                     HeightRequest="22"
-                                    HorizontalOptions="Center"
-                                    InputTransparent="True"
                                     Source="notification"
-                                    VerticalOptions="Center"
                                     WidthRequest="22" />
                             </StackLayout>
                         </Grid>
@@ -1003,7 +985,7 @@
                                     WidthRequest="120">
                                     <Grid InputTransparent="False">
                                         <Picker
-                                            Title="select Payment"
+                                            Title="Payment mode"
                                             HorizontalOptions="Start"
                                             ItemDisplayBinding="{Binding .}"
                                             ItemsSource="{Binding PaymentList}"
@@ -1102,83 +1084,79 @@
             Text="Profile"
             VerticalOptions="EndAndExpand">
             <xct:TabViewItem.Content>
-                <Grid RowDefinitions="120,*">
+                <Grid RowDefinitions="112,*">
                     <Grid>
                         <Grid>
                             <yummy:PancakeView
                                 BackgroundColor="#211E66"
                                 CornerRadius="0,0,10,10"
-                                HeightRequest="95"
+                                HeightRequest="45"
                                 VerticalOptions="StartAndExpand" />
-                            <StackLayout
-                                Margin="12,2"
-                                HorizontalOptions="StartAndExpand"
-                                Orientation="Horizontal"
-                                VerticalOptions="EndAndExpand">
-                                <xct:AvatarView
-                                    FontSize="14"
-                                    Size="90"
-                                    Source="profile_active"
-                                    Text="Profile Name"
-                                    TextColor="White"
-                                    Color="Gray" />
-                                <StackLayout Spacing="2">
-                                    <Label
-                                        FontSize="18"
-                                        HorizontalOptions="Start"
-                                        Text="John Doe"
-                                        TextColor="White"
-                                        VerticalOptions="EndAndExpand" />
-                                    <Label
-                                        FontSize="16"
-                                        HorizontalOptions="Start"
-                                        Text="DD94874"
-                                        TextColor="White"
-                                        VerticalOptions="StartAndExpand" />
-                                    <StackLayout Orientation="Horizontal" Spacing="2">
-                                        <Image
-                                            HeightRequest="14"
-                                            HorizontalOptions="Start"
-                                            Source="verified"
-                                            VerticalOptions="Center"
-                                            WidthRequest="14" />
-                                        <Label
-                                            HorizontalOptions="Start"
-                                            Text="Verified"
-                                            TextColor="#0BAC00"
-                                            VerticalOptions="Center" />
-
-                                    </StackLayout>
-                                </StackLayout>
-
-
-                                <StackLayout
-                                    Margin="50,0,0,0"
-                                    HorizontalOptions="EndAndExpand"
-                                    Orientation="Horizontal"
-                                    VerticalOptions="CenterAndExpand">
-                                    <Label
-                                        HorizontalOptions="Start"
-                                        Text="View Profile"
-                                        TextColor="White"
-                                        VerticalOptions="Center" />
-                                    <Image
-                                        HeightRequest="15"
-                                        HorizontalOptions="Start"
-                                        Source="backarrowwhite"
-                                        VerticalOptions="Center"
-                                        WidthRequest="15" />
-                                    <StackLayout.GestureRecognizers>
-                                        <TapGestureRecognizer Command="{Binding ViewProfileCommand}" />
-                                    </StackLayout.GestureRecognizers>
-                                </StackLayout>
-                            </StackLayout>
                         </Grid>
+                        <StackLayout
+                            Margin="12,0"
+                            HorizontalOptions="StartAndExpand"
+                            Orientation="Horizontal"
+                            VerticalOptions="CenterAndExpand">
+                            <xct:AvatarView
+                                Margin="0,20,0,0"
+                                FontSize="14"
+                                Size="70"
+                                Source="profile_active"
+                                Text="Profile Name"
+                                TextColor="White"
+                                Color="Gray" />
+                            <StackLayout Spacing="2">
+                                <Label
+                                    FontSize="16"
+                                    HorizontalOptions="Start"
+                                    Text="John Doe"
+                                    VerticalOptions="EndAndExpand" />
+                                <Label
+                                    HorizontalOptions="Start"
+                                    Text="DD94874"
+                                    VerticalOptions="StartAndExpand" />
+
+                            </StackLayout>
+                        </StackLayout>
+
+                        <StackLayout
+                            Margin="0,15,15,0"
+                            HorizontalOptions="EndAndExpand"
+                            Orientation="Horizontal"
+                            VerticalOptions="CenterAndExpand">
+                            <Label
+                                HorizontalOptions="EndAndExpand"
+                                Text="View Profile"
+                                TextColor="White"
+                                VerticalOptions="Center" />
+                            <Image
+                                HeightRequest="15"
+                                HorizontalOptions="Start"
+                                Source="backarrowwhite"
+                                VerticalOptions="Center"
+                                WidthRequest="15" />
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding ViewProfileCommand}" />
+                            </StackLayout.GestureRecognizers>
+                        </StackLayout>
+                        <Button
+                            Margin="0,0,12,0"
+                            Padding="15,0"
+                            BackgroundColor=" #f0a8a8"
+                            BorderColor="#f0a8a8"
+                            CornerRadius="1"
+                            FontSize="10"
+                            HeightRequest="25"
+                            HorizontalOptions="Center"
+                            Text="Your account is being reviewed"
+                            TextColor="#D72625"
+                            VerticalOptions="EndAndExpand" />
+
                     </Grid>
                     <ScrollView Grid.Row="1" VerticalScrollBarVisibility="Never">
                         <StackLayout Padding="20">
-                            <CollectionView
-                                HeightRequest="150"
+                            <CollectionView HeightRequest="250"
                                 ItemsSource="{Binding ProfileItems}"
                                 VerticalOptions="FillAndExpand">
                                 <CollectionView.ItemsLayout>
@@ -1190,10 +1168,10 @@
                                             BackgroundColor="#EBE9FF"
                                             BorderColor="#EBE9FF"
                                             CornerRadius="5">
+                                            <Frame.GestureRecognizers>
+                                                <TapGestureRecognizer Command="{Binding Path=BindingContext.ProfileTabCommand, Source={x:Reference thispage}}" CommandParameter="{Binding .}" />
+                                            </Frame.GestureRecognizers>
                                             <StackLayout Orientation="Horizontal">
-                                                <StackLayout.GestureRecognizers>
-                                                    <TapGestureRecognizer Command="{Binding Path=BindingContext.ProfileTabCommand, Source={x:Reference thispage}}" CommandParameter="{Binding .}" />
-                                                </StackLayout.GestureRecognizers>
                                                 <Image
                                                     HeightRequest="20"
                                                     Source="{Binding Images}"
@@ -1244,7 +1222,5 @@
                 </Grid>
             </xct:TabViewItem.Content>
         </xct:TabViewItem>
-
     </xct:TabView>
-
 </Pages:BaseContentPage>

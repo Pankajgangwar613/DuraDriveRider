@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<xct:Popup
+    x:Class="DuraDriveRider.Pages.XctTabView.PopUp.DeclinePopUp"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+    IsLightDismissEnabled="True"
+    Size="270,170">
+    <Frame>
+        <StackLayout>
+            <StackLayout Spacing="15">
+                <Label
+                    FontAttributes="Bold"
+                    FontFamily="ProximaNovaSemibold"
+                    FontSize="18"  HorizontalOptions="CenterAndExpand"
+                    HorizontalTextAlignment="Center"
+                    Text="Are you sure?"
+                    TextColor="#D72625" />
+                <Label Text="You want decline this job." HorizontalOptions="CenterAndExpand" TextColor="Black" />
+            </StackLayout>
+            <Grid Margin="5,10" VerticalOptions="CenterAndExpand">
+
+                <Button
+                    Command="{Binding AcceptCommand}"
+                    FontSize="14" x:Name="NoDiscard" Clicked="NoDiscard_Clicked"
+                    Text="No, Discard" />
+                <Button
+                    Grid.Column="1"
+                    BackgroundColor="Transparent"
+                    BorderColor="#D72625"
+                    Command="{Binding DeclineCommand}"
+                    FontSize="14" Clicked="Button_Clicked"
+                    Text="Yes, Discard"
+                    TextColor="#D72625" />
+            </Grid>
+        </StackLayout>
+    </Frame>
+</xct:Popup>

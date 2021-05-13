@@ -1,6 +1,8 @@
 ﻿using Acr.UserDialogs;
 using DuraDriveRider.NavigationService;
 using DuraDriveRider.Pages.Auth.Views;
+using DuraDriveRider.Pages.Profile.Views;
+using DuraDriveRider.Pages.Views;
 using DuraDriveRider.Pages.XctTabView.Model;
 using DuraDriveRider.ViewModel;
 using System;
@@ -170,6 +172,10 @@ namespace DuraDriveRider.Pages.XctTabView.ViewModels
             "Today"
         };
 
+        public ICommand NotificationCommand => new Command(async (obj) =>
+        { 
+           await RichNavigation.PushAsync(new NotificationPage(), typeof(NotificationPage));
+        }); 
         public ICommand ExpanderHomeCommand => new Command(async (obj) =>
         {
             if (HomeIsVisible)
@@ -318,13 +324,13 @@ namespace DuraDriveRider.Pages.XctTabView.ViewModels
             //Settings.IsWalkthroughCompleted = false;
         });
 
-        public ICommand ProfileTapCommand => new Command(async (obj) =>
+        public ICommand ProfileTabCommand => new Command(async (obj) =>
         {
             var ProfileMdl = obj as ProfileModel;
             switch (ProfileMdl.id)
             {
                 case 1:
-                    // await RichNavigation.PushAsync(new MyPointsPage(), typeof(MyPointsPage));
+                     await RichNavigation.PushAsync(new QrCodePage(), typeof(QrCodePage));
                     break;
                 case 2:
                     //await RichNavigation.PushAsync(new HealthConditionPage(), typeof(HealthConditionPage));

@@ -5,7 +5,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:PagePath="clr-namespace:DuraDriveRider.Popups"
     xmlns:xct="http://xamarin.com/schemas/2020/toolkit" IsLightDismissEnabled="False"
-    Size="{x:Static PagePath:PopuoSize.Size260By100}">
+    Size="{x:Static PagePath:PopuoSize.Size250By100}">
     <Frame>
         <StackLayout Spacing="5">
             <Image
@@ -14,7 +14,7 @@
                 VerticalOptions="EndAndExpand"
                 WidthRequest="25" />
             <Label
-                FontAttributes="Bold"
+                FontAttributes="Bold" x:Name="lblTitle"
                 FontFamily="ProximaNovaSemibold"
                 HorizontalOptions="CenterAndExpand"
                 HorizontalTextAlignment="Center"
