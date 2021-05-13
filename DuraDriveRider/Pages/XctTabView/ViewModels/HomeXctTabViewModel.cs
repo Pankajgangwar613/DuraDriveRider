@@ -114,6 +114,12 @@ namespace DuraDriveRider.Pages.XctTabView.ViewModels
             get { return _accountNumber; }
             set { _accountNumber = value; OnPropertyChanged(); }
         }
+        private bool _homeIsVisible;
+        public bool HomeIsVisible
+        {
+            get { return _homeIsVisible; }
+            set { _homeIsVisible = value; OnPropertyChanged(); }
+        }
         public ICommand FullscreenLoadingCommand { get; }
         public ICommand CycleStatesCommand { get; }
 
@@ -135,6 +141,7 @@ namespace DuraDriveRider.Pages.XctTabView.ViewModels
             //    MainState = LayoutState.None;
             //});
             //CycleStatesCommand = CommandFactory.Create(CycleStates);
+            HomeIsVisible = false;
         }
 
         //async Task CycleStates()
@@ -162,6 +169,18 @@ namespace DuraDriveRider.Pages.XctTabView.ViewModels
         {
             "Today"
         };
+
+        public ICommand ExpanderHomeCommand => new Command(async (obj) =>
+        {
+            if (HomeIsVisible)
+            {
+                HomeIsVisible = false;
+            }
+            else
+            {
+                HomeIsVisible = true;
+            }
+        });
 
         public ICommand PersonalDetailsCommand => new Command(async (obj) =>
         {
@@ -199,7 +218,15 @@ namespace DuraDriveRider.Pages.XctTabView.ViewModels
             PaymentDetailsTextColor = Color.White;
             PaymentDetailsBoxviewColor = Color.FromHex("#211E66");
         });
-
+        public ObservableCollection<OrderModel> HomeOfList { get; set; } = new ObservableCollection<OrderModel>()
+        {
+            new OrderModel{  Name="Dura Express", Status="Ongoing", StatusTextColor="#006FFF", StatusBgColor="#C1D5FF", Address="1976 Capt. M. Reyes, Makati, Metro Manila Phillipnes", Charges="Continue to delivery",ChargesTextColor="#211E66", date="" },
+            new OrderModel{  Name="Dura Shop", Status="Cancelled", StatusTextColor="#C80000", StatusBgColor="#FFB8B8", Address="2540 Makati, Metro Manila Phillipnes", Charges="Chages : ₱ 2.50",ChargesTextColor="#D72625", date="July 25 2020 at 05:30 pm" },
+            new OrderModel{  Name="Dura Eats", Status="Delevered", StatusTextColor="#009700", StatusBgColor="#98FFB0", Address="1976 Capt. M. Reyes, Makati, Metro Manila Phillipnes", Charges="Earned : ₱ 15.00",ChargesTextColor="#109A00", date="July 25 2020 at 05:30 pm" },
+            new OrderModel{  Name="Dura Express", Status="Ongoing", StatusTextColor="#006FFF", StatusBgColor="#C1D5FF", Address="1976 Capt. M. Reyes, Makati, Metro Manila Phillipnes", Charges="Continue to delivery",ChargesTextColor="#211E66", date="" },
+            new OrderModel{  Name="Dura Shop", Status="Cancelled", StatusTextColor="#C80000", StatusBgColor="#FFB8B8", Address="2540 Makati, Metro Manila Phillipnes", Charges="Chages : ₱ 2.50",ChargesTextColor="#D72625", date="July 25 2020 at 05:30 pm" },
+            new OrderModel{  Name="Dura Eats", Status="Delevered", StatusTextColor="#009700", StatusBgColor="#98FFB0", Address="1976 Capt. M. Reyes, Makati, Metro Manila Phillipnes", Charges="Earned : ₱ 15.00",ChargesTextColor="#109A00", date="July 25 2020 at 05:30 pm" },
+        };
         public ObservableCollection<OrderModel> DuraExpressOfList { get; set; } = new ObservableCollection<OrderModel>()
         {
             new OrderModel{  Name="Dura Express", Status="Delevered", StatusTextColor="#009700", StatusBgColor="#98FFB0", Address="1976 Capt. M. Reyes, Makati, Metro Manila Phillipnes", Charges="Earned : ₱ 30.90",ChargesTextColor="#109A00", date="July 25 2020 at 05:30 pm" },

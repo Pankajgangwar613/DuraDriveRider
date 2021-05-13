@@ -13,7 +13,7 @@ namespace DuraDriveRider.Pages.Auth.ViewsModel
     {
         public ICommand NextCommand => new Command(async (obj) =>
         {
-            await RichNavigation.PushAsync(new ApprovalPage(), typeof(ApprovalPage));
+            await RichNavigation.PushAsync(new DuraBageServicePage(), typeof(DuraBageServicePage));
         });
     }
 }

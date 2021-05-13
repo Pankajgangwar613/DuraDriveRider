@@ -52,6 +52,12 @@ namespace DuraDriveRider.ViewModel
                 UserDialogs.Instance.Alert(ex.Message);
             }
         });
+        //public CousttabCommand => new Command(async () =>
+        //{ 
+        //    App.Current.MainPage = new HomeXctTab(3);
+        //    OR
+        //    await RichNavigation.PushAsync(new HomeXctTabView(3), typeof(HomeXctTabView));
+        //});
         public ICommand LogoutCommand => new Command(async (obj) =>
         {
             // App.Current.MainPage = new MaterialNavigationPage(new LoginPage());

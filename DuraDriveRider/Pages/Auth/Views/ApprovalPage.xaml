@@ -31,7 +31,7 @@
                 HorizontalTextAlignment="Center"
                 Text="Our team will verify your documents and will activate your profile asap."
                 TextColor="Gray" />
-            <Button Margin="5,15" Text="Waiting For Approval" />
+            <Button Margin="5,15" Command="{Binding ApprovalCommand}" Text="Waiting For Approval" />
         </StackLayout>
     </ContentPage.Content>
 </Pages:BaseContentPage>

@@ -22,8 +22,28 @@ namespace DuraDriveRider.Pages.XctTabView.Views
             InitializeComponent();
             BindingContext = new HomeXctTabViewModel();
         }
-		 
-		private void Button_Clicked(object sender, EventArgs e)
+        public HomeXctTab(int selectedTab)
+        {
+            InitializeComponent(); 
+            if (selectedTab == 1)
+            {
+                MyTabView.SelectedIndex = 1;
+            }
+            else if (selectedTab == 2)
+            {
+                MyTabView.SelectedIndex = 2;
+            }
+            else if (selectedTab == 3)
+            {
+                MyTabView.SelectedIndex = 3;
+            }  
+            else
+            {
+                MyTabView.SelectedIndex = 0;
+            }
+            BindingContext = new HomeXctTabViewModel();
+        }
+        private void Button_Clicked(object sender, EventArgs e)
         {
             this.DisplayToastAsync("Toast"); 
         }

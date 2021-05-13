@@ -1,41 +1,84 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<Page:BaseContentPage  xmlns:Page="clr-namespace:DuraDriveRider.Infrastructure" xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:Yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
-             x:Class="DuraDriveRider.Pages.Auth.Views.ProfilePage">
+<Page:BaseContentPage
+    x:Class="DuraDriveRider.Pages.Auth.Views.ProfilePage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:Page="clr-namespace:DuraDriveRider.Infrastructure"
+    xmlns:Yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit">
     <ContentPage.Content>
-        <StackLayout Margin="0,0,0,0">
-            <Yummy:PancakeView
-            BackgroundColor="White"
-            CornerRadius="20,20,0,0"
-            VerticalOptions="EndAndExpand" Margin="0,0,0,0">
-                <StackLayout>
-                    <Label BackgroundColor="Green"
+        <StackLayout>
+            <StackLayout
+                Padding="10,15"
+                Orientation="Horizontal"
+                Spacing="1">
+                <Image
+                    HeightRequest="20"
+                    HorizontalOptions="Start"
+                    Rotation="180"
+                    Source="backarrowwhite"
+                    WidthRequest="20" />
+                <Label FontSize="16" Text="Back" />
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding BackCommand}" />
+                </StackLayout.GestureRecognizers>
+            </StackLayout>
+
+            <StackLayout Margin="15,10">
+                <Label
                     FontAttributes="Bold"
                     FontFamily="ProximaNovaSemibold"
-                    FontSize="Medium"
-                    Text="Set your profile photo"
-                    TextColor="Black" />
+                    FontSize="16"
+                    Text="Great! You are almost there"
+                    TextColor="White" />
+                <Label
+                    FontFamily="ProximaNovaSemibold"
+                    FontSize="10"
+                    Text="Last step to upload your clear face pic"
+                    TextColor="White" />
+            </StackLayout>
+            <Yummy:PancakeView
+                BackgroundColor="White"
+                CornerRadius="20,20,0,0"
+                VerticalOptions="EndAndExpand">
+                <StackLayout>
                     <Label
-                    FontAttributes="Bold"
-                    FontFamily="ProximaNovaRegular"
-                    FontSize="Medium"
-                    Text="Make sure selfie or photo should be clear face"
-                    TextColor="#7F7F7F" />
-                    <Grid>
+                        FontAttributes="Bold"
+                        FontFamily="ProximaNovaSemibold"
+                        FontSize="16"
+                        Text="Set your profile photo"
+                        TextColor="Black" />
+                    <Label
+                        FontFamily="ProximaNovaRegular"
+                        Text="Make sure selfie or photo should be clear face"
+                        TextColor="#7F7F7F" />
+                    <Grid
+                        Margin="0,30"
+                        HorizontalOptions="CenterAndExpand"
+                        WidthRequest="155">
                         <Grid>
-                            <Image Source="photo_placeholder.png"
-                       HorizontalOptions="Center" 
-                       HeightRequest="200" Margin="0,50,0,0"/>
+                            <xct:AvatarView
+                                BorderColor="#EBE9FF"
+                                HorizontalOptions="Center"
+                                Size="150"
+                                Source="photo_placeholder.png"
+                                Text="User Name"
+                                TextColor="White"
+                                VerticalOptions="Center"
+                                Color="#EBE9FF" />
                         </Grid>
-                        <Image Source="camera.png"
-                           VerticalOptions="End"
-                           HorizontalOptions="Center" 
-                           HeightRequest="40" Margin="20,30,0,0"/>
+                        <Image
+                            Margin="6"
+                            HeightRequest="35"
+                            HorizontalOptions="EndAndExpand"
+                            Source="camera.png"
+                            VerticalOptions="EndAndExpand"
+                            WidthRequest="35" />
                     </Grid>
 
                     <Button
-                        Margin="0,50,0,0"
-                        Command="{Binding LoginCommand}"
+                        Margin="0,20,0,0"
+                        Command="{Binding NextCommand}"
                         Text="Next" />
 
 
