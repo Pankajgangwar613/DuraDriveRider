@@ -306,7 +306,7 @@ namespace DuraDriveRider.Pages.XctTabView.ViewModels
             new ProfileModel {id=7,Images="privacy_policy", TitleName = "Privacy Policy" },
             new ProfileModel {id=8,Images="TermsCondition", TitleName = "Terms & Conditions" },
         };
-
+          
         public ICommand ViewProfileCommand => new Command(async (obj) =>
         {
             //await RichNavigation.PushAsync(new MyPointsPage(), typeof(MyPointsPage));

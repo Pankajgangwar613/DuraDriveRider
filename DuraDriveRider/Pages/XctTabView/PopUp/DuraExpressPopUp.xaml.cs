@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DuraDriveRider.NavigationService;
+using DuraDriveRider.Pages.XctTabView.Views;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,9 +24,10 @@ namespace DuraDriveRider.Pages.XctTabView.PopUp
             Navigation.ShowPopup(new DeclinePopUp());
         }
 
-        private void Accept_Clicked(object sender, EventArgs e)
+        private async void Accept_Clicked(object sender, EventArgs e)
         {
-            Navigation.ShowPopup(new DeclinePopUp());
+            Dismiss(null);
+            await RichNavigation.PushAsync(new ReachedLocationPage(), typeof(ReachedLocationPage)); 
         }
     }
 }
