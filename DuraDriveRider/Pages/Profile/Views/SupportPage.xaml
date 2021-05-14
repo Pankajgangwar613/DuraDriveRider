@@ -70,7 +70,7 @@
                         <Image
                             HeightRequest="20"
                             HorizontalOptions="Start"
-                            Source="check"
+                            Source="chat"
                             VerticalOptions="CenterAndExpand"
                             WidthRequest="20" />
 
