@@ -1,18 +1,11 @@
-﻿using Acr.UserDialogs;
-using DuraDriveRider.NavigationService;
+﻿using DuraDriveRider.NavigationService;
 using DuraDriveRider.Pages.Auth.Views;
 using DuraDriveRider.Pages.Profile.Views;
 using DuraDriveRider.Pages.Views;
 using DuraDriveRider.Pages.XctTabView.Model;
 using DuraDriveRider.ViewModel;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
-using Xamarin.CommunityToolkit.ObjectModel;
-using Xamarin.CommunityToolkit.UI.Views;
 using Xamarin.Forms;
 using XF.Material.Forms.Models;
 using XF.Material.Forms.UI;
@@ -309,8 +302,9 @@ namespace DuraDriveRider.Pages.XctTabView.ViewModels
             new ProfileModel {id=3,Images="my_ratings", TitleName = "My Ratings"},
             new ProfileModel {id=4,Images="support", TitleName = "Support"},
             new ProfileModel {id=5,Images="help_center", TitleName = "Help Center" },
-            new ProfileModel {id=6,Images="privacy_policy", TitleName = "Privacy Policy" },
-            new ProfileModel {id=7,Images="TermsCondition", TitleName = "Terms & Condition" },
+            new ProfileModel {id=6,Images="Aboutus", TitleName = "About Us" },
+            new ProfileModel {id=7,Images="privacy_policy", TitleName = "Privacy Policy" },
+            new ProfileModel {id=8,Images="TermsCondition", TitleName = "Terms & Conditions" },
         };
 
         public ICommand ViewProfileCommand => new Command(async (obj) =>
@@ -333,19 +327,25 @@ namespace DuraDriveRider.Pages.XctTabView.ViewModels
                      await RichNavigation.PushAsync(new QrCodePage(), typeof(QrCodePage));
                     break;
                 case 2:
-                    //await RichNavigation.PushAsync(new HealthConditionPage(), typeof(HealthConditionPage));
+                    await RichNavigation.PushAsync(new ReferRiderPage(), typeof(ReferRiderPage));
                     break;
                 case 3:
-                    //await RichNavigation.PushAsync(new NotificationPage(), typeof(NotificationPage));
+                    await RichNavigation.PushAsync(new MyRatingPage(), typeof(MyRatingPage));
                     break;
                 case 4:
-                    //await RichNavigation.PushAsync(new AboutUsPage(), typeof(AboutUsPage));
+                    await RichNavigation.PushAsync(new SupportPage(), typeof(SupportPage));
                     break;
                 case 5:
-                    //await RichNavigation.PushAsync(new SettingsPage(), typeof(SettingsPage));
+                    await RichNavigation.PushAsync(new HelpCenterPage(), typeof(HelpCenterPage));
                     break;
                 case 6:
-                    //  await RichNavigation.PushAsync(new ContactUsPage(), typeof(ContactUsPage));
+                      await RichNavigation.PushAsync(new AboutusPage(), typeof(AboutusPage));
+                    break;
+                case 7:
+                      await RichNavigation.PushAsync(new PrivacyPolicy(), typeof(PrivacyPolicy));
+                    break;
+                case 8:
+                      await RichNavigation.PushAsync(new TermsConditionPage(), typeof(TermsConditionPage));
                     break;
                 case 9:
                     // App.Current.MainPage = new MaterialNavigationPage(new LogInPage());

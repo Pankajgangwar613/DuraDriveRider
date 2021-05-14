@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Pages:BaseContentPage
+    x:Class="DuraDriveRider.Pages.Views.ReviewPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:Pages="clr-namespace:DuraDriveRider.Infrastructure"
+    xmlns:Yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout
+                Padding="10,15"
+                BackgroundColor="#211E66"
+                Orientation="Horizontal"
+                Spacing="1">
+                <Image
+                    HeightRequest="20"
+                    HorizontalOptions="Start"
+                    Rotation="180"
+                    Source="backarrowwhite"
+                    WidthRequest="20" />
+
+                <Label
+                    FontSize="16"
+                    Text="Back"
+                    TextColor="White" />
+                <Label
+                    Margin="0,0,50,0"
+                    FontSize="18"
+                    Text="Verify Items"
+                    TextColor="White" />
+            </StackLayout>
+            <StackLayout Margin="10,0,10,0" Padding="10">
+                <Frame
+                    BackgroundColor="#FBFBFF"
+                    CornerRadius="5"
+                    HasShadow="True"
+                    HeightRequest="60"
+                    VerticalOptions="Start"
+                    WidthRequest="300">
+                    <StackLayout>
+                        <Label
+                            FontAttributes="Bold"
+                            FontFamily="ProximaNovaSemibold"
+                            FontSize="16"
+                            HorizontalOptions="Start"
+                            Opacity="0.5"
+                            Text="Order Number"
+                            TextColor="Black"
+                            VerticalOptions="Start" />
+                        <Label
+                            FontAttributes="Bold"
+                            FontFamily="ProximaNovaSemibold"
+                            FontSize="16"
+                            Text="#1566565656544"
+                            TextColor="Black" />
+                        <StackLayout HorizontalOptions="End" VerticalOptions="Start">
+                            <Label
+                                Margin="0,-40,0,0"
+                                FontAttributes="Bold"
+                                FontFamily="ProximaNovaSemibold"
+                                FontSize="14"
+                                HorizontalOptions="End"
+                                Opacity="0.5"
+                                Text="Ordered on"
+                                TextColor="Black"
+                                VerticalOptions="Start" />
+                            <Label
+                                Margin="0,0,0,0"
+                                FontAttributes="Bold"
+                                FontFamily="ProximaNovaRegular"
+                                FontSize="14"
+                                HorizontalOptions="End"
+                                Text="July 25 2020 at 05:30 pm"
+                                TextColor="Black"
+                                VerticalOptions="End" />
+
+
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+                <StackLayout
+                    HeightRequest="240"
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="Center">
+
+                    <Yummy:PancakeView
+                        Margin="0,0,0,0"
+                        BackgroundColor="#FBFBFF"
+                        CornerRadius="10"
+                        HeightRequest="120"
+                        WidthRequest="300">
+                        <StackLayout Margin="0,10,0,0">
+
+                            <Label
+                                Margin="40,0,0,0"
+                                FontFamily="ProximaNovaRegular"
+                                FontSize="Small"
+                                HorizontalOptions="Start"
+                                Text="Lorem ipsum dolor sit amet, consetetur                                sadipscing elitr, sed diam nonumy eirmod                                 tempor. Lorem ipsum dolor sit amet,                                consetetur sadipscing elitr,"
+                                TextColor="#000000"
+                                VerticalOptions="Start" />
+
+                            <Frame
+                                BackgroundColor="#EBE9FF"
+                                CornerRadius="5"
+                                HeightRequest="20"
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center">
+                                <Label Margin="0,0,0,0">
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span
+                                                FontFamily="ProximaNovaRegular"
+                                                Text="Verification ID : "
+                                                TextColor="#3B3B3B" />
+                                            <Span
+                                                FontAttributes="Bold"
+                                                FontFamily="ProximaNovaSemibold"
+                                                Text="834e9ed"
+                                                TextColor="Black" />
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding RegisterCommand}" />
+                                    </Label.GestureRecognizers>
+                                </Label>
+                            </Frame>
+                        </StackLayout>
+                    </Yummy:PancakeView>
+
+
+                </StackLayout>
+
+            </StackLayout>
+            <StackLayout>
+                <Button
+                    Margin="35,10,35,10"
+                    Command="{Binding ForgotCommand}"
+                    HeightRequest="50"
+                    Text="Validate Item(s)" />
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding ForgotCommand}" />
+                </StackLayout.GestureRecognizers>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</Pages:BaseContentPage>

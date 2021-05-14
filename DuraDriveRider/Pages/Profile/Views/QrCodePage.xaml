@@ -10,7 +10,7 @@
     <ContentPage.Content>
         <Grid RowDefinitions="60,*">
             <yummy:PancakeView
-                Padding="15,20"
+                Padding="10,20"
                 BackgroundColor="#211E66"
                 CornerRadius="0,0,10,10">
                 <Grid VerticalOptions="CenterAndExpand">

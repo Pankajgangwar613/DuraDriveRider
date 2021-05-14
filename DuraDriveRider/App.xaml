@@ -30,19 +30,19 @@
             <Setter Property="Margin" Value="2,5,2,0" />
             <Setter Property="xct:VisualFeedbackEffect.FeedbackColor" Value="DarkBlue" />
         </Style>
-        
-        <Style ApplyToDerivedTypes="True" TargetType="ImageButton"> 
+
+        <Style ApplyToDerivedTypes="True" TargetType="ImageButton">
             <Setter Property="BackgroundColor" Value="Transparent" />
             <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
             <Setter Property="VerticalOptions" Value="CenterAndExpand" />
             <Setter Property="xct:VisualFeedbackEffect.FeedbackColor" Value="DarkBlue" />
         </Style>
-        
+
         <Style ApplyToDerivedTypes="True" TargetType="Image">
             <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
             <Setter Property="VerticalOptions" Value="CenterAndExpand" />
         </Style>
-        
+
         <Style ApplyToDerivedTypes="True" TargetType="Label">
             <Setter Property="FontFamily" Value="ProximaNovaRegular" />
             <Setter Property="VerticalOptions" Value="CenterAndExpand" />
@@ -87,6 +87,13 @@
             <Setter Property="VerticalOptions" Value="CenterAndExpand" />
         </Style>
 
+        <Style ApplyToDerivedTypes="True" TargetType="Editor">
+            <Setter Property="FontFamily" Value="ProximaNovaRegular" />
+            <Setter Property="TextColor" Value="#7F7F7F" />
+            <Setter Property="PlaceholderColor" Value="#7F7F7F" />
+            <Setter Property="FontSize" Value="14" />
+        </Style>
+
         <Style ApplyToDerivedTypes="True" TargetType="Picker">
             <Setter Property="FontFamily" Value="ProximaNovaRegular" />
             <Setter Property="TextColor" Value="{DynamicResource PrimaryColor}" />
@@ -105,13 +112,16 @@
             <Setter Property="HorizontalOptions" Value="FillAndExpand" />
         </Style>
 
-        <!--<Style ApplyToDerivedTypes="True" TargetType="xct:AvatarView">
-            <Setter Property="Size" Value="40" />
-            <Setter Property="Color" Value="Green" />
-            <Setter Property="TextColor" Value="White" />
-            <Setter Property="HorizontalOptions" Value="Center" />
-            <Setter Property="VerticalOptions" Value="Center" />
-        </Style>-->
+        <Style x:Key="AvatarViewStyle" TargetType="xct:AvatarView">
+            <Setter Property="Size" Value="80" />
+            <Setter Property="Color" Value="Transparent" />
+            <Setter Property="BorderColor" Value="Gray" />
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="Text" Value="No Name" />
+            <Setter Property="TextColor" Value="Gray" />
+            <Setter Property="HorizontalOptions" Value="StartAndExpand" />
+            <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+        </Style>
 
         <Style ApplyToDerivedTypes="True" TargetType="xct:BadgeView">
             <Setter Property="BackgroundColor" Value="Red" />
@@ -146,15 +156,17 @@
         </Style>
         <Style ApplyToDerivedTypes="True" TargetType="ScrollView">
             <Setter Property="VerticalScrollBarVisibility" Value="Never" />
-            <Setter Property="HorizontalScrollBarVisibility"  Value="Never" />
+            <Setter Property="HorizontalScrollBarVisibility" Value="Never" />
         </Style>
 
-       <!-- Every where Shadow
+        <!--
+            Every where Shadow
             xct:ShadowEffect.Color="Red"
             xct:ShadowEffect.OffsetX="100"
             xct:ShadowEffect.OffsetY="100"
             xct:ShadowEffect.Opacity="1"
-            xct:ShadowEffect.Radius="33" -->
+            xct:ShadowEffect.Radius="33"
+        -->
 
         <Style ApplyToDerivedTypes="True" TargetType="xct:Popup">
             <!--<Setter Property="IsLightDismissEnabled" Value="True" />-->
