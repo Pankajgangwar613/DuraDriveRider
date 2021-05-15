@@ -1,7 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<Pages:BaseContentPage  xmlns:Pages="clr-namespace:DuraDriveRider.Infrastructure" xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:Yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
-                        x:Class="DuraDriveRider.Pages.Auth.Views.RegisterPage">
+<Pages:BaseContentPage
+    x:Class="DuraDriveRider.Pages.Auth.Views.RegisterPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:Pages="clr-namespace:DuraDriveRider.Infrastructure"
+    xmlns:Yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+    BackgroundColor="#211E66">
     <StackLayout>
         <StackLayout
             Padding="10,15"
@@ -37,18 +42,19 @@
                     FontSize="16"
                     Text="Register"
                     TextColor="Black" />
-                <Label FontFamily="ProximaNovaSemibold" VerticalOptions="CenterAndExpand" TextColor="Black">
+                <Label
+                    FontFamily="ProximaNovaSemibold"
+                    TextColor="Black"
+                    VerticalOptions="CenterAndExpand">
                     <Label.FormattedText>
                         <FormattedString>
                             <Span Text="Got to know, you are not register with " />
-                            <Span
-                                FontAttributes="Bold"
-                                Text="DURADRIVE"/>
+                            <Span FontAttributes="Bold" Text="DURADRIVE" />
                         </FormattedString>
                     </Label.FormattedText>
-                </Label> 
-                
-                <StackLayout> 
+                </Label>
+
+                <StackLayout>
                     <Grid
                         Margin="0,5"
                         ColumnDefinitions="2*,.1*,8*"
@@ -67,7 +73,6 @@
                                 </Picker.Effects>
                             </Picker>
                             <Image
-                                
                                 HeightRequest="15"
                                 HorizontalOptions="StartAndExpand"
                                 InputTransparent="True"
@@ -78,7 +83,7 @@
                         <BoxView
                             Grid.Column="1"
                             HeightRequest="20"
-                            HorizontalOptions="CenterAndExpand" 
+                            HorizontalOptions="CenterAndExpand"
                             VerticalOptions="CenterAndExpand"
                             WidthRequest="1" />
 
@@ -96,8 +101,7 @@
                     </Grid>
 
                     <Grid VerticalOptions="CenterAndExpand">
-                        <Entry
-                            Placeholder="Email Address" >
+                        <Entry Placeholder="Email Address">
                             <Entry.Effects>
                                 <xct:RemoveBorderEffect />
                             </Entry.Effects>
@@ -122,16 +126,24 @@
                     </Grid>
 
                     <StackLayout Margin="0,5" Orientation="Horizontal">
-                        <Image Source="check" HeightRequest="20" WidthRequest="20" HorizontalOptions="Start"/>
-                        <Label  VerticalOptions="CenterAndExpand" HorizontalOptions="Start">
+                        <Image
+                            HeightRequest="20"
+                            HorizontalOptions="Start"
+                            Source="check"
+                            WidthRequest="20" />
+                        <Label HorizontalOptions="Start" VerticalOptions="CenterAndExpand">
                             <Label.FormattedText>
-                                <FormattedString >
-                                    <Span Text="I accept the " TextColor="Black"/>
-                                    <Span Text="Terms of Services" TextDecorations="Underline" FontFamily="ProximaNovaSemibold"  TextColor="#D72625" />
+                                <FormattedString>
+                                    <Span Text="I accept the " TextColor="Black" />
+                                    <Span
+                                        FontFamily="ProximaNovaSemibold"
+                                        Text="Terms of Services"
+                                        TextColor="#D72625"
+                                        TextDecorations="Underline" />
                                 </FormattedString>
                             </Label.FormattedText>
                             <Label.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding CheckCommand}"/>
+                                <TapGestureRecognizer Command="{Binding CheckCommand}" />
                             </Label.GestureRecognizers>
                         </Label>
                     </StackLayout>
@@ -142,9 +154,9 @@
                         Command="{Binding RegisterCommand}"
                         Text="Register" />
                 </StackLayout>
-            </StackLayout> 
+            </StackLayout>
         </Yummy:PancakeView>
 
     </StackLayout>
 
-    </Pages:BaseContentPage>
+</Pages:BaseContentPage>

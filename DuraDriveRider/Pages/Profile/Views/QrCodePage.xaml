@@ -6,7 +6,7 @@
     xmlns:Pages="clr-namespace:DuraDriveRider.Infrastructure"
     xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
     xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
-    BackgroundColor="White">
+   >
     <ContentPage.Content>
         <Grid RowDefinitions="60,*">
             <yummy:PancakeView

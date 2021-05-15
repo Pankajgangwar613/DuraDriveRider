@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DuraDriveRider.Android", "D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DuraDriveRider.iOS", "DuraDriveRider.iOS\DuraDriveRider.iOS.csproj", "{2B2CC886-CBAB-4841-A5F4-0B2167131B4F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DuraDriveRider", "DuraDriveRider\DuraDriveRider.csproj", "{C62EC0D2-466F-4A63-A73A-442EAF9773D3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DuraDriveRider", "DuraDriveRider\DuraDriveRider.csproj", "{C62EC0D2-466F-4A63-A73A-442EAF9773D3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -6,11 +6,11 @@ using DuraDriveRider.Pages.XctTabView.Model;
 using DuraDriveRider.ViewModel;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
-using Xamarin.Forms;
+using Xamarin.Forms; 
 using XF.Material.Forms.Models;
 using XF.Material.Forms.UI;
 using XF.Material.Forms.UI.Dialogs;
-
+//apk delivery to client
 namespace DuraDriveRider.Pages.XctTabView.ViewModels
 {
     public class HomeXctTabViewModel : BaseViewModel
@@ -165,6 +165,7 @@ namespace DuraDriveRider.Pages.XctTabView.ViewModels
             "Today"
         };
 
+        
         public ICommand NotificationCommand => new Command(async (obj) =>
         { 
            await RichNavigation.PushAsync(new NotificationPage(), typeof(NotificationPage));
@@ -221,27 +222,27 @@ namespace DuraDriveRider.Pages.XctTabView.ViewModels
         {
             new OrderModel{  Name="Dura Express", Status="Ongoing", StatusTextColor="#006FFF", StatusBgColor="#C1D5FF", Address="1976 Capt. M. Reyes, Makati, Metro Manila Phillipnes", Charges="Continue to delivery",ChargesTextColor="#211E66", date="" },
             new OrderModel{  Name="Dura Shop", Status="Cancelled", StatusTextColor="#C80000", StatusBgColor="#FFB8B8", Address="2540 Makati, Metro Manila Phillipnes", Charges="Chages : ₱ 2.50",ChargesTextColor="#D72625", date="July 25 2020 at 05:30 pm" },
-            new OrderModel{  Name="Dura Eats", Status="Delevered", StatusTextColor="#009700", StatusBgColor="#98FFB0", Address="1976 Capt. M. Reyes, Makati, Metro Manila Phillipnes", Charges="Earned : ₱ 15.00",ChargesTextColor="#109A00", date="July 25 2020 at 05:30 pm" },
+            new OrderModel{  Name="Dura Eats", Status="Delivered", StatusTextColor="#009700", StatusBgColor="#98FFB0", Address="1976 Capt. M. Reyes, Makati, Metro Manila Phillipnes", Charges="Earned : ₱ 15.00",ChargesTextColor="#109A00", date="July 25 2020 at 05:30 pm" },
             new OrderModel{  Name="Dura Express", Status="Ongoing", StatusTextColor="#006FFF", StatusBgColor="#C1D5FF", Address="1976 Capt. M. Reyes, Makati, Metro Manila Phillipnes", Charges="Continue to delivery",ChargesTextColor="#211E66", date="" },
             new OrderModel{  Name="Dura Shop", Status="Cancelled", StatusTextColor="#C80000", StatusBgColor="#FFB8B8", Address="2540 Makati, Metro Manila Phillipnes", Charges="Chages : ₱ 2.50",ChargesTextColor="#D72625", date="July 25 2020 at 05:30 pm" },
-            new OrderModel{  Name="Dura Eats", Status="Delevered", StatusTextColor="#009700", StatusBgColor="#98FFB0", Address="1976 Capt. M. Reyes, Makati, Metro Manila Phillipnes", Charges="Earned : ₱ 15.00",ChargesTextColor="#109A00", date="July 25 2020 at 05:30 pm" },
+            new OrderModel{  Name="Dura Eats", Status="Delivered", StatusTextColor="#009700", StatusBgColor="#98FFB0", Address="1976 Capt. M. Reyes, Makati, Metro Manila Phillipnes", Charges="Earned : ₱ 15.00",ChargesTextColor="#109A00", date="July 25 2020 at 05:30 pm" },
         };
         public ObservableCollection<OrderModel> DuraExpressOfList { get; set; } = new ObservableCollection<OrderModel>()
         {
-            new OrderModel{  Name="Dura Express", Status="Delevered", StatusTextColor="#009700", StatusBgColor="#98FFB0", Address="1976 Capt. M. Reyes, Makati, Metro Manila Phillipnes", Charges="Earned : ₱ 30.90",ChargesTextColor="#109A00", date="July 25 2020 at 05:30 pm" },
-            new OrderModel{  Name="Dura Express", Status="Delevered", StatusTextColor="#C80000", StatusBgColor="#FFB8B8", Address="2540 Makati, Metro Manila Phillipnes", Charges="Earned : ₱ 30.90",ChargesTextColor="#D72625", date="July 25 2020 at 05:30 pm" },
-            new OrderModel{  Name="Dura Express", Status="Delevered", StatusTextColor="#009700", StatusBgColor="#98FFB0", Address="1976 Capt. M. Reyes, Makati, Metro Manila Phillipnes", Charges="Earned : ₱ 30.90",ChargesTextColor="#109A00", date="July 25 2020 at 05:30 pm" },
+            new OrderModel{  Name="Dura Express", Status="Delivered", StatusTextColor="#009700", StatusBgColor="#98FFB0", Address="1976 Capt. M. Reyes, Makati, Metro Manila Phillipnes", Charges="Earned : ₱ 30.90",ChargesTextColor="#109A00", date="July 25 2020 at 05:30 pm" },
+            new OrderModel{  Name="Dura Express", Status="Cancelled", StatusTextColor="#C80000", StatusBgColor="#FFB8B8", Address="2540 Makati, Metro Manila Phillipnes", Charges="Earned : ₱ 30.90",ChargesTextColor="#D72625", date="July 25 2020 at 05:30 pm" },
+            new OrderModel{  Name="Dura Express", Status="Delivered", StatusTextColor="#009700", StatusBgColor="#98FFB0", Address="1976 Capt. M. Reyes, Makati, Metro Manila Phillipnes", Charges="Earned : ₱ 30.90",ChargesTextColor="#109A00", date="July 25 2020 at 05:30 pm" },
         };
         public ObservableCollection<OrderModel> DuraShopsOfList { get; set; } = new ObservableCollection<OrderModel>()
         {
-            new OrderModel{  Name="Dura Express", Status="Delevered", StatusTextColor="#009700", StatusBgColor="#98FFB0", Address="1976 Capt. M. Reyes, Makati, Metro Manila Phillipnes", Charges="Earned : ₱ 30.90",ChargesTextColor="#109A00", date="July 25 2020 at 05:30 pm" },
-            new OrderModel{  Name="Dura Express", Status="Delevered", StatusTextColor="#009700", StatusBgColor="#98FFB0", Address="1976 Capt. M. Reyes, Makati, Metro Manila Phillipnes", Charges="Earned : ₱ 30.90",ChargesTextColor="#109A00", date="July 25 2020 at 05:30 pm" },
+            new OrderModel{  Name="Dura Express", Status="Delivered", StatusTextColor="#009700", StatusBgColor="#98FFB0", Address="1976 Capt. M. Reyes, Makati, Metro Manila Phillipnes", Charges="Earned : ₱ 30.90",ChargesTextColor="#109A00", date="July 25 2020 at 05:30 pm" },
+            new OrderModel{  Name="Dura Express", Status="Delivered", StatusTextColor="#009700", StatusBgColor="#98FFB0", Address="1976 Capt. M. Reyes, Makati, Metro Manila Phillipnes", Charges="Earned : ₱ 30.90",ChargesTextColor="#109A00", date="July 25 2020 at 05:30 pm" },
         };
         public ObservableCollection<OrderModel> DuraOfList { get; set; } = new ObservableCollection<OrderModel>()
         {
-            new OrderModel{  Name="Dura Express", Status="Delevered", StatusTextColor="#009700", StatusBgColor="#98FFB0", Address="1976 Capt. M. Reyes, Makati, Metro Manila Phillipnes", Charges="Earned : ₱ 30.90",ChargesTextColor="#109A00", date="July 25 2020 at 05:30 pm" },
-            new OrderModel{  Name="Dura Express", Status="Delevered", StatusTextColor="#C80000", StatusBgColor="#FFB8B8", Address="2540 Makati, Metro Manila Phillipnes", Charges="Earned : ₱ 30.90",ChargesTextColor="#D72625", date="July 25 2020 at 05:30 pm" },
-            new OrderModel{  Name="Dura Express", Status="Delevered", StatusTextColor="#009700", StatusBgColor="#98FFB0", Address="1976 Capt. M. Reyes, Makati, Metro Manila Phillipnes", Charges="Earned : ₱ 30.90",ChargesTextColor="#109A00", date="July 25 2020 at 05:30 pm" },
+            new OrderModel{  Name="Dura Express", Status="Delivered", StatusTextColor="#009700", StatusBgColor="#98FFB0", Address="1976 Capt. M. Reyes, Makati, Metro Manila Phillipnes", Charges="Earned : ₱ 30.90",ChargesTextColor="#109A00", date="July 25 2020 at 05:30 pm" },
+            new OrderModel{  Name="Dura Express", Status="Cancelled", StatusTextColor="#C80000", StatusBgColor="#FFB8B8", Address="2540 Makati, Metro Manila Phillipnes", Charges="Earned : ₱ 30.90",ChargesTextColor="#D72625", date="July 25 2020 at 05:30 pm" },
+            new OrderModel{  Name="Dura Express", Status="Delivered", StatusTextColor="#009700", StatusBgColor="#98FFB0", Address="1976 Capt. M. Reyes, Makati, Metro Manila Phillipnes", Charges="Earned : ₱ 30.90",ChargesTextColor="#109A00", date="July 25 2020 at 05:30 pm" },
         };
 
         //Wallet
@@ -306,10 +307,10 @@ namespace DuraDriveRider.Pages.XctTabView.ViewModels
             new ProfileModel {id=7,Images="privacy_policy", TitleName = "Privacy Policy" },
             new ProfileModel {id=8,Images="TermsCondition", TitleName = "Terms & Conditions" },
         };
-          
+
         public ICommand ViewProfileCommand => new Command(async (obj) =>
         {
-            //await RichNavigation.PushAsync(new MyPointsPage(), typeof(MyPointsPage));
+            await RichNavigation.PushAsync(new ProfileTabPage(), typeof(ProfileTabPage));
         });
 
         public ICommand LogOutCommand => new Command(async (obj) =>

@@ -4,8 +4,11 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:Pages="clr-namespace:DuraDriveRider.Infrastructure"
+   
     xmlns:Yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
     xmlns:xct="http://xamarin.com/schemas/2020/toolkit">
+   
+    
     <Application.Resources>
 
         <Color x:Key="PrimaryColor">White</Color>
@@ -148,7 +151,7 @@
         </Style>
 
         <Style ApplyToDerivedTypes="True" TargetType="ContentPage">
-            <Setter Property="BackgroundColor" Value="{DynamicResource ContentPageBgColor}" />
+            <Setter Property="BackgroundColor" Value="{DynamicResource PrimaryColor}" />
             <!--<Setter Property="ios:Page.UseSafeArea" Value="False" />-->
             <Setter Property="NavigationPage.HasNavigationBar" Value="False" />
             <!--<Setter Property="NavigationPage.BackButtonTitle" Value="" />-->

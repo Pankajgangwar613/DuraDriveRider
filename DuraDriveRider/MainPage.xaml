@@ -3,24 +3,43 @@
     x:Class="DuraDriveRider.MainPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:font="clr-namespace:DuraDriveRider.Fonts"
+    xmlns:images="clr-namespace:DuraDriveRider.Extensions"
     xmlns:xct="http://xamarin.com/schemas/2020/toolkit">
 
     <StackLayout>
-        <Frame
-            Padding="24"
-            BackgroundColor="#2196F3"
-            CornerRadius="0">
-            <Label
-                FontSize="36"
-                HorizontalTextAlignment="Center"
-                Text="Welcome to Xamarin Structure"
-                TextColor="White" />
-        </Frame>
-        
+        <Frame Padding="24" CornerRadius="0" />
+
         <Button
             Margin="50"
-            Clicked="Button_Clicked" 
+            Clicked="Button_Clicked"
             Text="Tab Open" />
 
+        <!--Embedded Images-->
+        <Image
+            Grid.Row="0"
+            Margin="20"
+            HeightRequest="220"
+            HorizontalOptions="CenterAndExpand"
+            Source="{images:EmbeddedImage DuraDriveRider.Images.camera.png}"
+            VerticalOptions="CenterAndExpand"
+            WidthRequest="220" /> 
+        
+        <!--FontIcons-->
+        <Image
+            Grid.Row="0"
+            Margin="20"
+            HeightRequest="220"
+            HorizontalOptions="CenterAndExpand"
+            VerticalOptions="CenterAndExpand"
+            WidthRequest="220"> 
+            <Image.Source>
+                <FontImageSource
+                    FontFamily="Typicons"
+                    Glyph="{x:Static font:FontIcons.Book}"
+                    Size="50"
+                    Color="Green" />
+            </Image.Source> 
+        </Image>
     </StackLayout>
 </ContentPage>

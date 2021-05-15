@@ -1,19 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<Pages:BaseContentPage  xmlns:Pages="clr-namespace:DuraDriveRider.Infrastructure" xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:Yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
-                        x:Class="DuraDriveRider.Pages.Auth.Views.BankInfoPage">
+<Pages:BaseContentPage
+    x:Class="DuraDriveRider.Pages.Auth.Views.BankInfoPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:Pages="clr-namespace:DuraDriveRider.Infrastructure"
+    xmlns:Yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+    BackgroundColor="#211E66">
     <ContentPage.Content>
         <StackLayout>
             <StackLayout
-            Padding="10,15"
-            Orientation="Horizontal"
-            Spacing="1">
+                Padding="10,15"
+                Orientation="Horizontal"
+                Spacing="1">
                 <Image
-                HeightRequest="20"
-                HorizontalOptions="Start"
-                Rotation="180"
-                Source="backarrowwhite"
-                WidthRequest="20" />
+                    HeightRequest="20"
+                    HorizontalOptions="Start"
+                    Rotation="180"
+                    Source="backarrowwhite"
+                    WidthRequest="20" />
                 <Label FontSize="16" Text="Back" />
                 <StackLayout.GestureRecognizers>
                     <TapGestureRecognizer Command="{Binding BackCommand}" />
@@ -28,11 +33,11 @@
             <Yummy:PancakeView CornerRadius="20,20,0,0" VerticalOptions="EndAndExpand">
                 <StackLayout>
                     <Label
-                    FontAttributes="Bold"
-                    FontFamily="ProximaNovaSemibold"
-                    FontSize="16"
-                    Text="Provide G-cash account details"
-                    TextColor="Black" />
+                        FontAttributes="Bold"
+                        FontFamily="ProximaNovaSemibold"
+                        FontSize="16"
+                        Text="Provide G-cash account details"
+                        TextColor="Black" />
 
                     <StackLayout>
 
@@ -44,14 +49,14 @@
                             </Entry>
                             <BoxView VerticalOptions="EndAndExpand" />
                         </Grid>
-                        <Grid Margin="0,10"  VerticalOptions="CenterAndExpand">
+                        <Grid Margin="0,10" VerticalOptions="CenterAndExpand">
                             <Entry Keyboard="Numeric" Placeholder="GCash Number">
                                 <Entry.Effects>
                                     <xct:RemoveBorderEffect />
                                 </Entry.Effects>
                             </Entry>
                             <BoxView VerticalOptions="EndAndExpand" />
-                        </Grid>  
+                        </Grid>
                         <Grid VerticalOptions="CenterAndExpand">
                             <Entry Placeholder="Repeat GCash Number">
                                 <Entry.Effects>
@@ -60,13 +65,14 @@
                             </Entry>
                             <BoxView VerticalOptions="EndAndExpand" />
                         </Grid>
-                        <Button Command="{Binding NextCommand}"
-                        Margin="0,10,0,0" 
-                        Text="Next" />
+                        <Button
+                            Margin="0,10,0,0"
+                            Command="{Binding NextCommand}"
+                            Text="Next" />
                     </StackLayout>
                 </StackLayout>
             </Yummy:PancakeView>
 
         </StackLayout>
     </ContentPage.Content>
-    </Pages:BaseContentPage>
+</Pages:BaseContentPage>
