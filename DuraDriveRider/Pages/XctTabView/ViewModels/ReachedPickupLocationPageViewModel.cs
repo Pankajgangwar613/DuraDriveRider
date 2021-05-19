@@ -9,11 +9,11 @@ using Xamarin.Forms;
 
 namespace DuraDriveRider.Pages.XctTabView.ViewModels
 {
-    public class VerifyItemPageViewModel : BaseViewModel
+   public class ReachedPickupLocationPageViewModel : BaseViewModel
     {
-        public ICommand ValidateCommand => new Command(async (obj) =>
+        public ICommand VerifyItemsCommand => new Command(async (obj) =>
         {
-            await RichNavigation.PushAsync(new ReachedLocationPage("RechedDrop"), typeof(ReachedLocationPage));
+            await RichNavigation.PushAsync(new VerifyItemPage(), typeof(VerifyItemPage));
         });
     }
 }

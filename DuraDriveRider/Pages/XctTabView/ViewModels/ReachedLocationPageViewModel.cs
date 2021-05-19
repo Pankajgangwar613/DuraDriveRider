@@ -13,7 +13,11 @@ namespace DuraDriveRider.Pages.XctTabView.ViewModels
     {
         public ICommand ValidateCommand => new Command(async (obj) =>
         {
-            await RichNavigation.PushAsync(new VerifyItemPage(), typeof(VerifyItemPage));
+            await RichNavigation.PushAsync(new ReachedPickupLocationPage("VerifyItems"), typeof(ReachedPickupLocationPage));
+        });
+        public ICommand ReachedDropoffLocatioCommand => new Command(async (obj) =>
+        {
+            await RichNavigation.PushAsync(new ReachedPickupLocationPage("DeliveryStatus"), typeof(ReachedPickupLocationPage));
         });
     }
 }

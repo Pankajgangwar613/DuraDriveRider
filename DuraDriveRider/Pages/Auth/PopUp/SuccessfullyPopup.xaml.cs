@@ -23,7 +23,7 @@ namespace DuraDriveRider.Pages.Auth.PopUp
         public SuccessfullyPopup(string jobTitle)
         {
             InitializeComponent();
-            this.jobTitle = jobTitle;
+           // this.jobTitle = jobTitle;
             lblTitle.Text = jobTitle;
             LoadDissmisspop();
         }

@@ -11,6 +11,10 @@ namespace DuraDriveRider.Pages.ViewModels
 {
   public  class ReviewPageViewModel : BaseViewModel
     {
+        public ICommand SubmitCommand => new Command(async (obj) =>
+        {
+            await RichNavigation.PushAsync(new HomeXctTab(), typeof(HomeXctTab));
+        });
         public ICommand ReviewCommand => new Command(async (obj) =>
         {
             await RichNavigation.PushAsync(new HomeXctTab(), typeof(HomeXctTab));

@@ -4,144 +4,103 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:Pages="clr-namespace:DuraDriveRider.Infrastructure"
-    xmlns:Yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView">
+    xmlns:Yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit">
     <ContentPage.Content>
         <StackLayout>
-            <StackLayout
-                Padding="10,15"
-                BackgroundColor="#211E66"
-                Orientation="Horizontal"
-                Spacing="1">
-                <Image
-                    HeightRequest="20"
-                    HorizontalOptions="Start"
-                    Rotation="180"
-                    Source="backarrowwhite"
-                    WidthRequest="20" />
-
-                <Label
-                    FontSize="16"
-                    Text="Back"
-                    TextColor="White" />
-                <Label
-                    Margin="0,0,50,0"
-                    FontSize="18"
-                    Text="Verify Items"
-                    TextColor="White" />
-            </StackLayout>
-            <StackLayout Margin="10,0,10,0" Padding="10">
-                <Frame
-                    BackgroundColor="#FBFBFF"
-                    CornerRadius="5"
-                    HasShadow="True"
-                    HeightRequest="60"
-                    VerticalOptions="Start"
-                    WidthRequest="300">
-                    <StackLayout>
-                        <Label
-                            FontAttributes="Bold"
-                            FontFamily="ProximaNovaSemibold"
-                            FontSize="16"
-                            HorizontalOptions="Start"
-                            Opacity="0.5"
-                            Text="Order Number"
-                            TextColor="Black"
-                            VerticalOptions="Start" />
-                        <Label
-                            FontAttributes="Bold"
-                            FontFamily="ProximaNovaSemibold"
-                            FontSize="16"
-                            Text="#1566565656544"
-                            TextColor="Black" />
-                        <StackLayout HorizontalOptions="End" VerticalOptions="Start">
-                            <Label
-                                Margin="0,-40,0,0"
-                                FontAttributes="Bold"
-                                FontFamily="ProximaNovaSemibold"
-                                FontSize="14"
-                                HorizontalOptions="End"
-                                Opacity="0.5"
-                                Text="Ordered on"
-                                TextColor="Black"
-                                VerticalOptions="Start" />
-                            <Label
-                                Margin="0,0,0,0"
-                                FontAttributes="Bold"
-                                FontFamily="ProximaNovaRegular"
-                                FontSize="14"
-                                HorizontalOptions="End"
-                                Text="July 25 2020 at 05:30 pm"
-                                TextColor="Black"
-                                VerticalOptions="End" />
-
-
-                        </StackLayout>
-                    </StackLayout>
-                </Frame>
+            <Yummy:PancakeView
+                Margin="25,0,25,0"
+                BackgroundColor="#E8FFE2"
+                CornerRadius="10"
+                HeightRequest="120"
+                WidthRequest="300">
                 <StackLayout
-                    HeightRequest="240"
-                    HorizontalOptions="CenterAndExpand"
+                    Margin="0,0,0,0"
+                    HorizontalOptions="Center"
                     VerticalOptions="Center">
-
-                    <Yummy:PancakeView
-                        Margin="0,0,0,0"
-                        BackgroundColor="#FBFBFF"
-                        CornerRadius="10"
-                        HeightRequest="120"
-                        WidthRequest="300">
-                        <StackLayout Margin="0,10,0,0">
-
-                            <Label
-                                Margin="40,0,0,0"
-                                FontFamily="ProximaNovaRegular"
-                                FontSize="Small"
-                                HorizontalOptions="Start"
-                                Text="Lorem ipsum dolor sit amet, consetetur                                sadipscing elitr, sed diam nonumy eirmod                                 tempor. Lorem ipsum dolor sit amet,                                consetetur sadipscing elitr,"
-                                TextColor="#000000"
-                                VerticalOptions="Start" />
-
-                            <Frame
-                                BackgroundColor="#EBE9FF"
-                                CornerRadius="5"
-                                HeightRequest="20"
-                                HorizontalOptions="Center"
-                                VerticalOptions="Center">
-                                <Label Margin="0,0,0,0">
-                                    <Label.FormattedText>
-                                        <FormattedString>
-                                            <Span
-                                                FontFamily="ProximaNovaRegular"
-                                                Text="Verification ID : "
-                                                TextColor="#3B3B3B" />
-                                            <Span
-                                                FontAttributes="Bold"
-                                                FontFamily="ProximaNovaSemibold"
-                                                Text="834e9ed"
-                                                TextColor="Black" />
-                                        </FormattedString>
-                                    </Label.FormattedText>
-                                    <Label.GestureRecognizers>
-                                        <TapGestureRecognizer Command="{Binding RegisterCommand}" />
-                                    </Label.GestureRecognizers>
-                                </Label>
-                            </Frame>
-                        </StackLayout>
-                    </Yummy:PancakeView>
-
-
+                    <Image
+                        Margin="0,10,0,0"
+                        HeightRequest="30"
+                        Source="done.png" />
+                    <Label
+                        FontAttributes="Bold"
+                        FontFamily="ProximaNovaSemibold"
+                        FontSize="15"
+                        Text="Great! you delivered the item(s)"
+                        TextColor="#24BE00" />
                 </StackLayout>
-
-            </StackLayout>
+            </Yummy:PancakeView>
             <StackLayout>
-                <Button
-                    Margin="35,10,35,10"
-                    Command="{Binding ForgotCommand}"
-                    HeightRequest="50"
-                    Text="Validate Item(s)" />
-                <StackLayout.GestureRecognizers>
-                    <TapGestureRecognizer Command="{Binding ForgotCommand}" />
-                </StackLayout.GestureRecognizers>
+                <Label
+                    Margin="20,30,0,0"
+                    FontAttributes="Bold"
+                    FontFamily="ProximaNovaSemibold"
+                    FontSize="20"
+                    Text="Rate &amp; Review Customer"
+                    TextColor="Black" />
             </StackLayout>
+            <StackLayout
+                Margin="0,30,0,0"
+                HorizontalOptions="Center"
+                VerticalOptions="Center">
+                <Image
+                    HeightRequest="100"
+                    HorizontalOptions="Center"
+                    Source="photo_placeholder.png"
+                    VerticalOptions="Center" />
+                <Label
+                    FontAttributes="Bold"
+                    FontFamily="ProximaNovaSemibold"
+                    FontSize="18"
+                    HorizontalOptions="Center"
+                    Text="Jessica Jonash"
+                    TextColor="Black"
+                    VerticalOptions="Center" />
+            </StackLayout>
+            <StackLayout
+                Margin="0,20,0,10"
+                HorizontalOptions="CenterAndExpand"
+                Orientation="Horizontal"
+                Spacing="10">
+                <Image HeightRequest="35" Source="rate_star_filled" />
+                <Image HeightRequest="35" Source="rate_star_filled" />
+                <Image HeightRequest="35" Source="rate_star.png" />
+                <Image HeightRequest="35" Source="rate_star.png" />
+                <Image HeightRequest="35" Source="rate_star.png" />
+            </StackLayout>
+            <Frame
+                Margin="10,20,10,0"
+                Padding="5"
+                BackgroundColor="#FBFBFF"
+                HasShadow="True"
+                HeightRequest="120">
+                <Editor
+                    FontFamily="ProximaNovaRegular"
+                    FontSize="14"
+                    Placeholder="Write a review............"
+                    PlaceholderColor="#C9C8DC"
+                    VerticalOptions="StartAndExpand">
+                    <Editor.Effects>
+                        <xct:RemoveBorderEffect />
+                    </Editor.Effects>
+                </Editor>
+            </Frame>
+            <Button
+                Margin="30,20,30,0"
+                Command="{Binding SubmitCommand}"
+                Text="Submit" />
+
+            <Label
+                Margin="0,20,0,10"
+                FontAttributes="Bold"
+                HorizontalOptions="Center"
+                Text="Will Review Later"
+                TextColor="#D72625"
+                TextDecorations="Underline">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding ReviewCommand}" />
+                </Label.GestureRecognizers>
+            </Label>
         </StackLayout>
     </ContentPage.Content>
 </Pages:BaseContentPage>

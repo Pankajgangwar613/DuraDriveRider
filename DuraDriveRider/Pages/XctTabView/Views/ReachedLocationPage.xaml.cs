@@ -14,10 +14,20 @@ namespace DuraDriveRider.Pages.XctTabView.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ReachedLocationPage : BaseContentPage
     {
-        public ReachedLocationPage()
+        public ReachedLocationPage(string Title)
         {
             InitializeComponent();
             BindingContext = new ReachedLocationPageViewModel();
+            if(Title== "ReachedPicked")
+            {
+                StkServiceType.IsVisible = true;
+                StkItems.IsVisible = false;
+            }
+            else
+            {
+                StkItems.IsVisible = true;
+                StkServiceType.IsVisible = false;                
+            }
         }
     }
 }
