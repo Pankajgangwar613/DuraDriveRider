@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DuraDriveRider.Pages.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,19 +8,15 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace DuraDriveRider.Pages.Auth.PopUp
+namespace DuraDriveRider.Pages.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class ChooseAccountPopUp 
+    public partial class SuccessfulPage : ContentPage
     {
-        public ChooseAccountPopUp()
+        public SuccessfulPage()
         {
             InitializeComponent();
-        }
-
-        private void Button_Clicked(object sender, EventArgs e)
-        {
-            Dismiss(null);
+            BindingContext = new SuccessfulPageViewModel();
         }
     }
 }

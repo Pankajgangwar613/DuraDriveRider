@@ -4,7 +4,8 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:Pages="clr-namespace:DuraDriveRider.Infrastructure"
-    xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" xmlns:xct="http://xamarin.com/schemas/2020/toolkit">
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+    xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView">
     <ContentPage.Content>
         <Grid RowDefinitions="60,Auto,*">
             <yummy:PancakeView
@@ -43,7 +44,8 @@
 
             <Frame
                 Grid.Row="1"
-                Padding="0" Margin="20,20,20,0"
+                Margin="20,20,20,0"
+                Padding="0"
                 BackgroundColor="#EBE9FF"
                 CornerRadius="5"
                 VerticalOptions="StartAndExpand">
@@ -96,11 +98,14 @@
 
             <ScrollView Grid.Row="2" Margin="20">
                 <StackLayout>
-                    <StackLayout Spacing="20" IsVisible="{Binding PersonalDetailsIsVisible}">
-                        <xct:AvatarView HorizontalOptions="CenterAndExpand" Size="120" Style="{StaticResource AvatarViewStyle}" Source="profile" />
+                    <StackLayout IsVisible="{Binding PersonalDetailsIsVisible}" Spacing="20">
+                        <xct:AvatarView
+                            HorizontalOptions="CenterAndExpand"
+                            Size="120"
+                            Source="profile"
+                            Style="{StaticResource AvatarViewStyle}" />
                         <Grid VerticalOptions="CenterAndExpand">
-                            <Entry
-                            Placeholder="John" TextColor="Black">
+                            <Entry Placeholder="John" TextColor="Black">
                                 <Entry.Effects>
                                     <xct:RemoveBorderEffect />
                                 </Entry.Effects>
@@ -109,8 +114,7 @@
                         </Grid>
 
                         <Grid VerticalOptions="CenterAndExpand">
-                            <Entry
-                            Placeholder="Middle Name" TextColor="Black">
+                            <Entry Placeholder="Middle Name" TextColor="Black">
                                 <Entry.Effects>
                                     <xct:RemoveBorderEffect />
                                 </Entry.Effects>
@@ -119,8 +123,7 @@
                         </Grid>
 
                         <Grid VerticalOptions="CenterAndExpand">
-                            <Entry
-                            Placeholder="Doe" TextColor="Black">
+                            <Entry Placeholder="Doe" TextColor="Black">
                                 <Entry.Effects>
                                     <xct:RemoveBorderEffect />
                                 </Entry.Effects>
@@ -129,8 +132,7 @@
                         </Grid>
 
                         <Grid VerticalOptions="CenterAndExpand">
-                            <Entry
-                            Placeholder="+631234556780" TextColor="Black">
+                            <Entry Placeholder="+631234556780" TextColor="Black">
                                 <Entry.Effects>
                                     <xct:RemoveBorderEffect />
                                 </Entry.Effects>
@@ -139,8 +141,7 @@
                         </Grid>
 
                         <Grid VerticalOptions="CenterAndExpand">
-                            <Entry
-                            Placeholder="doejdofha@gmail.com" TextColor="Black">
+                            <Entry Placeholder="doejdofha@gmail.com" TextColor="Black">
                                 <Entry.Effects>
                                     <xct:RemoveBorderEffect />
                                 </Entry.Effects>
@@ -149,8 +150,7 @@
                         </Grid>
 
                         <Grid VerticalOptions="CenterAndExpand">
-                            <Entry
-                            Placeholder="19 Mar 1990" TextColor="Black">
+                            <Entry Placeholder="19 Mar 1990" TextColor="Black">
                                 <Entry.Effects>
                                     <xct:RemoveBorderEffect />
                                 </Entry.Effects>
@@ -165,28 +165,33 @@
                             TextColor="#C7C6D8" />
 
                         <Grid VerticalOptions="CenterAndExpand">
-                            <Entry
-                            Placeholder="Facebook" TextColor="Black">
+                            <Entry Placeholder="Facebook" TextColor="Black">
                                 <Entry.Effects>
                                     <xct:RemoveBorderEffect />
                                 </Entry.Effects>
                             </Entry>
                             <BoxView VerticalOptions="EndAndExpand" />
-                            <Label 
-                            FontSize="16"   Opacity=".8"
-                            Text="Linked" HorizontalOptions="EndAndExpand"
-                            TextColor="Black" />
+                            <Label
+                                FontSize="16"
+                                HorizontalOptions="EndAndExpand"
+                                Opacity=".8"
+                                Text="Linked"
+                                TextColor="Black" />
                         </Grid>
 
                         <Grid VerticalOptions="CenterAndExpand">
-                            <Entry
-                            Placeholder="Google" TextColor="Black">
+                            <Entry Placeholder="Google" TextColor="Black">
                                 <Entry.Effects>
                                     <xct:RemoveBorderEffect />
                                 </Entry.Effects>
                             </Entry>
                             <BoxView VerticalOptions="EndAndExpand" />
-                            <Image Margin="0,0,10,0" WidthRequest="20" HeightRequest="20" HorizontalOptions="EndAndExpand" Source="link"/>
+                            <Image
+                                Margin="0,0,10,0"
+                                HeightRequest="20"
+                                HorizontalOptions="EndAndExpand"
+                                Source="link"
+                                WidthRequest="20" />
                         </Grid>
 
                         <Label
@@ -197,7 +202,10 @@
 
                         <Grid VerticalOptions="CenterAndExpand">
                             <Entry
-                            Placeholder="5646464654546" FontAttributes="Bold" FontSize="16" TextColor="Black">
+                                FontAttributes="Bold"
+                                FontSize="16"
+                                Placeholder="5646464654546"
+                                TextColor="Black">
                                 <Entry.Effects>
                                     <xct:RemoveBorderEffect />
                                 </Entry.Effects>
@@ -205,13 +213,134 @@
                             <BoxView VerticalOptions="EndAndExpand" />
                         </Grid>
 
-                        <Button Text="Edit" Command="{Binding EditCommand}"/>
+                        <Button Command="{Binding EditCommand}" Text="Edit" />
                     </StackLayout>
 
-                    <StackLayout IsVisible="{Binding OfficialDetailsIsVisible}" />
+                    <StackLayout IsVisible="{Binding OfficialDetailsIsVisible}">
+                        <StackLayout>
+                            <Grid VerticalOptions="CenterAndExpand">
+                                <Entry
+                                    FontFamily="ProximaNovaRegular"
+                                    FontSize="18"
+                                    Keyboard="Numeric"
+                                    Placeholder="490349784097854"
+                                    PlaceholderColor="#000000">
+                                    <Entry.Effects>
+                                        <xct:RemoveBorderEffect />
+                                    </Entry.Effects>
+                                </Entry>
+                                <BoxView VerticalOptions="EndAndExpand" />
+                            </Grid>
+
+                            <Grid Margin="0,5" ColumnSpacing="10">
+
+                                <StackLayout Margin="0,2" Orientation="Horizontal">
+                                    <Image
+                                        HeightRequest="155"
+                                        HorizontalOptions="Start"
+                                        Source="Doc.png"
+                                        VerticalOptions="Start"
+                                        WidthRequest="160" />
+
+                                </StackLayout>
+                                <StackLayout Margin="0,2">
+                                    <Image
+                                        HeightRequest="155"
+                                        HorizontalOptions="EndAndExpand"
+                                        Source="Doc_F.png"
+                                        VerticalOptions="Center"
+                                        WidthRequest="160" />
+                                </StackLayout>
+
+                            </Grid>
+                            <Grid Margin="0,10" VerticalOptions="CenterAndExpand">
+
+                                <Entry
+                                    FontFamily="ProximaNovaRegular"
+                                    FontSize="18"
+                                    Keyboard="Numeric"
+                                    Placeholder="DAS9047643y4834"
+                                    PlaceholderColor="#000000">
+                                    <Entry.Effects>
+                                        <xct:RemoveBorderEffect />
+                                    </Entry.Effects>
+                                </Entry>
+                                <BoxView VerticalOptions="EndAndExpand" />
+                            </Grid>
+
+                            <StackLayout>
+                                <Image
+                                    HeightRequest="195"
+                                    Source="Doc_S.png"
+                                    WidthRequest="400" />
+
+                            </StackLayout>
+
+
+                            <Grid VerticalOptions="CenterAndExpand">
+                                <Entry
+                                    FontFamily="ProximaNovaRegular"
+                                    FontSize="18"
+                                    Keyboard="Numeric"
+                                    Placeholder="65468749879434"
+                                    PlaceholderColor="#000000">
+                                    <Entry.Effects>
+                                        <xct:RemoveBorderEffect />
+                                    </Entry.Effects>
+                                </Entry>
+                                <BoxView VerticalOptions="EndAndExpand" />
+                            </Grid>
+
+
+                            <StackLayout>
+                                <Image
+                                    HeightRequest="195"
+                                    Source="Doc_T.png"
+                                    WidthRequest="400" />
+
+                            </StackLayout>
+
+                            <Label
+                                Margin="0,5,0,0"
+                                FontFamily="ProximaNovaBold"
+                                FontSize="16"
+                                HorizontalOptions="StartAndExpand"
+                                Text="Picture of unit/vehicle"
+                                TextColor="#C7C6D8" />
+
+                            <Grid VerticalOptions="CenterAndExpand">
+                                <Entry
+                                    FontFamily="ProximaNovaRegular"
+                                    FontSize="18"
+                                    Keyboard="Numeric"
+                                    Placeholder="Motorbike"
+                                    PlaceholderColor="#000000">
+                                    <Entry.Effects>
+                                        <xct:RemoveBorderEffect />
+                                    </Entry.Effects>
+                                </Entry>
+                                <BoxView VerticalOptions="EndAndExpand" />
+                            </Grid>
+
+
+                            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Fill">
+                                <Image
+                                    HeightRequest="195"
+                                    Source="Suzuki.png"
+                                    WidthRequest="495" />
+                            </StackLayout>
+
+                            <Button
+                                Margin="10,0,10,25"
+                                Command="{Binding NextCommand}"
+                                Text="Edit" />
+                        </StackLayout>
+
+                    </StackLayout>
 
                     <StackLayout IsVisible="{Binding PaymentDetailsIsVisible}">
-                        <Frame  Margin="0,0,0,20"
+                        <Frame
+                            Margin="0,0,0,20"
                             BackgroundColor="#EBE9FF"
                             CornerRadius="5">
                             <StackLayout>
@@ -230,9 +359,11 @@
 
                         <Button
                             BackgroundColor="Transparent"
-                            BorderColor="#211E66" FontFamily=""
+                            BorderColor="#211E66"
                             Command="{Binding AddAnotherBankCommand}"
-                            FontAttributes="Bold" FontSize="18"
+                            FontAttributes="Bold"
+                            FontFamily=""
+                            FontSize="18"
                             Text="Add Another Bank"
                             TextColor="#211E66" />
                     </StackLayout>

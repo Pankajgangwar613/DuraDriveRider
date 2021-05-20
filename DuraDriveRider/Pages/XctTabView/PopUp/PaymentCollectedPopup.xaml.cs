@@ -23,7 +23,6 @@ namespace DuraDriveRider.Pages.XctTabView.PopUp
         {
             Dismiss(null);
             await RichNavigation.PushAsync(new ReviewPage(), typeof(ReviewPage));
-
         }
     }
 }

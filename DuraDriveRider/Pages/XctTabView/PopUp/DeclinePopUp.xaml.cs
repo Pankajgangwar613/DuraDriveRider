@@ -60,7 +60,7 @@ namespace DuraDriveRider.Pages.XctTabView.PopUp
         private async void YesCancel_Clicked(object sender, EventArgs e)
         {
             Dismiss(null);
-            await RichNavigation.PushAsync(new HomeXctTab(), typeof(HomeXctTab));            
+            await RichNavigation.PushAsync(new HomeXctTab(0), typeof(HomeXctTab));            
         }
 
         private async void YesReject_Clicked(object sender, EventArgs e)
@@ -69,7 +69,7 @@ namespace DuraDriveRider.Pages.XctTabView.PopUp
             Navigation.ShowPopup(new SuccessfullyPopup(JobTitle));
             Dismiss(null);
             await Task.Delay(500);
-            await RichNavigation.PushAsync(new HomeXctTab(), typeof(HomeXctTab));
+            await RichNavigation.PushAsync(new HomeXctTab(0), typeof(HomeXctTab));
         }
     }
 }

@@ -13,11 +13,11 @@ namespace DuraDriveRider.Pages.ViewModels
     {
         public ICommand SubmitCommand => new Command(async (obj) =>
         {
-            await RichNavigation.PushAsync(new HomeXctTab(), typeof(HomeXctTab));
+            await RichNavigation.PushAsync(new HomeXctTab(0), typeof(HomeXctTab));
         });
         public ICommand ReviewCommand => new Command(async (obj) =>
         {
-            await RichNavigation.PushAsync(new HomeXctTab(), typeof(HomeXctTab));
+            await RichNavigation.PushAsync(new HomeXctTab(0), typeof(HomeXctTab));
         });
     }
 }

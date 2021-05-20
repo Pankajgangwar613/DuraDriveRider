@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Pages:BaseContentPage
+    x:Class="DuraDriveRider.Pages.Views.ChatSupportPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:Pages="clr-namespace:DuraDriveRider.Infrastructure"
+    xmlns:Yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout>
+                <Yummy:PancakeView
+                    Padding="10,20"
+                    BackgroundColor="#211E66"
+                    CornerRadius="0,0,10,10">
+                    <Grid VerticalOptions="CenterAndExpand">
+                        <StackLayout Orientation="Horizontal">
+                            <Image
+                                HeightRequest="20"
+                                HorizontalOptions="Start"
+                                Rotation="180"
+                                Source="backarrowwhite"
+                                WidthRequest="20" />
+                            <Label
+                                FontSize="14"
+                                Text="Back"
+                                TextColor="White" />
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding BackCommand}" />
+                            </StackLayout.GestureRecognizers>
+                        </StackLayout>
+                        <StackLayout HorizontalOptions="CenterAndExpand">
+                            <Label
+                                FontFamily="ProximaNovaRegular"
+                                FontSize="16"
+                                HorizontalTextAlignment="Center"
+                                Text=" Chat Support"
+                                TextColor="White" />
+                        </StackLayout>
+                    </Grid>
+                </Yummy:PancakeView>
+            </StackLayout>
+
+            <Yummy:PancakeView
+                Margin="0,15,20,0"
+                BackgroundColor="#F6F5FF"
+                CornerRadius="10,10,10,0"
+                HorizontalOptions="EndAndExpand"
+                VerticalOptions="End"
+                WidthRequest="180">
+
+                <Label
+                    Margin="0,0,0,0"
+                    FontFamily="ProximaNovaRegular"
+                    FontSize="11"
+                    Text="Hi, I requested to Gcash but, haven't reflected yet."
+                    TextColor="Black"
+                    VerticalOptions="Center" />
+            </Yummy:PancakeView>
+            <Grid>
+                <Grid>
+                    <Image
+                        Margin="0,0,20,0"
+                        HeightRequest="18"
+                        HorizontalOptions="EndAndExpand"
+                        Source="photo_placeholder.png"
+                        VerticalOptions="End" />
+                </Grid>
+                <Label
+                    Margin="0,0,42,0"
+                    FontSize="8"
+                    HorizontalOptions="End"
+                    Text="11:30 am"
+                    TextColor="#B7B7B7"
+                    VerticalOptions="End" />
+            </Grid>
+            <Yummy:PancakeView
+                Margin="20,0,0,0"
+                Padding="0,0"
+                BackgroundColor="#211E66"
+                CornerRadius="15,15,0,15"
+                HeightRequest="75"
+                HorizontalOptions="Start"
+                VerticalOptions="Start"
+                WidthRequest="250">
+
+                <Label
+                    Margin="10,0,0,0"
+                    FontFamily="ProximaNovaRegular"
+                    FontSize="11"
+                    Text="We are sorry for inconvenient! but don't worry we'll look into this. and you get your money reflection within 2 hours"
+                    TextColor="White"
+                    VerticalOptions="Center" />
+            </Yummy:PancakeView>
+            <Grid>
+                <Grid>
+                    <Image
+                        Margin="12,5"
+                        HeightRequest="15"
+                        HorizontalOptions="Start"
+                        Source="AppLogo.png"
+                        VerticalOptions="Start" />
+                </Grid>
+                <Label
+                    Margin="40,5,0,0"
+                    FontSize="8"
+                    HorizontalOptions="Start"
+                    Text="11:32 am"
+                    TextColor="#B7B7B7"
+                    VerticalOptions="Start" />
+            </Grid>
+            <Frame Margin="15,0,15,30" VerticalOptions="EndAndExpand">
+                <StackLayout Orientation="Horizontal">
+                    <Editor Placeholder="Write your message.... ">
+                        <Editor.Effects>
+                            <xct:RemoveBorderEffect />
+                        </Editor.Effects>
+                    </Editor>
+                    <Image
+                        xct:IconTintColorEffect.TintColor="#211E66"
+                        HeightRequest="20"
+                        HorizontalOptions="EndAndExpand"
+                        Source="navigate.png" />
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</Pages:BaseContentPage>

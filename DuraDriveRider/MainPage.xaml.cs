@@ -19,10 +19,9 @@ namespace DuraDriveRider
         }
 
         private async void Button_Clicked(object sender, EventArgs e)
-        {
-            //await Navigation.ShowPopupAsync(new ChooseAccountPopUp());
-            //Dismiss(null);
-            App.Current.MainPage = new HomeXctTab();
+        {            
+           // Dismiss(null);
+           // App.Current.MainPage = new HomeXctTab();
         }
     }
 }

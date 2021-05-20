@@ -1,4 +1,6 @@
-﻿using DuraDriveRider.ViewModel;
+﻿using DuraDriveRider.NavigationService;
+using DuraDriveRider.Pages.Auth.Views;
+using DuraDriveRider.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -85,6 +87,10 @@ namespace DuraDriveRider.Pages.Profile.ViewModels
             PaymentDetailsTextColor = Color.FromHex("#75747F");
         }
 
+        public ICommand PasswordChangeCommand => new Command(async (obj) =>
+        {
+           await RichNavigation.PushAsync(new ChangePasswordPage(), typeof(ChangePasswordPage));
+        });
         public ICommand Tab1Command => new Command(async (obj) =>
         {
             PersonalDetailsIsVisible = true;

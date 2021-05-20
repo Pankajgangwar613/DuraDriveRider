@@ -7,9 +7,7 @@
     xmlns:Yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
     xmlns:xct="http://xamarin.com/schemas/2020/toolkit">
 
-
     <Application.Resources>
-
         <Color x:Key="PrimaryColor">White</Color>
         <Color x:Key="SecondaryColor">Black</Color>
         <Color x:Key="StatusBarColor">#131313</Color>
@@ -73,7 +71,7 @@
         <Style ApplyToDerivedTypes="True" TargetType="Yummy:PancakeView">
             <Setter Property="BackgroundColor" Value="White" />
             <!--<Setter Property="BorderColor" Value="WhiteSmoke" />-->
-            <Setter Property="Padding" Value="20" />
+            <Setter Property="Padding" Value="16" />
             <Setter Property="VerticalOptions" Value="StartAndExpand" />
             <Setter Property="HorizontalOptions" Value="FillAndExpand" />
             <Setter Property="IsClippedToBounds" Value="true" />
@@ -172,7 +170,7 @@
         <Style ApplyToDerivedTypes="True" TargetType="xct:Popup">
             <Setter Property="Color" Value="Transparent" />
             <!--<Setter Property="IsLightDismissEnabled" Value="True" />-->
-            <!--<Setter Property="Size" Value="300,330" />-->
+            <Setter Property="Size" Value="360,730" />
         </Style>
         <Style ApplyToDerivedTypes="True" TargetType="RadioButton">
             <Setter Property="FontSize" Value="16" />

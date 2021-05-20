@@ -26,9 +26,8 @@ namespace DuraDriveRider.Pages.Auth.ViewsModel
             await RichNavigation.PushAsync(new ForgotPasswordPage(), typeof(ForgotPasswordPage));
         });
         public ICommand LoginCommand => new Command(async (obj) =>
-        {
-            //App.Current.MainPage = new HomeXctTab();
-            await RichNavigation.PushAsync(new HomeXctTab(), typeof(HomeXctTab));
+        { 
+            await RichNavigation.PushAsync(new HomeXctTab(0), typeof(HomeXctTab));
         });
 
         public ICommand RegisterCommand => new Command(async (obj) =>

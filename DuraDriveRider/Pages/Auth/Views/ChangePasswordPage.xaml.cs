@@ -14,18 +14,18 @@ using Xamarin.Forms.Xaml;
 namespace DuraDriveRider.Pages.Auth.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class NewPasswordPage : BaseContentPage
+    public partial class ChangePasswordPage : BaseContentPage
     {
-        public NewPasswordPage()
+        public ChangePasswordPage()
         {
             InitializeComponent();
-            BindingContext = new NewPasswordPageViewModel();
+           BindingContext=new ChangePasswordPageViewModel();
         }
 
-        private async  void Save_Clicked(object sender, EventArgs e)
+        private async void Submit_Clicked(object sender, EventArgs e)
         {
-            Navigation.ShowPopup(new SuccessfullyPopup("Password Reset Successfully !"));  
-            await RichNavigation.PushAsync(new LoginPage(), typeof(LoginPage));
+            Navigation.ShowPopup(new SuccessfullyPopup("Password change Successfully"));
+            await RichNavigation.PopAsync();
         }
     }
 }

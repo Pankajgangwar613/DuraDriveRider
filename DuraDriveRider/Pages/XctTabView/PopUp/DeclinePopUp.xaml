@@ -7,7 +7,7 @@
     xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
     IsLightDismissEnabled="True">
     <StackLayout>
-        <Frame x:Name="DeclineFrm" VerticalOptions="CenterAndExpand">
+        <Frame Margin="25,0" x:Name="DeclineFrm" VerticalOptions="CenterAndExpand">
             <StackLayout>
                 <StackLayout Spacing="12">
                     <Label
@@ -44,7 +44,7 @@
                 </Grid>
             </StackLayout>
         </Frame>
-        <Frame
+        <Frame Margin="25,0"
             x:Name="CancleFrm"
             BackgroundColor="#d9d9d9"
             VerticalOptions="CenterAndExpand">
@@ -109,7 +109,7 @@
             </StackLayout>
         </Frame>
 
-        <Frame
+        <Frame Margin="25,0"
             x:Name="RejectFrm"
             BackgroundColor="#d9d9d9"
             VerticalOptions="CenterAndExpand">

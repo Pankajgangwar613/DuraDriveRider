@@ -244,8 +244,17 @@ namespace DuraDriveRider.Pages.XctTabView.ViewModels
             new OrderModel{  Name="Dura Express", Status="Cancelled", StatusTextColor="#C80000", StatusBgColor="#FFB8B8", Address="2540 Makati, Metro Manila Phillipnes", Charges="Earned : ₱ 30.90",ChargesTextColor="#D72625", date="July 25 2020 at 05:30 pm" },
             new OrderModel{  Name="Dura Express", Status="Delivered", StatusTextColor="#009700", StatusBgColor="#98FFB0", Address="1976 Capt. M. Reyes, Makati, Metro Manila Phillipnes", Charges="Earned : ₱ 30.90",ChargesTextColor="#109A00", date="July 25 2020 at 05:30 pm" },
         };
-
+        
         //Wallet
+         public ICommand TopUpCommand => new Command(async (obj) =>
+         {
+            // await RichNavigation.PushAsync(new ProfileTabPage(), typeof(ProfileTabPage));
+         });
+         public ICommand RequestCashoutCommand => new Command(async (obj) =>
+         {
+            // await RichNavigation.PushAsync(new ProfileTabPage(), typeof(ProfileTabPage));
+         });
+
         public ObservableCollection<string> ProfileNameList { get; set; } = new ObservableCollection<string>
         {
             "hi, John"

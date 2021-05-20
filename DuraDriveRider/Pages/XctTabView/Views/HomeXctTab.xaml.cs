@@ -17,39 +17,37 @@ namespace DuraDriveRider.Pages.XctTabView.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class HomeXctTab : BaseContentPage
-    {
-        public HomeXctTab()
+    { 
+        public HomeXctTab(int SelectedTab)
         {
             InitializeComponent();
-            BindingContext = new HomeXctTabViewModel();
-            Navigation.ShowPopup(new DuraExpressPopUp());
-        }
-        public HomeXctTab(int selectedTab)
-        {
-            InitializeComponent(); 
-            if (selectedTab == 1)
+            BindingContext = new HomeXctTabViewModel();            
+            if (SelectedTab == 1)
             {
                 MyTabView.SelectedIndex = 1;
             }
-            else if (selectedTab == 2)
+            else if (SelectedTab == 2)
             {
                 MyTabView.SelectedIndex = 2;
             }
-            else if (selectedTab == 3)
+            else if (SelectedTab == 3)
             {
                 MyTabView.SelectedIndex = 3;
             }  
             else
             {
                 MyTabView.SelectedIndex = 0;
-            }
-            BindingContext = new HomeXctTabViewModel();
-            //await Task.Delay(500);  
-            Navigation.ShowPopup(new DuraExpressPopUp());
+                Navigation.ShowPopup(new DuraExpressPopUp()); 
+            }                        
         }
         private void Button_Clicked(object sender, EventArgs e)
         {
             this.DisplayToastAsync("Toast"); 
+        }
+
+        private void TopUp_Clicked(object sender, EventArgs e)
+        {
+            Navigation.ShowPopup(new AmountPopup());
         }
     }
 }
