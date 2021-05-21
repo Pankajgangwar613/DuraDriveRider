@@ -3,9 +3,10 @@
     x:Class="DuraDriveRider.Pages.Auth.Views.ProfilePage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:Page="clr-namespace:DuraDriveRider.Infrastructure" BackgroundColor="#211E66"
+    xmlns:Page="clr-namespace:DuraDriveRider.Infrastructure"
     xmlns:Yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
-    xmlns:xct="http://xamarin.com/schemas/2020/toolkit">
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+    BackgroundColor="#211E66">
     <ContentPage.Content>
         <StackLayout>
             <StackLayout
@@ -58,6 +59,7 @@
                         WidthRequest="155">
                         <Grid>
                             <xct:AvatarView
+                                Aspect="AspectFill"
                                 BorderColor="#EBE9FF"
                                 HorizontalOptions="Center"
                                 Size="150"

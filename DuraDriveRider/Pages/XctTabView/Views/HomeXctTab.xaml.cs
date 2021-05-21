@@ -45,9 +45,14 @@ namespace DuraDriveRider.Pages.XctTabView.Views
             this.DisplayToastAsync("Toast"); 
         }
 
-        private void TopUp_Clicked(object sender, EventArgs e)
+        private async void TopUp_Clicked(object sender, EventArgs e)
         {
-            Navigation.ShowPopup(new AmountPopup());
+          await  Navigation.ShowPopupAsync(new AmountPopup("TopUpPopup"));
+        }
+
+        private async void RequestCashout_Clicked(object sender, EventArgs e)
+        {
+            await  Navigation.ShowPopupAsync(new AmountPopup("RequestCashoutPopup"));
         }
     }
 }

@@ -17,10 +17,10 @@ namespace DuraDriveRider.Pages.Auth.PopUp
         {
             InitializeComponent(); 
             lblTitle.Text = title;
-            LoadDissmisspop();
+            Dissmisspop();
         }
 
-        private async void LoadDissmisspop()
+        private async void Dissmisspop()
         {
             await Task.Delay(800);
             Dismiss(null);

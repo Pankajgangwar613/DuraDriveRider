@@ -1,16 +1,34 @@
-﻿using DuraDriveRider.NavigationService;
+﻿using Acr.UserDialogs;
+using DuraDriveRider.NavigationService;
 using DuraDriveRider.Pages.Auth.Views;
+using DuraDriveRider.Pages.Profile.Views;
 using DuraDriveRider.ViewModel;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
 
 namespace DuraDriveRider.Pages.Profile.ViewModels
 {
-   public class ProfileTabPageViewModel : BaseViewModel
+    public class ProfileTabPageViewModel : BaseViewModel
     {
+        private bool _saveDetailsIsVisible;
+        public bool SaveDetailsIsVisible
+        {
+            get { return _saveDetailsIsVisible; }
+            set { _saveDetailsIsVisible = value;OnPropertyChanged(); }
+        }
+
+        private VihicleModel _vehicleSelected;
+        public VihicleModel VehicleSelected
+        {
+            get { return _vehicleSelected; }
+            set { _vehicleSelected = value; OnPropertyChanged(); LoadData(); }
+        }
+
         private Color _personalDetailsTextColor = Color.Black;
         public Color PersonalDetailsTextColor
         {
@@ -74,6 +92,17 @@ namespace DuraDriveRider.Pages.Profile.ViewModels
             get { return _paymentDetailsIsVisible; }
             set { _paymentDetailsIsVisible = value; OnPropertyChanged(); }
         }
+
+        private string _editBtn;
+        public string EditBtn
+        {
+            get { return _editBtn; }
+            set { _editBtn = value; OnPropertyChanged(nameof(EditBtn)); }
+        }
+        public class VihicleModel
+        {
+            public string Name { get; set; }
+        }
         public ProfileTabPageViewModel()
         {
             PersonalDetailsIsVisible = true;
@@ -85,15 +114,41 @@ namespace DuraDriveRider.Pages.Profile.ViewModels
             OfficalDetailsTextColor = Color.FromHex("#75747F");
             PaymentDetailsBoxviewColor = Color.Transparent;
             PaymentDetailsTextColor = Color.FromHex("#75747F");
+            EditBtn = "Edit";
+           
         }
-
+        private void LoadData()
+        {
+            if (VehicleSelected != null) 
+                EditBtn = "Save"; 
+            else 
+                EditBtn = "Edit"; 
+        }
         public ICommand PasswordChangeCommand => new Command(async (obj) =>
         {
-           await RichNavigation.PushAsync(new ChangePasswordPage(), typeof(ChangePasswordPage));
+            await RichNavigation.PushAsync(new ChangePasswordPage(), typeof(ChangePasswordPage));
+        });
+        public ICommand EditCommand => new Command(async (obj) =>
+        {
+            SaveDetailsIsVisible = true;
+            PersonalDetailsIsVisible = false;
+        });
+        public ICommand SaveCommand => new Command(async (obj) =>
+        {
+            PersonalDetailsIsVisible = true;
+            SaveDetailsIsVisible = false;           
+        });
+        public ICommand EditDocumentCommand => new Command(async (obj) =>
+        { 
+            EditBtn = "Edit";  
+        });
+        public ICommand AddAnotherBankCommand => new Command(async (obj) =>
+        {
+            //await RichNavigation.PushAsync(new EditProfilePage(), typeof(EditProfilePage));
         });
         public ICommand Tab1Command => new Command(async (obj) =>
         {
-            PersonalDetailsIsVisible = true;
+            PersonalDetailsIsVisible = true; 
             OfficialDetailsIsVisible = false;
             PaymentDetailsIsVisible = false;
             PersonalDetailsTextColor = Color.White;
@@ -108,6 +163,7 @@ namespace DuraDriveRider.Pages.Profile.ViewModels
         public ICommand Tab2Command => new Command(async (obj) =>
         {
             PersonalDetailsIsVisible = false;
+            SaveDetailsIsVisible = false;
             OfficialDetailsIsVisible = true;
             PaymentDetailsIsVisible = false;
             PersonalDetailsTextColor = Color.FromHex("#75747F");
@@ -119,8 +175,9 @@ namespace DuraDriveRider.Pages.Profile.ViewModels
         });
         public ICommand Tab3Command => new Command(async (obj) =>
         {
-            PersonalDetailsIsVisible = false;
-            OfficialDetailsIsVisible = false;
+            PersonalDetailsIsVisible = false; 
+            SaveDetailsIsVisible = false;
+            OfficialDetailsIsVisible = false;           
             PaymentDetailsIsVisible = true;
             PersonalDetailsBoxviewColor = Color.Transparent;
             PersonalDetailsTextColor = Color.FromHex("#75747F");
@@ -129,5 +186,13 @@ namespace DuraDriveRider.Pages.Profile.ViewModels
             PaymentDetailsTextColor = Color.White;
             PaymentDetailsBoxviewColor = Color.FromHex("#211E66");
         });
+        public ObservableCollection<VihicleModel> VehicleList { get; set; } = new ObservableCollection<VihicleModel>
+        {
+            new VihicleModel{ Name="Motorbike"},
+            new VihicleModel{ Name="MPV"},
+            new VihicleModel{ Name="VAN"},
+            new VihicleModel{ Name="FB"},
+            new VihicleModel{ Name="Aluminum"}
+    };
     }
 }

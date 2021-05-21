@@ -951,18 +951,16 @@
                                                 FontSize="22"
                                                 Text="₱ 2500.00" />
                                         </StackLayout>
-                                    </StackLayout>
-                                    <!--Command="{Binding TopUpCommand}"-->
+                                    </StackLayout> 
                                     <StackLayout Grid.Column="1" Padding="8,0">
                                         <Button HeightRequest="42"
-                                            Margin="0,10,0,0" x:Name="TopUp" Clicked="TopUp_Clicked"
+                                            Margin="0,10,0,0" Clicked="TopUp_Clicked"
                                            
                                             FontSize="15"
                                             Text="Top Up" />
-                                        <Button HeightRequest="42"
-                                            Command="{Binding RequestCashoutCommand}"
-                                            FontSize="15"
-                                            Text="Request Cashout"
+                                        <Button HeightRequest="42" 
+                                            FontSize="15" 
+                                            Text="Request Cashout" Clicked="RequestCashout_Clicked"
                                             VerticalOptions="EndAndExpand" />
                                     </StackLayout>
                                 </Grid>

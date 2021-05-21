@@ -164,7 +164,6 @@ namespace DuraDriveRider.Pages.XctTabView.ViewModels
         {
             "Today"
         };
-
         
         public ICommand NotificationCommand => new Command(async (obj) =>
         { 

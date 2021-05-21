@@ -267,6 +267,74 @@
 
                 </StackLayout>
 
+
+                <StackLayout x:Name="StkTransactionWith" Padding="2">
+                    <Grid>
+                        <Label
+                            FontAttributes="Bold"
+                            FontFamily="ProximaNovaBold"
+                            FontSize="16"
+                            Text="Transaction with"
+                            TextColor="Black" />
+                        <ImageButton
+                            Clicked="Close_Clicked"
+                            HeightRequest="22"
+                            HorizontalOptions="EndAndExpand"
+                            Source="close.png"
+                            WidthRequest="22" />
+                    </Grid>
+                    <StackLayout Margin="0,20,0,20">
+                        <Frame
+                            BackgroundColor="#EBE9FF"
+                            BorderColor="#EBE9FF"
+                            CornerRadius="5">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="RequesttoGcash_Tapped" />
+                            </Frame.GestureRecognizers>
+                            <StackLayout Background="#EBE9FF" Orientation="Horizontal">
+
+
+                                <Label
+                                    FontFamily="ProximaNovaSemibold"
+                                    FontSize="14"
+                                    Text="Request to Gcash"
+                                    TextColor="Black"
+                                    VerticalOptions="CenterAndExpand" />
+                                <Image
+                                    HeightRequest="15"
+                                    HorizontalOptions="EndAndExpand"
+                                    Source="backarrowBlue"
+                                    VerticalOptions="CenterAndExpand"
+                                    WidthRequest="15" />
+
+                            </StackLayout>
+                        </Frame>
+                        <Frame
+                            Margin="0,20,0,0"
+                            BackgroundColor="#EBE9FF"
+                            BorderColor="#EBE9FF"
+                            CornerRadius="5">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="RequesttoGcash_Tapped" />
+                            </Frame.GestureRecognizers>
+                            <StackLayout Background="#EBE9FF" Orientation="Horizontal">
+                                <Label
+                                    FontFamily="ProximaNovaSemibold"
+                                    FontSize="14"
+                                    Text="Convert To E-wallet"
+                                    TextColor="Black"
+                                    VerticalOptions="CenterAndExpand" />
+                                <Image
+                                    HeightRequest="15"
+                                    HorizontalOptions="EndAndExpand"
+                                    Source="backarrowBlue"
+                                    VerticalOptions="CenterAndExpand"
+                                    WidthRequest="15" />
+                            </StackLayout>
+                        </Frame>
+                    </StackLayout>
+                </StackLayout>
+
             </StackLayout>
         </Yummy:PancakeView>
     </StackLayout>
