@@ -54,7 +54,7 @@
                                 FontSize="13"
                                 HorizontalOptions="Start"
                                 Opacity="0.5"
-                                Text="Ordered on"
+                                Text="Order Number"
                                 TextColor="Black" />
                             <Label
                                 FontAttributes="Bold"

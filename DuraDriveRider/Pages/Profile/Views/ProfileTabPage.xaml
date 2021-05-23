@@ -37,6 +37,7 @@
                         Command="{Binding PasswordChangeCommand}"
                         HeightRequest="22"
                         HorizontalOptions="EndAndExpand"
+                        IsVisible="{Binding ImageIsVisible}"
                         Source="password_changed"
                         WidthRequest="22" />
                 </Grid>
@@ -57,7 +58,7 @@
                         <Label
                             Margin="0,4"
                             HorizontalOptions="CenterAndExpand"
-                            Text="Dura Express"
+                            Text="Personal Info"
                             TextColor="{Binding PersonalDetailsTextColor}" />
                         <Frame.GestureRecognizers>
                             <TapGestureRecognizer Command="{Binding Tab1Command}" />
@@ -71,7 +72,7 @@
                         <Label
                             Margin="0,4"
                             HorizontalOptions="CenterAndExpand"
-                            Text="Dura Shops"
+                            Text="Document"
                             TextColor="{Binding OfficalDetailsTextColor}" />
                         <Frame.GestureRecognizers>
                             <TapGestureRecognizer Command="{Binding Tab2Command}" />
@@ -86,7 +87,7 @@
                         <Label
                             Margin="0,4"
                             HorizontalOptions="CenterAndExpand"
-                            Text="Dura Eats"
+                            Text="Bank Info"
                             TextColor="{Binding PaymentDetailsTextColor}"
                             VerticalOptions="CenterAndExpand" />
                         <Frame.GestureRecognizers>

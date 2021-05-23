@@ -125,7 +125,7 @@
                         Margin="0,20,0,0"
                         FontFamily="ProximaNovaBold"
                         FontSize="15"
-                        Text="Select Payment Methd"
+                        Text="Select Payment Method"
                         TextColor="#3D3D3D" />
                     <StackLayout Margin="0,20,0,20">
                         <Frame
@@ -190,8 +190,7 @@
                                                     FontFamily="ProximaNovaSemibold"
                                                     FontSize="14"
                                                     Text="Dura Drive"
-                                                    TextColor="Black"
-                                                    TextDecorations="Underline" />
+                                                    TextColor="Black"  />
                                             </FormattedString>
                                         </Label.FormattedText>
                                     </Label>
@@ -207,8 +206,7 @@
                                                     FontFamily="ProximaNovaSemibold"
                                                     FontSize="14"
                                                     Text="₱ 100.00"
-                                                    TextColor="Black"
-                                                    TextDecorations="Underline" />
+                                                    TextColor="Black"  />
                                             </FormattedString>
                                         </Label.FormattedText>
                                         <Label.GestureRecognizers>

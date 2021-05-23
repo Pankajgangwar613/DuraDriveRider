@@ -21,25 +21,25 @@ namespace DuraDriveRider.Pages.XctTabView.Views
         public HomeXctTab(int SelectedTab)
         {
             InitializeComponent();
-            BindingContext = new HomeXctTabViewModel();            
+            BindingContext = new HomeXctTabViewModel();  
             if (SelectedTab == 1)
             {
                 MyTabView.SelectedIndex = 1;
             }
             else if (SelectedTab == 2)
-            {
+            { 
                 MyTabView.SelectedIndex = 2;
             }
             else if (SelectedTab == 3)
-            {
+            { 
                 MyTabView.SelectedIndex = 3;
             }  
             else
-            {
+            { 
                 MyTabView.SelectedIndex = 0;
                 Navigation.ShowPopup(new DuraExpressPopUp()); 
             }                        
-        }
+        } 
         private void Button_Clicked(object sender, EventArgs e)
         {
             this.DisplayToastAsync("Toast"); 
@@ -53,6 +53,6 @@ namespace DuraDriveRider.Pages.XctTabView.Views
         private async void RequestCashout_Clicked(object sender, EventArgs e)
         {
             await  Navigation.ShowPopupAsync(new AmountPopup("RequestCashoutPopup"));
-        }
+        }       
     }
 }

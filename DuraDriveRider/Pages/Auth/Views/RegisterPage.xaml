@@ -125,12 +125,11 @@
                         <BoxView VerticalOptions="EndAndExpand" />
                     </Grid>
 
-                    <StackLayout Margin="0,5" Orientation="Horizontal">
-                        <Image
-                            HeightRequest="20"
-                            HorizontalOptions="Start"
-                            Source="check"
-                            WidthRequest="20" />
+                    <StackLayout
+                        Margin="0,5"
+                        Orientation="Horizontal"
+                        Spacing="2">
+                        <CheckBox IsChecked="True" />
                         <Label HorizontalOptions="Start" VerticalOptions="CenterAndExpand">
                             <Label.FormattedText>
                                 <FormattedString>
@@ -147,7 +146,6 @@
                             </Label.GestureRecognizers>
                         </Label>
                     </StackLayout>
-
 
                     <Button
                         Margin="0,10"

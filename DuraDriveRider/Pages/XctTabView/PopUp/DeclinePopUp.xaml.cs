@@ -53,7 +53,7 @@ namespace DuraDriveRider.Pages.XctTabView.PopUp
         }
         private void Button_Clicked(object sender, EventArgs e)
         {
-            string JobTitle = "Job Decline";
+            string JobTitle = "Job Declined";
             Navigation.ShowPopup(new SuccessfullyPopup(JobTitle));
             Dismiss(null);
         } 

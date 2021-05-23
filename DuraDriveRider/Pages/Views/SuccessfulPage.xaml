@@ -39,8 +39,7 @@
                                     FontFamily="ProximaNovaSemibold"
                                     FontSize="14"
                                     Text="Dura Drive"
-                                    TextColor="Black"
-                                    TextDecorations="Underline" />
+                                    TextColor="Black" />
                             </FormattedString>
                         </Label.FormattedText>
                     </Label>

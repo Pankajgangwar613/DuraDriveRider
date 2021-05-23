@@ -175,6 +175,16 @@
         <Style ApplyToDerivedTypes="True" TargetType="RadioButton">
             <Setter Property="FontSize" Value="16" />
             <Setter Property="FontFamily" Value="ProximaNovaRegular" />
+            <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+        </Style>
+        <Style ApplyToDerivedTypes="True" TargetType="Switch">
+            <Setter Property="ThumbColor" Value="Green" />
+            <Setter Property="OnColor" Value="WhiteSmoke" />
+            <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+        </Style>
+        <Style ApplyToDerivedTypes="True" TargetType="CheckBox">
+            <Setter Property="Color" Value="#211E66" /> 
+            <Setter Property="VerticalOptions" Value="CenterAndExpand" />
         </Style>
 
         <Style x:Key="XctTabViewStyle" TargetType="xct:TabViewItem">

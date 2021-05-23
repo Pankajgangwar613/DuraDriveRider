@@ -56,28 +56,34 @@
                         Spacing="15">
                         <StackLayout Orientation="Horizontal">
                             <Image
-                                HeightRequest="16"
+                                HeightRequest="20"
                                 HorizontalOptions="Start"
-                                Source="check.png"
-                                WidthRequest="16" />
+                                Source="{Binding CheckedImage}"
+                                WidthRequest="20" />
                             <Label
                                 FontFamily="ProximaNovaRegular"
                                 HorizontalOptions="Start"
                                 Text="Have DuraBag"
                                 TextColor="Black"
                                 VerticalOptions="Center" />
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding SelectDuraBagCommand}"/>
+                            </StackLayout.GestureRecognizers>
                         </StackLayout>
                         <StackLayout Orientation="Horizontal">
                             <Image
-                                HeightRequest="16"
-                                Source="uncheck.png"
-                                WidthRequest="16" />
+                                HeightRequest="20"
+                                Source="{Binding UnCheckedImage}"
+                                WidthRequest="20" />
                             <Label
                                 FontFamily="ProximaNovaRegular"
                                 HorizontalOptions="Start"
                                 Text="Don't have DuraBag"
                                 TextColor="Black"
                                 VerticalOptions="Center" />
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding UnSelectDuraBagCommand}"/>
+                            </StackLayout.GestureRecognizers>
                         </StackLayout>
                     </StackLayout>
                     <Grid Margin="0,0,0,20">

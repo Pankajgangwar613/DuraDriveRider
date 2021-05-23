@@ -24,7 +24,7 @@ namespace DuraDriveRider.Pages.Auth.Views
 
         private async void Submit_Clicked(object sender, EventArgs e)
         {
-            Navigation.ShowPopup(new SuccessfullyPopup("Password change Successfully"));
+            Navigation.ShowPopup(new SuccessfullyPopup("Password changed Successfully"));
             await RichNavigation.PopAsync();
         }
     }

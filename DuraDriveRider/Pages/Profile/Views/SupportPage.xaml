@@ -49,7 +49,7 @@
                     </Entry>
                 </Frame>
                 <Frame Padding="10,0" HeightRequest="140">
-                    <Editor Placeholder="Describe your issue.....">
+                    <Editor Placeholder="Describe your issues....">
                         <Editor.Effects>
                             <xct:RemoveBorderEffect />
                         </Editor.Effects>

@@ -10,7 +10,7 @@ using Xamarin.Forms;
 namespace DuraDriveRider.Pages.XctTabView.ViewModels
 {
    public class ReachedPickupLocationPageViewModel : BaseViewModel
-    {
+    { 
         public ICommand VerifyItemsCommand => new Command(async (obj) =>
         {
             await RichNavigation.PushAsync(new VerifyItemPage(), typeof(VerifyItemPage));

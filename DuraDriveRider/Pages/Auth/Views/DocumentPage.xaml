@@ -3,9 +3,10 @@
     x:Class="DuraDriveRider.Pages.Auth.Views.DocumentPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:Pages="clr-namespace:DuraDriveRider.Infrastructure" BackgroundColor="#211E66"
+    xmlns:Pages="clr-namespace:DuraDriveRider.Infrastructure"
     xmlns:Yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
-    xmlns:xct="http://xamarin.com/schemas/2020/toolkit">
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+    BackgroundColor="#211E66">
     <ContentPage.Content>
         <StackLayout>
             <StackLayout
@@ -52,13 +53,13 @@
                                 <Frame BackgroundColor="#FBFBFF" BorderColor="#FBFBFF">
                                     <StackLayout Margin="0,2">
                                         <Image
-                                            HeightRequest="35"
+                                            HeightRequest="38"
                                             Source="upload_img"
-                                            WidthRequest="35" />
+                                            WidthRequest="38" />
                                         <Label
-                                            FontSize="10"
+                                            FontSize="12"
                                             HorizontalOptions="Center"
-                                            Text="Document attachments"
+                                            Text="Front of License"
                                             TextColor="#7F7F7F" />
                                     </StackLayout>
                                 </Frame>
@@ -68,11 +69,11 @@
                                     BorderColor="#FBFBFF">
                                     <StackLayout Margin="0,2">
                                         <Image
-                                            HeightRequest="35"
+                                            HeightRequest="38"
                                             Source="upload_img"
-                                            WidthRequest="35" />
+                                            WidthRequest="38" />
                                         <Label
-                                            FontSize="10"
+                                            FontSize="12"
                                             HorizontalOptions="Center"
                                             Text="Back of License"
                                             TextColor="#7F7F7F" />
@@ -88,14 +89,15 @@
                                 <BoxView VerticalOptions="EndAndExpand" />
                             </Grid>
                             <Frame BackgroundColor="#FBFBFF" BorderColor="#FBFBFF">
-                                <StackLayout>
+                                <StackLayout Orientation="Horizontal">
                                     <Image
-                                        HeightRequest="35"
+                                        HeightRequest="38"
+                                        HorizontalOptions="EndAndExpand"
                                         Source="upload_img"
-                                        WidthRequest="35" />
+                                        WidthRequest="38" />
                                     <Label
-                                        FontSize="10"
-                                        HorizontalOptions="Center"
+                                        FontSize="12"
+                                        HorizontalOptions="StartAndExpand"
                                         Text="Attach Photo"
                                         TextColor="#7F7F7F" />
                                 </StackLayout>
@@ -111,21 +113,23 @@
                             </Grid>
 
                             <Frame BackgroundColor="#FBFBFF" BorderColor="#FBFBFF">
-                                <StackLayout>
+                                <StackLayout Orientation="Horizontal">
                                     <Image
-                                        HeightRequest="35"
+                                        HeightRequest="38"
+                                        HorizontalOptions="EndAndExpand"
                                         Source="upload_img"
-                                        WidthRequest="35" />
+                                        WidthRequest="38" />
                                     <Label
-                                        FontSize="10"
-                                        HorizontalOptions="Center"
+                                        FontSize="12"
+                                        HorizontalOptions="StartAndExpand"
                                         Text="Attach Photo"
                                         TextColor="#7F7F7F" />
                                 </StackLayout>
                             </Frame>
                             <Label
-                                Margin="0,5,0,0"
-                                FontSize="12"
+                                Margin="0,10,0,0"
+                                FontAttributes="Bold" 
+                                FontSize="16"
                                 HorizontalOptions="StartAndExpand"
                                 Text="Picture of unit/vehicle"
                                 TextColor="#7F7F7F" />
@@ -156,15 +160,16 @@
                             </Grid>
 
                             <Frame BackgroundColor="#FBFBFF" BorderColor="#FBFBFF">
-                                <StackLayout>
+                                <StackLayout Orientation="Horizontal">
                                     <Image
-                                        HeightRequest="35"
+                                        HeightRequest="38"
+                                        HorizontalOptions="EndAndExpand"
                                         Source="upload_img"
-                                        WidthRequest="35" />
+                                        WidthRequest="38" />
                                     <Label
-                                        FontSize="10"
-                                        HorizontalOptions="Center"
-                                        Text="Upload Photo"
+                                        FontSize="12"
+                                        HorizontalOptions="StartAndExpand"
+                                        Text="Attach Photo"
                                         TextColor="#7F7F7F" />
                                 </StackLayout>
                             </Frame>
