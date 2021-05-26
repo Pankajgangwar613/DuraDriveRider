@@ -32,15 +32,14 @@
                             TextType="Text" />
                     </StackLayout>
                     <ImageButton
-                        Margin="0,0,10,0"
-                        Command="{Binding PasswordChangeCommand}"
-                        HeightRequest="22"
-                        HorizontalOptions="EndAndExpand"
-                        Source="password_changed"
-                        WidthRequest="22" />
-                </Grid>
+                            Margin="0,0,10,0"
+                            Command="{Binding PasswordChangeCommand}"
+                            HeightRequest="22"
+                            HorizontalOptions="EndAndExpand"
+                            Source="password_changed"
+                            WidthRequest="22" />
+                     </Grid>
             </yummy:PancakeView>
-
             <Frame
                 Grid.Row="1"
                 Padding="0" Margin="20,20,20,0"
@@ -55,7 +54,7 @@
                         <Label
                             Margin="0,4"
                             HorizontalOptions="CenterAndExpand"
-                            Text="Dura Express"
+                            Text="Personal Info"
                             TextColor="{Binding PersonalDetailsTextColor}" />
                         <Frame.GestureRecognizers>
                             <TapGestureRecognizer Command="{Binding Tab1Command}" />
@@ -69,13 +68,12 @@
                         <Label
                             Margin="0,4"
                             HorizontalOptions="CenterAndExpand"
-                            Text="Dura Shops"
+                            Text="Document"
                             TextColor="{Binding OfficalDetailsTextColor}" />
                         <Frame.GestureRecognizers>
                             <TapGestureRecognizer Command="{Binding Tab2Command}" />
                         </Frame.GestureRecognizers>
                     </Frame>
-
                     <Frame
                         Grid.Column="2"
                         BackgroundColor="{Binding PaymentDetailsBoxviewColor}"
@@ -84,7 +82,7 @@
                         <Label
                             Margin="0,4"
                             HorizontalOptions="CenterAndExpand"
-                            Text="Dura Eats"
+                            Text="Bank Info"
                             TextColor="{Binding PaymentDetailsTextColor}"
                             VerticalOptions="CenterAndExpand" />
                         <Frame.GestureRecognizers>
@@ -93,7 +91,6 @@
                     </Frame>
                 </Grid>
             </Frame>
-
             <ScrollView Grid.Row="2" Margin="20">
                 <StackLayout>
                     <StackLayout Spacing="20" IsVisible="{Binding PersonalDetailsIsVisible}">
@@ -137,7 +134,6 @@
                             </Entry>
                             <BoxView VerticalOptions="EndAndExpand" />
                         </Grid>
-
                         <Grid VerticalOptions="CenterAndExpand">
                             <Entry
                             Placeholder="doejdofha@gmail.com" TextColor="Black">
@@ -147,7 +143,6 @@
                             </Entry>
                             <BoxView VerticalOptions="EndAndExpand" />
                         </Grid>
-
                         <Grid VerticalOptions="CenterAndExpand">
                             <Entry
                             Placeholder="19 Mar 1990" TextColor="Black">
@@ -157,13 +152,11 @@
                             </Entry>
                             <BoxView VerticalOptions="EndAndExpand" />
                         </Grid>
-
                         <Label
                             FontFamily="ProximaNovaBold"
                             FontSize="16"
                             Text="Social Account"
                             TextColor="#C7C6D8" />
-
                         <Grid VerticalOptions="CenterAndExpand">
                             <Entry
                             Placeholder="Facebook" TextColor="Black">
@@ -177,7 +170,6 @@
                             Text="Linked" HorizontalOptions="EndAndExpand"
                             TextColor="Black" />
                         </Grid>
-
                         <Grid VerticalOptions="CenterAndExpand">
                             <Entry
                             Placeholder="Google" TextColor="Black">
@@ -185,26 +177,30 @@
                                     <xct:RemoveBorderEffect />
                                 </Entry.Effects>
                             </Entry>
-                            <BoxView VerticalOptions="EndAndExpand" />
-                            <Image Margin="0,0,10,0" WidthRequest="20" HeightRequest="20" HorizontalOptions="EndAndExpand" Source="link"/>
+                          <BoxView VerticalOptions="EndAndExpand" />
+                            <Image Margin="0,0,10,0"
+                                   WidthRequest="20" 
+                                   HeightRequest="20" 
+                                   HorizontalOptions="EndAndExpand" 
+                                   Source="link"/>
                         </Grid>
-
                         <Label
                             FontFamily="ProximaNovaBold"
                             FontSize="16"
                             Text="Social Details"
                             TextColor="#C7C6D8" />
-
                         <Grid VerticalOptions="CenterAndExpand">
-                            <Entry
-                            Placeholder="5646464654546" FontAttributes="Bold" FontSize="16" TextColor="Black">
+                        <Entry
+                            Placeholder="5646464654546"
+                            FontAttributes="Bold" 
+                            FontSize="16"
+                            TextColor="Black">
                                 <Entry.Effects>
                                     <xct:RemoveBorderEffect />
                                 </Entry.Effects>
                             </Entry>
                             <BoxView VerticalOptions="EndAndExpand" />
                         </Grid>
-
                         <Button Text="Edit" Command="{Binding EditCommand}"/>
                     </StackLayout>
 
@@ -227,7 +223,6 @@
                                     TextColor="Black" />
                             </StackLayout>
                         </Frame>
-
                         <Button
                             BackgroundColor="Transparent"
                             BorderColor="#211E66" FontFamily=""
@@ -238,10 +233,6 @@
                     </StackLayout>
                 </StackLayout>
             </ScrollView>
-
         </Grid>
-
-
-
     </ContentPage.Content>
 </Pages:BaseContentPage>

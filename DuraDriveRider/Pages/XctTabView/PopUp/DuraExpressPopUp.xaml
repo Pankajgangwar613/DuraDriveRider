@@ -91,7 +91,6 @@
                                 </StackLayout>
                             </StackLayout>
                         </StackLayout>
-
                         <Frame
                             Margin="0,8"
                             BackgroundColor="#211E66"
@@ -132,7 +131,7 @@
                                                     Margin="0,5,0,0"
                                                     HorizontalOptions="StartAndExpand"
                                                     Orientation="Horizontal">
-                                                    <Label Text="Additional Service : " TextColor="#908FB3" />
+                                                    <Label Text="Additional Service : " TextColor="#908FB3"/>
                                                     <Label HorizontalOptions="StartAndExpand" Text="None" />
                                                 </StackLayout>
                                             </StackLayout>

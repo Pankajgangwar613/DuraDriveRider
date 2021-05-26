@@ -33,15 +33,14 @@
                             Text="Notifications"
                             TextType="Text" />
                     </StackLayout>
-                </Grid>
+            </Grid>
             </yummy:PancakeView>
-
             <CollectionView
                 Grid.Row="1"
                 Margin="15,5"
                 ItemsSource="{Binding NotificationData}">
                 <CollectionView.ItemsLayout>
-                    <GridItemsLayout Orientation="Vertical" VerticalItemSpacing="10" />
+                <GridItemsLayout Orientation="Vertical" VerticalItemSpacing="10" />
                 </CollectionView.ItemsLayout>
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
@@ -53,15 +52,14 @@
                                         FontFamily="ProximaNovaSemibold"
                                         Text="{Binding Title}"
                                         TextColor="Black"
-                                        VerticalOptions="CenterAndExpand" />
-
+                                        VerticalOptions="CenterAndExpand"/>
                                     <Label
                                         FontSize="12"
                                         HorizontalOptions="EndAndExpand"
                                         Opacity="0.6"
                                         Text="{Binding Date}"
                                         TextColor="Black"
-                                        VerticalOptions="CenterAndExpand" />
+                                        VerticalOptions="CenterAndExpand"/>
                                 </StackLayout>
                                 <Label
                                     FontSize="13"

@@ -3,142 +3,339 @@
     x:Class="DuraDriveRider.Pages.Auth.Views.LoginPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:Pages="clr-namespace:DuraDriveRider.Infrastructure" BackgroundColor="#211E66"
+    xmlns:Pages="clr-namespace:DuraDriveRider.Infrastructure" BackgroundColor="White"
     xmlns:Yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
     xmlns:xct="http://xamarin.com/schemas/2020/toolkit">
     <StackLayout>
-        <Image
-            Margin="0,110,0,0"
-            HeightRequest="150"
-            HorizontalOptions="CenterAndExpand"
-            Source="logo_white.png"
-            VerticalOptions="StartAndExpand"
-            WidthRequest="150" />
-        <Yummy:PancakeView
-            BackgroundColor="White"
-            CornerRadius="20,20,0,0"
-            VerticalOptions="EndAndExpand">
-            <StackLayout>
-                <Label
-                    FontAttributes="Bold"
-                    FontFamily="ProximaNovaSemibold"
-                    FontSize="Medium"
-                    Text="Login to access your account "
-                    TextColor="Black" />
-
-                <StackLayout>
-                    <Grid InputTransparent="False">
-                        <Picker
-                            Title="Manila"
-                            ItemDisplayBinding="{Binding .}"
-                            ItemsSource="{Binding LoginList}"
-                            SelectedItem="{Binding LoginListSelected}"
-                            TextColor="Black"
-                            TitleColor="Black"
-                            VerticalOptions="CenterAndExpand">
-                            <Picker.Effects>
-                                <xct:RemoveBorderEffect />
-                            </Picker.Effects>
-                        </Picker>
+        <Grid>
+            <Yummy:PancakeView
+                Padding="10,20"
+                BackgroundColor="#211E66"
+                CornerRadius="0,0,10,10">
+                <Grid VerticalOptions="CenterAndExpand">
+                    <StackLayout Orientation="Horizontal">
                         <Image
-                            Margin="0,0,10,0"
-                            HeightRequest="15"
-                            HorizontalOptions="EndAndExpand"
-                            InputTransparent="True"
-                            Source="filled_dropdown"
-                            VerticalOptions="Center"
-                            WidthRequest="15" />
-                        <BoxView VerticalOptions="EndAndExpand" />
-
-                    </Grid>
-                    <Grid
-                        Margin="0,5"
-                        ColumnDefinitions="2*,.1*,8*"
-                        InputTransparent="False">
-                        <StackLayout Padding="0,0,10,0" Orientation="Horizontal">
-                            <Picker
-                                Title="+63"
-                                ItemDisplayBinding="{Binding .}"
-                                ItemsSource="{Binding CountryCodeList}"
-                                SelectedItem="{Binding CountrySelected}"
-                                TextColor="Black"
-                                TitleColor="Black"
-                                VerticalOptions="CenterAndExpand">
-                                <Picker.Effects>
-                                    <xct:RemoveBorderEffect />
-                                </Picker.Effects>
-                            </Picker>
-                            <Image
-                                
-                                HeightRequest="15"
-                                HorizontalOptions="StartAndExpand"
-                                InputTransparent="True"
-                                Source="filled_dropdown"
-                                VerticalOptions="Center"
-                                WidthRequest="15" />
-                        </StackLayout>
-                        <BoxView
-                            Grid.Column="1"
                             HeightRequest="20"
-                            HorizontalOptions="CenterAndExpand" 
-                            VerticalOptions="CenterAndExpand"
-                            WidthRequest="1" />
-
-                        <Entry
-                            Grid.Column="2"
-                            Keyboard="Numeric"
-                            Placeholder="1234567890"
-                            PlaceholderColor="Black"
-                            TextColor="Black">
-                            <Entry.Effects>
-                                <xct:RemoveBorderEffect />
-                            </Entry.Effects>
-                        </Entry>
-                        <BoxView Grid.ColumnSpan="3" VerticalOptions="EndAndExpand" />
+                            HorizontalOptions="Start"                         
+                            Source="logo_white.png"
+                            WidthRequest="25"/>
+                        <Label
+                            HorizontalOptions="Start"   
+                            VerticalOptions="CenterAndExpand">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span 
+                                        Text="DURA "
+                                        FontSize="13"
+                                        FontFamily="ProximaNovaBold"
+                                        TextColor="White" />
+                                    <Span
+                                        FontFamily="ProximaNovaRegular"
+                                        Text="DRIVE"
+                                        FontSize="13"
+                                        TextColor="White"/>
+                                </FormattedString>
+                            </Label.FormattedText>
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding CheckCommand}" />
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </StackLayout>
+                    <StackLayout HorizontalOptions="EndAndExpand"
+                                 Margin="0,0,40,0">
+                        <Image
+                            HeightRequest="20"
+                            Source="notification.png"
+                            WidthRequest="20" />
+                    </StackLayout>
+                    <ImageButton
+                         Margin="0,0,10,0"
+                         HeightRequest="16"
+                         HorizontalOptions="EndAndExpand"
+                         Source="help_message"
+                         WidthRequest="16"/>
+                </Grid>
+            </Yummy:PancakeView>
+            <StackLayout Orientation="Vertical"
+                         Padding="0" >
+                <StackLayout Margin="0,10,0,0">
+                    <Grid>
+                        <StackLayout
+                         Orientation="Horizontal"
+                         Padding="15"
+                         Spacing="20"
+                         VerticalOptions="Start">
+                            <Frame
+                         HeightRequest="100"
+                         CornerRadius="10"
+                         HasShadow="True"
+                         Margin="0,60,0,0"
+                         WidthRequest="130">
+                                <Grid
+                         VerticalOptions="Center"
+                         HorizontalOptions="CenterAndExpand">
+                                    <Image
+                         Margin="0,0,0,35"
+                         HeightRequest="70"                                
+                         Source="Dashboard.png"
+                         WidthRequest="80" />
+                                    <Grid>
+                                        <Label
+                         Text="Dashboard"
+                         TextColor="Black"                                     
+                         FontSize="18"
+                         FontFamily="ProximaNovaSemibold"
+                         FontAttributes="Bold"
+                         Margin="0,40,0,0"
+                         VerticalOptions="Center">
+                                        </Label>
+                                    </Grid>
+                                </Grid>
+                            </Frame>
+                            <Frame
+                         HeightRequest="100"
+                         CornerRadius="10"
+                         HasShadow="True"
+                         Margin="0,60,0,0"
+                         WidthRequest="130">
+                                <Grid
+                         VerticalOptions="Center"
+                         HorizontalOptions="CenterAndExpand">
+                                    <Image
+                         Margin="0,0,0,35"
+                         HeightRequest="40"                                  
+                         Source="Driver.png"
+                         WidthRequest="60" />
+                                    <Grid>
+                                        <Label
+                         Text="Driver Management"                                    
+                         HorizontalTextAlignment="Center"
+                         TextColor="Black"                                      
+                         FontSize="18"
+                         FontFamily="ProximaNovaSemibold"
+                         FontAttributes="Bold"
+                         Margin="0,50,0,0"
+                         VerticalOptions="End">
+                                        </Label>
+                                    </Grid>
+                                </Grid>
+                            </Frame>
+                        </StackLayout>
                     </Grid>
-
-                    <Grid VerticalOptions="CenterAndExpand">
-                        <Entry
-                            Placeholder="Enter Password" >
-                            <Entry.Effects>
-                                <xct:RemoveBorderEffect />
-                            </Entry.Effects>
-                        </Entry>
-                        <BoxView VerticalOptions="EndAndExpand" />
+                </StackLayout>
+                <StackLayout VerticalOptions="Start"
+                         Margin="0,-10,0,0"
+                         HorizontalOptions="StartAndExpand">
+                    <Grid>
+                        <StackLayout Orientation="Horizontal"
+                         Padding="15"
+                         Spacing="20"
+                         VerticalOptions="Center" >
+                            <Frame
+                         HeightRequest="100"
+                         CornerRadius="10"
+                         HasShadow="True"
+                         Margin="0,0,0,0"
+                         WidthRequest="130">
+                                <Grid 
+                         VerticalOptions="Center"
+                         HorizontalOptions="CenterAndExpand">
+                                    <Image
+                         Margin="0,0,0,35"
+                         HeightRequest="70"                                 
+                         Source="vehicle.png"
+                         WidthRequest="80"/>
+                                    <Grid>
+                                        <Label
+                         Text="Vehicles"
+                         TextColor="Black"                                   
+                         FontSize="18"
+                         FontFamily="ProximaNovaSemibold"
+                         FontAttributes="Bold"
+                         Margin="5,40,0,0"
+                         VerticalOptions="Center" >
+                                        </Label>
+                                    </Grid>
+                                </Grid>
+                            </Frame >
+                            <Frame
+                         HeightRequest="100"
+                         CornerRadius="10"
+                         HasShadow="True"
+                         Margin="0,0,0,0"
+                         WidthRequest="130">
+                            <Grid
+                         VerticalOptions="Center"
+                         HorizontalOptions="CenterAndExpand">
+                                <Image
+                         Margin="5,0,0,35"
+                         HeightRequest="80"                                 
+                         Source="MAP.png"
+                         WidthRequest="100"/>
+                                <Grid>
+                                    <Label
+                         Text="Map"                                              
+                         TextColor="Black"                                      
+                         FontSize="18"
+                         FontFamily="ProximaNovaSemibold"
+                         FontAttributes="Bold"
+                          Margin="37,0,0,15"
+                         VerticalOptions="End">
+                                    </Label>
+                                </Grid>
+                            </Grid>
+                            </Frame>
+                        </StackLayout>
                     </Grid>
-                    <Label
-                        Margin="0,15" 
-                        FontFamily="Proxima Nova"
-                        HorizontalOptions="Center"
-                        Text="Forgot Password?"
-                        TextColor="#211E66"
-                        TextDecorations="Underline"
-                        VerticalOptions="Center" >
-                        <Label.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding ForgotCommand}" />
-                        </Label.GestureRecognizers>
-                    </Label>
-                    <Button
-                        Margin="0,10"
-                        Command="{Binding LoginCommand}"
-                        Text="Login" />
-                    <Label Margin="0,15,0,0" HorizontalOptions="CenterAndExpand">
-                        <Label.FormattedText>
-                            <FormattedString>
-                                <Span Text="Want to be a rider? " TextColor="#3B3B3B" />
-                                <Span
-                                    FontFamily="ProximaNovaSemibold"
-                                    Text="Register here"
-                                    TextColor="#211E66"
-                                    TextDecorations="Underline" />
-                            </FormattedString>
-                        </Label.FormattedText>
-                        <Label.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding RegisterCommand}" />
-                        </Label.GestureRecognizers>
-                    </Label>
+                </StackLayout>
+                <StackLayout
+                                                            VerticalOptions="Start"      
+                                                            HorizontalOptions="StartAndExpand"
+                                                            Margin="0,-10,0,0">
+                    <Grid>
+                        <StackLayout Orientation="Horizontal"
+                                                            Padding="15"
+                                                            Spacing="20"
+                                                            VerticalOptions="Center" >
+                            <Frame
+                                                            HeightRequest="100"
+                                                            CornerRadius="10"
+                                                            HasShadow="True"
+                                                            Margin="0,0,0,0"
+                                                            WidthRequest="130">
+                                <Grid 
+                                                            VerticalOptions="Center"
+                                                            HorizontalOptions="CenterAndExpand">
+                                    <Image
+                                                             Margin="0,0,0,35"
+                                                             HeightRequest="70"                                 
+                                                             Source="Delivery_M.png"
+                                                             WidthRequest="80" />
+                                    <Grid>
+                                        <Label
+                                                              Text="Delivery Management"
+                                                              HorizontalTextAlignment="Center"
+                                                              TextColor="Black"                                   
+                                                              FontSize="18"
+                                                              FontFamily="ProximaNovaSemibold"
+                                                              FontAttributes="Bold"
+                                                              Margin="0,50,0,0"
+                                                              VerticalOptions="Center">
+                                        </Label>
+                                    </Grid>
+                                </Grid>
+                            </Frame>
+                            <Frame
+                                                            HeightRequest="100"
+                                                            CornerRadius="10"
+                                                            HasShadow="True"
+                                                            Margin="0,0,0,0"
+                                                            WidthRequest="130">
+                                <Grid
+                                                            VerticalOptions="Center"
+                                                            HorizontalOptions="CenterAndExpand">
+                                    <Image
+                                                           Margin="0,0,0,35"
+                                                           HeightRequest="100"                                 
+                                                           Source="E_wallet.png"
+                                                           WidthRequest="100" />
+                                    <Grid>
+                                        <Label
+                                                          Text="E-Wallet Management"                                      
+                                                          HorizontalTextAlignment="Center"
+                                                          TextColor="Black"                                      
+                                                          FontSize="18"
+                                                          FontFamily="ProximaNovaSemibold"
+                                                          FontAttributes="Bold"
+                                                          Margin="0,0,0,0"
+                                                          VerticalOptions="End">
+                                        </Label>
+                                    </Grid>
+                                </Grid>
+                            </Frame>
+                        </StackLayout>
+                    </Grid>
+                </StackLayout>
+                <StackLayout
+                         VerticalOptions="Start"
+                         Margin="0,-10,0,0"
+                         HorizontalOptions="StartAndExpand">
+                    <Grid>
+                        <StackLayout
+                         Orientation="Horizontal"
+                         Padding="15"
+                         Spacing="20"
+                         VerticalOptions="Center" >
+                            <Frame
+                         HeightRequest="100"
+                         CornerRadius="10"
+                         HasShadow="True"
+                         Margin="0,0,0,0"
+                         WidthRequest="130">
+                                <Grid 
+                         VerticalOptions="Center"
+                         HorizontalOptions="CenterAndExpand">
+                                    <Image
+                         Margin="0,0,0,35"
+                         HeightRequest="70"                                 
+                         Source="Reports.png"
+                         WidthRequest="80" />
+                                    <Grid>
+                                        <Label
+                         Text="Reports"
+                         TextColor="Black"                                   
+                         FontSize="18"
+                         FontFamily="ProximaNovaSemibold"
+                         FontAttributes="Bold"
+                         Margin="10,40,0,0"
+                         VerticalOptions="Center">
+                                        </Label>
+                                    </Grid>
+                                </Grid>
+                            </Frame>
+                            <Frame
+                         HeightRequest="100"
+                         CornerRadius="10"
+                         HasShadow="True"
+                         Margin="0,0,0,0"
+                         WidthRequest="130">
+                                <Grid
+                         VerticalOptions="Center"
+                         HorizontalOptions="CenterAndExpand">
+                                    <Image
+                         Margin="0,0,0,35"
+                         HeightRequest="80"                                 
+                         Source="O_s.png"
+                         WidthRequest="80"/>
+                                    <Grid>
+                                        <Label
+                         Text="Operator Settings"               
+                         HorizontalTextAlignment="Center"
+                         TextColor="Black"                                      
+                         FontSize="18"
+                         FontFamily="ProximaNovaSemibold"
+                         FontAttributes="Bold"
+                         Margin="0,0,0,20"
+                         VerticalOptions="End">
+                                        </Label>
+                                    </Grid>
+                                </Grid>
+                            </Frame>
+                        </StackLayout>
+                    </Grid>
                 </StackLayout>
             </StackLayout>
-        </Yummy:PancakeView>
+        </Grid>
+        <StackLayout VerticalOptions="EndAndExpand"
+                     Margin="0,0,0,0"
+                     Spacing="0">
+            <Grid 
+                    BackgroundColor="#D72625"
+                   >
+            </Grid>
+            <Grid 
+                   BackgroundColor="#211E66">
+            </Grid>
+        </StackLayout>
     </StackLayout>
 </Pages:BaseContentPage>
